@@ -82,6 +82,9 @@
                                 <rect key="frame" x="155" y="382" width="104" height="53"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                 <state key="normal" title="Submit"/>
+                                <connections>
+                                    <action selector="createAccount:" destination="tDQ-2h-ec7" eventType="touchUpInside" id="2ef-oh-OhE"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k3x-DK-r7L">
                                 <rect key="frame" x="81" y="429" width="252" height="33"/>
@@ -107,6 +110,11 @@
                         <viewLayoutGuide key="safeArea" id="nxG-qh-sgd"/>
                     </view>
                     <navigationItem key="navigationItem" id="f3m-xv-XDR"/>
+                    <connections>
+                        <outlet property="createAccountButton" destination="rcl-XN-YvQ" id="LgQ-I6-UPw"/>
+                        <outlet property="userEmailTextField" destination="HlR-rv-jSF" id="388-2s-Fka"/>
+                        <outlet property="userPasswordTextField" destination="dw6-yr-tEi" id="uvL-gA-Fiu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dcR-z0-cbU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -150,6 +158,10 @@
                         <viewLayoutGuide key="safeArea" id="g9z-z4-RAF"/>
                     </view>
                     <navigationItem key="navigationItem" id="fx8-cX-4qS"/>
+                    <connections>
+                        <outlet property="toCreateAccountScreen" destination="rCa-K0-xeu" id="PIz-09-beT"/>
+                        <outlet property="toLoginScreenButton" destination="ueU-dV-094" id="nKg-HJ-yEK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8yS-vG-i0z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -230,6 +242,9 @@
                                 <rect key="frame" x="158" y="382" width="98" height="53"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                 <state key="normal" title="Log in!"/>
+                                <connections>
+                                    <action selector="loginTapped:" destination="Flz-FX-azB" eventType="touchUpInside" id="iuz-6h-141"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oeV-x7-GQb">
                                 <rect key="frame" x="71" y="429" width="272" height="33"/>
@@ -255,6 +270,11 @@
                         <viewLayoutGuide key="safeArea" id="Bul-7j-uAJ"/>
                     </view>
                     <navigationItem key="navigationItem" id="SCb-s1-xKV"/>
+                    <connections>
+                        <outlet property="loginButton" destination="cof-53-06M" id="jTN-ek-8Jw"/>
+                        <outlet property="userEmailTextField" destination="kJH-DL-Ttg" id="lN6-U6-dU3"/>
+                        <outlet property="userPasswordTextField" destination="68l-Qf-ybY" id="4jV-dl-HoF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4LH-C1-Zkw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -280,7 +300,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="H4I-cI-PdS"/>
-        <segue reference="lnJ-Vz-Rz9"/>
+        <segue reference="pHE-12-gpc"/>
+        <segue reference="gmf-dA-yId"/>
     </inferredMetricsTieBreakers>
 </document>

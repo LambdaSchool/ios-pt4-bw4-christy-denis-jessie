@@ -10,6 +10,9 @@ import UIKit
 
 class LandingPageViewController: UIViewController {
 
+    @IBOutlet weak var toLoginScreenButton: UIButton!
+    @IBOutlet weak var toCreateAccountScreen: UIButton!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
