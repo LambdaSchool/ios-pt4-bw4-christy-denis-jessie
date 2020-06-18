@@ -17,6 +17,10 @@
 		9590BA08249B0A06008E7AD9 /* ShoppingCart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9590BA07249B0A06008E7AD9 /* ShoppingCart.storyboard */; };
 		9590BA0A249B0A63008E7AD9 /* CatsForSale.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9590BA09249B0A63008E7AD9 /* CatsForSale.storyboard */; };
 		9590BA0C249B0A72008E7AD9 /* ProductsForSale.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9590BA0B249B0A72008E7AD9 /* ProductsForSale.storyboard */; };
+		9590BA0F249B1285008E7AD9 /* UserLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9590BA0E249B1285008E7AD9 /* UserLoginViewController.swift */; };
+		9590BA11249B12E5008E7AD9 /* CreateUserAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9590BA10249B12E5008E7AD9 /* CreateUserAccountViewController.swift */; };
+		9590BA13249B130A008E7AD9 /* LandingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9590BA12249B130A008E7AD9 /* LandingPageViewController.swift */; };
+		9590BA15249B136A008E7AD9 /* LandingPageNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9590BA14249B136A008E7AD9 /* LandingPageNavViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +36,10 @@
 		9590BA07249B0A06008E7AD9 /* ShoppingCart.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ShoppingCart.storyboard; sourceTree = "<group>"; };
 		9590BA09249B0A63008E7AD9 /* CatsForSale.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CatsForSale.storyboard; sourceTree = "<group>"; };
 		9590BA0B249B0A72008E7AD9 /* ProductsForSale.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProductsForSale.storyboard; sourceTree = "<group>"; };
+		9590BA0E249B1285008E7AD9 /* UserLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLoginViewController.swift; sourceTree = "<group>"; };
+		9590BA10249B12E5008E7AD9 /* CreateUserAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserAccountViewController.swift; sourceTree = "<group>"; };
+		9590BA12249B130A008E7AD9 /* LandingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingPageViewController.swift; sourceTree = "<group>"; };
+		9590BA14249B136A008E7AD9 /* LandingPageNavViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingPageNavViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +72,7 @@
 		12BE9448249B035D00AD1542 /* CatCart */ = {
 			isa = PBXGroup;
 			children = (
+				9590BA0D249B1252008E7AD9 /* User View Controllers */,
 				9590BA04249B0982008E7AD9 /* Storyboards */,
 				12BE9449249B035D00AD1542 /* AppDelegate.swift */,
 				12BE944B249B035D00AD1542 /* SceneDelegate.swift */,
@@ -85,6 +94,17 @@
 				9590BA0B249B0A72008E7AD9 /* ProductsForSale.storyboard */,
 			);
 			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		9590BA0D249B1252008E7AD9 /* User View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9590BA14249B136A008E7AD9 /* LandingPageNavViewController.swift */,
+				9590BA12249B130A008E7AD9 /* LandingPageViewController.swift */,
+				9590BA0E249B1285008E7AD9 /* UserLoginViewController.swift */,
+				9590BA10249B12E5008E7AD9 /* CreateUserAccountViewController.swift */,
+			);
+			name = "User View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,9 +182,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9590BA15249B136A008E7AD9 /* LandingPageNavViewController.swift in Sources */,
 				12BE944E249B035D00AD1542 /* ViewController.swift in Sources */,
+				9590BA13249B130A008E7AD9 /* LandingPageViewController.swift in Sources */,
 				12BE944A249B035D00AD1542 /* AppDelegate.swift in Sources */,
+				9590BA11249B12E5008E7AD9 /* CreateUserAccountViewController.swift in Sources */,
 				12BE944C249B035D00AD1542 /* SceneDelegate.swift in Sources */,
+				9590BA0F249B1285008E7AD9 /* UserLoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
