@@ -10,6 +10,10 @@ import UIKit
 
 class CreateUserAccountViewController: UIViewController {
 
+    @IBOutlet weak var userEmailTextField: UITextField!
+    @IBOutlet weak var userPasswordTextField: UITextField!
+    @IBOutlet weak var createAccountButton: UIButton!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -17,6 +21,8 @@ class CreateUserAccountViewController: UIViewController {
     }
     
 
+    @IBAction func createAccount(_ sender: UIButton) {
+    }
     /*
     // MARK: - Navigation
 

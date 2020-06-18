@@ -10,13 +10,20 @@ import UIKit
 
 class UserLoginViewController: UIViewController {
 
+    @IBOutlet weak var userEmailTextField: UITextField!
+    @IBOutlet weak var userPasswordTextField: UITextField!
+    @IBOutlet weak var loginButton: UIButton!
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func loginTapped(_ sender: UIButton) {
+    }
+    
     /*
     // MARK: - Navigation
 
