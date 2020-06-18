@@ -13,6 +13,10 @@
 		12BE9451249B035D00AD1542 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12BE944F249B035D00AD1542 /* Main.storyboard */; };
 		12BE9453249B036700AD1542 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12BE9452249B036700AD1542 /* Assets.xcassets */; };
 		12BE9456249B036700AD1542 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12BE9454249B036700AD1542 /* LaunchScreen.storyboard */; };
+		9590BA06249B09CC008E7AD9 /* UserLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9590BA05249B09CC008E7AD9 /* UserLogin.storyboard */; };
+		9590BA08249B0A06008E7AD9 /* ShoppingCart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9590BA07249B0A06008E7AD9 /* ShoppingCart.storyboard */; };
+		9590BA0A249B0A63008E7AD9 /* CatsForSale.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9590BA09249B0A63008E7AD9 /* CatsForSale.storyboard */; };
+		9590BA0C249B0A72008E7AD9 /* ProductsForSale.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9590BA0B249B0A72008E7AD9 /* ProductsForSale.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		12BE9452249B036700AD1542 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		12BE9455249B036700AD1542 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		12BE9457249B036700AD1542 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9590BA05249B09CC008E7AD9 /* UserLogin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserLogin.storyboard; sourceTree = "<group>"; };
+		9590BA07249B0A06008E7AD9 /* ShoppingCart.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ShoppingCart.storyboard; sourceTree = "<group>"; };
+		9590BA09249B0A63008E7AD9 /* CatsForSale.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CatsForSale.storyboard; sourceTree = "<group>"; };
+		9590BA0B249B0A72008E7AD9 /* ProductsForSale.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProductsForSale.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +64,27 @@
 		12BE9448249B035D00AD1542 /* CatCart */ = {
 			isa = PBXGroup;
 			children = (
+				9590BA04249B0982008E7AD9 /* Storyboards */,
 				12BE9449249B035D00AD1542 /* AppDelegate.swift */,
 				12BE944B249B035D00AD1542 /* SceneDelegate.swift */,
 				12BE944D249B035D00AD1542 /* ViewController.swift */,
-				12BE944F249B035D00AD1542 /* Main.storyboard */,
 				12BE9452249B036700AD1542 /* Assets.xcassets */,
-				12BE9454249B036700AD1542 /* LaunchScreen.storyboard */,
 				12BE9457249B036700AD1542 /* Info.plist */,
 			);
 			path = CatCart;
+			sourceTree = "<group>";
+		};
+		9590BA04249B0982008E7AD9 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				12BE9454249B036700AD1542 /* LaunchScreen.storyboard */,
+				12BE944F249B035D00AD1542 /* Main.storyboard */,
+				9590BA05249B09CC008E7AD9 /* UserLogin.storyboard */,
+				9590BA07249B0A06008E7AD9 /* ShoppingCart.storyboard */,
+				9590BA09249B0A63008E7AD9 /* CatsForSale.storyboard */,
+				9590BA0B249B0A72008E7AD9 /* ProductsForSale.storyboard */,
+			);
+			name = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,9 +145,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9590BA0C249B0A72008E7AD9 /* ProductsForSale.storyboard in Resources */,
+				9590BA08249B0A06008E7AD9 /* ShoppingCart.storyboard in Resources */,
 				12BE9456249B036700AD1542 /* LaunchScreen.storyboard in Resources */,
 				12BE9453249B036700AD1542 /* Assets.xcassets in Resources */,
 				12BE9451249B035D00AD1542 /* Main.storyboard in Resources */,
+				9590BA0A249B0A63008E7AD9 /* CatsForSale.storyboard in Resources */,
+				9590BA06249B09CC008E7AD9 /* UserLogin.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
