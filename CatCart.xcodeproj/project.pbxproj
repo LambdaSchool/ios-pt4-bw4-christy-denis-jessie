@@ -85,6 +85,7 @@
 				12BE9452249B036700AD1542 /* Assets.xcassets */,
 				12BE9457249B036700AD1542 /* Info.plist */,
 				BA2F223C249C5B07005944D8 /* Core Data */,
+				BA2F223D249C5B52005944D8 /* Model Helpers */,
 			);
 			path = CatCart;
 			sourceTree = "<group>";
@@ -135,6 +136,14 @@
 				BA2F2238249C5339005944D8 /* CoreDataStack.swift */,
 			);
 			name = "Core Data";
+			sourceTree = "<group>";
+		};
+		BA2F223D249C5B52005944D8 /* Model Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				BA2F223A249C5364005944D8 /* Cat+Convenience.swift */,
+			);
+			name = "Model Helpers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
