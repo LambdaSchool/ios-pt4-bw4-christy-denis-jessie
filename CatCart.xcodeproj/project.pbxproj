@@ -141,7 +141,6 @@
 		BA2F223D249C5B52005944D8 /* Model Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				BA2F223A249C5364005944D8 /* Cat+Convenience.swift */,
 			);
 			name = "Model Helpers";
 			sourceTree = "<group>";
