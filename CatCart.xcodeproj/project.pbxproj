@@ -21,6 +21,8 @@
 		9590BA11249B12E5008E7AD9 /* CreateUserAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9590BA10249B12E5008E7AD9 /* CreateUserAccountViewController.swift */; };
 		9590BA13249B130A008E7AD9 /* LandingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9590BA12249B130A008E7AD9 /* LandingPageViewController.swift */; };
 		9590BA15249B136A008E7AD9 /* LandingPageNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9590BA14249B136A008E7AD9 /* LandingPageNavViewController.swift */; };
+		BA2F2237249C52A0005944D8 /* CatCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BA2F2235249C52A0005944D8 /* CatCoreData.xcdatamodeld */; };
+		BA2F2239249C5339005944D8 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2F2238249C5339005944D8 /* CoreDataStack.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		9590BA10249B12E5008E7AD9 /* CreateUserAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserAccountViewController.swift; sourceTree = "<group>"; };
 		9590BA12249B130A008E7AD9 /* LandingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingPageViewController.swift; sourceTree = "<group>"; };
 		9590BA14249B136A008E7AD9 /* LandingPageNavViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingPageNavViewController.swift; sourceTree = "<group>"; };
+		BA2F2236249C52A0005944D8 /* CatCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CatCoreData.xcdatamodel; sourceTree = "<group>"; };
+		BA2F2238249C5339005944D8 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +84,8 @@
 				12BE944B249B035D00AD1542 /* SceneDelegate.swift */,
 				12BE9452249B036700AD1542 /* Assets.xcassets */,
 				12BE9457249B036700AD1542 /* Info.plist */,
+				BA2F2235249C52A0005944D8 /* CatCoreData.xcdatamodeld */,
+				BA2F2238249C5339005944D8 /* CoreDataStack.swift */,
 			);
 			path = CatCart;
 			sourceTree = "<group>";
@@ -200,6 +206,8 @@
 				9590BA15249B136A008E7AD9 /* LandingPageNavViewController.swift in Sources */,
 				12BE94B6249C2E2A00AD1542 /* UserController.swift in Sources */,
 				9590BA13249B130A008E7AD9 /* LandingPageViewController.swift in Sources */,
+				BA2F2239249C5339005944D8 /* CoreDataStack.swift in Sources */,
+				BA2F2237249C52A0005944D8 /* CatCoreData.xcdatamodeld in Sources */,
 				12BE944A249B035D00AD1542 /* AppDelegate.swift in Sources */,
 				9590BA11249B12E5008E7AD9 /* CreateUserAccountViewController.swift in Sources */,
 				12BE944C249B035D00AD1542 /* SceneDelegate.swift in Sources */,
@@ -394,6 +402,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		BA2F2235249C52A0005944D8 /* CatCoreData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				BA2F2236249C52A0005944D8 /* CatCoreData.xcdatamodel */,
+			);
+			currentVersion = BA2F2236249C52A0005944D8 /* CatCoreData.xcdatamodel */;
+			path = CatCoreData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 12BE943E249B035C00AD1542 /* Project object */;
 }
