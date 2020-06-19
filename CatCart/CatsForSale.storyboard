@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Category View Controller-->
         <scene sceneID="40h-YQ-e2g">
             <objects>
-                <viewController id="wQe-P6-dTr" sceneMemberID="viewController">
+                <viewController id="wQe-P6-dTr" customClass="CategoryViewController" customModule="CatCart" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gvE-t6-gOf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -246,10 +246,10 @@
             </objects>
             <point key="canvasLocation" x="1957.9710144927537" y="164.73214285714286"/>
         </scene>
-        <!--Table View Controller-->
+        <!--All Cats Table View Controller-->
         <scene sceneID="xSF-nq-eat">
             <objects>
-                <tableViewController id="cO3-8a-msz" sceneMemberID="viewController">
+                <tableViewController id="cO3-8a-msz" customClass="AllCatsTableViewController" customModule="CatCart" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="1zP-qh-eav">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -315,10 +315,10 @@
             </objects>
             <point key="canvasLocation" x="2895.6521739130435" y="-150"/>
         </scene>
-        <!--View Controller-->
+        <!--Cats Nearby Map View Controller-->
         <scene sceneID="1CC-AY-gy1">
             <objects>
-                <viewController id="ob2-EK-jzc" sceneMemberID="viewController">
+                <viewController id="ob2-EK-jzc" customClass="CatsNearbyMapViewController" customModule="CatCart" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="68s-zx-z7x">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -342,10 +342,10 @@
             </objects>
             <point key="canvasLocation" x="2870" y="559"/>
         </scene>
-        <!--View Controller-->
+        <!--Cat Detail View Controller-->
         <scene sceneID="aww-sm-nqO">
             <objects>
-                <viewController id="iGu-rw-Dz4" sceneMemberID="viewController">
+                <viewController id="iGu-rw-Dz4" customClass="CatDetailViewController" customModule="CatCart" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FiM-wl-rnS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -402,11 +402,27 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="UvP-Lu-RiI"/>
                     </view>
-                    <navigationItem key="navigationItem" id="TSL-R2-rzA"/>
+                    <navigationItem key="navigationItem" id="TSL-R2-rzA">
+                        <barButtonItem key="rightBarButtonItem" image="cart" catalog="system" id="pPZ-te-4U2">
+                            <connections>
+                                <segue destination="kv9-q5-LfH" kind="show" identifier="ShowShoppingCart" id="8yb-1A-pQ8"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ERX-pC-SuH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3869.5652173913045" y="227.67857142857142"/>
+        </scene>
+        <!--ShoppingCart-->
+        <scene sceneID="H4t-nd-GLu">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ShoppingCart" id="kv9-q5-LfH" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Fwa-oy-XmH"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vsd-k2-DFF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4446" y="-29"/>
         </scene>
         <!--ProductsForSale-->
         <scene sceneID="KhT-do-e2J">
@@ -440,4 +456,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="I2X-CA-uDX"/>
     </inferredMetricsTieBreakers>
+    <resources>
+        <image name="cart" catalog="system" width="128" height="102"/>
+    </resources>
 </document>
