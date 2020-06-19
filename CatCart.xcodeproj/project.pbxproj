@@ -21,6 +21,10 @@
 		9590BA11249B12E5008E7AD9 /* CreateUserAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9590BA10249B12E5008E7AD9 /* CreateUserAccountViewController.swift */; };
 		9590BA13249B130A008E7AD9 /* LandingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9590BA12249B130A008E7AD9 /* LandingPageViewController.swift */; };
 		9590BA15249B136A008E7AD9 /* LandingPageNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9590BA14249B136A008E7AD9 /* LandingPageNavViewController.swift */; };
+		95A64470249C6B5700870401 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A6446F249C6B5700870401 /* CategoryViewController.swift */; };
+		95A64472249C6B8700870401 /* CatsNearbyMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A64471249C6B8700870401 /* CatsNearbyMapViewController.swift */; };
+		95A64474249C6BCD00870401 /* AllCatsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A64473249C6BCD00870401 /* AllCatsTableViewController.swift */; };
+		95A64476249C6BFF00870401 /* CatDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A64475249C6BFF00870401 /* CatDetailViewController.swift */; };
 		BA2F2237249C52A0005944D8 /* CatCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BA2F2235249C52A0005944D8 /* CatCoreData.xcdatamodeld */; };
 		BA2F2239249C5339005944D8 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2F2238249C5339005944D8 /* CoreDataStack.swift */; };
 /* End PBXBuildFile section */
@@ -42,6 +46,10 @@
 		9590BA10249B12E5008E7AD9 /* CreateUserAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserAccountViewController.swift; sourceTree = "<group>"; };
 		9590BA12249B130A008E7AD9 /* LandingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingPageViewController.swift; sourceTree = "<group>"; };
 		9590BA14249B136A008E7AD9 /* LandingPageNavViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingPageNavViewController.swift; sourceTree = "<group>"; };
+		95A6446F249C6B5700870401 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
+		95A64471249C6B8700870401 /* CatsNearbyMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatsNearbyMapViewController.swift; sourceTree = "<group>"; };
+		95A64473249C6BCD00870401 /* AllCatsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCatsTableViewController.swift; sourceTree = "<group>"; };
+		95A64475249C6BFF00870401 /* CatDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatDetailViewController.swift; sourceTree = "<group>"; };
 		BA2F2236249C52A0005944D8 /* CatCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CatCoreData.xcdatamodel; sourceTree = "<group>"; };
 		BA2F2238249C5339005944D8 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -76,9 +84,9 @@
 		12BE9448249B035D00AD1542 /* CatCart */ = {
 			isa = PBXGroup;
 			children = (
+				95A6446D249C6B0600870401 /* View Controllers */,
 				12BE94BC249C2E9400AD1542 /* Model */,
 				12BE94B7249C2E3B00AD1542 /* Model Controllers */,
-				9590BA0D249B1252008E7AD9 /* User View Controllers */,
 				9590BA04249B0982008E7AD9 /* Storyboards */,
 				12BE9449249B035D00AD1542 /* AppDelegate.swift */,
 				12BE944B249B035D00AD1542 /* SceneDelegate.swift */,
@@ -127,6 +135,26 @@
 				9590BA10249B12E5008E7AD9 /* CreateUserAccountViewController.swift */,
 			);
 			name = "User View Controllers";
+			sourceTree = "<group>";
+		};
+		95A6446D249C6B0600870401 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				95A6446E249C6B1B00870401 /* Cats For Sale View Controllers */,
+				9590BA0D249B1252008E7AD9 /* User View Controllers */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		95A6446E249C6B1B00870401 /* Cats For Sale View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				95A6446F249C6B5700870401 /* CategoryViewController.swift */,
+				95A64471249C6B8700870401 /* CatsNearbyMapViewController.swift */,
+				95A64473249C6BCD00870401 /* AllCatsTableViewController.swift */,
+				95A64475249C6BFF00870401 /* CatDetailViewController.swift */,
+			);
+			name = "Cats For Sale View Controllers";
 			sourceTree = "<group>";
 		};
 		BA2F223C249C5B07005944D8 /* Core Data */ = {
@@ -226,8 +254,12 @@
 				BA2F2237249C52A0005944D8 /* CatCoreData.xcdatamodeld in Sources */,
 				12BE944A249B035D00AD1542 /* AppDelegate.swift in Sources */,
 				9590BA11249B12E5008E7AD9 /* CreateUserAccountViewController.swift in Sources */,
+				95A64474249C6BCD00870401 /* AllCatsTableViewController.swift in Sources */,
+				95A64472249C6B8700870401 /* CatsNearbyMapViewController.swift in Sources */,
 				12BE944C249B035D00AD1542 /* SceneDelegate.swift in Sources */,
 				9590BA0F249B1285008E7AD9 /* UserLoginViewController.swift in Sources */,
+				95A64470249C6B5700870401 /* CategoryViewController.swift in Sources */,
+				95A64476249C6BFF00870401 /* CatDetailViewController.swift in Sources */,
 				12BE94BB249C2E8C00AD1542 /* UserModelRepresentation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
