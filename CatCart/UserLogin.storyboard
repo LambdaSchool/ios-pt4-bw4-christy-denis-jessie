@@ -84,6 +84,7 @@
                                 <state key="normal" title="Submit"/>
                                 <connections>
                                     <action selector="createAccount:" destination="tDQ-2h-ec7" eventType="touchUpInside" id="2ef-oh-OhE"/>
+                                    <segue destination="SWy-LE-ac5" kind="show" identifier="ShowStoreSegue" id="RRh-or-BwZ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k3x-DK-r7L">
@@ -244,6 +245,7 @@
                                 <state key="normal" title="Log in!"/>
                                 <connections>
                                     <action selector="loginTapped:" destination="Flz-FX-azB" eventType="touchUpInside" id="iuz-6h-141"/>
+                                    <segue destination="SWy-LE-ac5" kind="show" identifier="ShowStoreSegue" id="67X-Kl-3RS"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oeV-x7-GQb">
@@ -280,6 +282,16 @@
             </objects>
             <point key="canvasLocation" x="2039" y="-149"/>
         </scene>
+        <!--CatsForSale-->
+        <scene sceneID="nu5-eV-QFH">
+            <objects>
+                <viewControllerPlaceholder storyboardName="CatsForSale" id="SWy-LE-ac5" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="q7S-Tg-gOw"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DBx-Ur-YOT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2962" y="221"/>
+        </scene>
         <!--Landing Page Nav View Controller-->
         <scene sceneID="yMH-ks-ead">
             <objects>
@@ -300,7 +312,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="pHE-12-gpc"/>
-        <segue reference="gmf-dA-yId"/>
+        <segue reference="67X-Kl-3RS"/>
+        <segue reference="H4I-cI-PdS"/>
+        <segue reference="lnJ-Vz-Rz9"/>
     </inferredMetricsTieBreakers>
 </document>
