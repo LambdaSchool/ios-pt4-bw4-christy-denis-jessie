@@ -13,12 +13,20 @@ class LandingPageViewController: UIViewController {
     @IBOutlet weak var toLoginScreenButton: UIButton!
     @IBOutlet weak var toCreateAccountScreen: UIButton!
 
+
+    var userController: UserController?
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-    
+
+
+    @IBAction func showLogin() {
+        let loginVC = UserLoginViewController.newLogin()
+        present(loginVC, animated: true, completion: nil)
+    }
 
     /*
     // MARK: - Navigation

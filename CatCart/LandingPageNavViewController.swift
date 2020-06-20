@@ -10,12 +10,14 @@ import UIKit
 
 class LandingPageNavViewController: UINavigationController {
 
+    var userController: UserController?
+    var user: User?
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        let landingPageVC = viewControllers.first as? LandingPageViewController
+        landingPageVC?.userController = userController
     }
-    
 
     /*
     // MARK: - Navigation

@@ -24,7 +24,12 @@ class CreateUserAccountViewController: UIViewController {
         let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
         view.addGestureRecognizer(tap)
     }
-    
+
+    @IBAction func showLogin() {
+        let loginVC = UserLoginViewController.newLogin()
+        loginVC.user = user
+        present(loginVC, animated: true, completion: nil)
+    }
     
     @IBAction func createAccount(_ sender: UIButton) {
         if let userEmail = userEmailTextField.text,
@@ -51,7 +56,8 @@ class CreateUserAccountViewController: UIViewController {
                             title: "OK",
                             style: UIAlertAction.Style.default,
                             handler: { action -> Void in
-                                self.performSegue(withIdentifier: "ToLoginFromCreate", sender: self)
+                                self.showLogin()
+//                                self.performSegue(withIdentifier: "ToLoginFromCreate", sender: self)
                         })
                         
                         alertController.addAction(alertAction)
