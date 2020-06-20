@@ -15,6 +15,7 @@ class CreateUserAccountViewController: UIViewController {
     @IBOutlet weak var createAccountButton: UIButton!
     
     var userController = UserController()
+    var user: UserRepresentation?
     //    var currentUser: User?
     
     override func viewDidLoad() {
@@ -32,13 +33,15 @@ class CreateUserAccountViewController: UIViewController {
             !password.isEmpty {
             
 //            currentUser = User(password: password,
-//                               username: userEmail)
-            let user = UserRepresentation(password: password,
-                                          userEmail: userEmail)
+//                               email: userEmail)
             
-            userController.signUp(with: user) { error in
+            self.user = UserRepresentation(password: password,
+                                           userName: userEmail)
+            
+            userController.signUp(with: self.user!) { error in
                 
                 if let error = error {
+                    
                     DispatchQueue.main.async {
                         let alertController = UIAlertController(
                             title: "Sign Up Successfull",
@@ -48,14 +51,16 @@ class CreateUserAccountViewController: UIViewController {
                             title: "OK",
                             style: UIAlertAction.Style.default,
                             handler: { action -> Void in
-                                self.performSegue(withIdentifier: "SignInSegue", sender: self)
+                                self.performSegue(withIdentifier: "ToLoginFromCreate", sender: self)
                         })
+                        
                         alertController.addAction(alertAction)
                         self.present(alertController, animated: true)
                         self.userEmailTextField.text = ""
                         self.userPasswordTextField.text = ""
                     }
                     print("Error did not occur during sign up: \(error)")
+                    
                 } else {
                     DispatchQueue.main.async {
                         self.userEmailTextField.text = ""
@@ -79,14 +84,16 @@ class CreateUserAccountViewController: UIViewController {
         }
     }
     
-    // MARK: - Navigation
-    //     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    //         if segue.identifier == "SignInSegue" {
-    //             if let signInVC = segue.destination as? UserSignInViewController {
-    //                 signInVC.currentUser = currentUser
-    //             }
-    //         }
-    //     }
+     //MARK: - Navigation
+         override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+             if segue.identifier == "ToLoginFromCreate" {
+                 if let signInVC = segue.destination as? UserLoginViewController {
+//                     signInVC.currentUser = currentUser
+                    signInVC.user = self.user
+                    
+                 }
+             }
+         }
     
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
