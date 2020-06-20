@@ -10,6 +10,16 @@ import UIKit
 
 class CategoryViewController: UIViewController {
 
+    @IBOutlet weak var categoryCollectionView: UICollectionView!
+
+    static func goToStore() -> CategoryViewController {
+        let storyboard = UIStoryboard(name: "CatsForSale", bundle: nil)
+        print(storyboard)
+        let categoryVC = storyboard.instantiateViewController(withIdentifier: "CategoryViewController") as! CategoryViewController
+//        let navController = UINavigationController(rootViewController: categoryVC)
+        return categoryVC
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 

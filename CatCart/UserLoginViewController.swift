@@ -19,13 +19,26 @@ class UserLoginViewController: UIViewController {
     
     //TODO: need a user model from core data
     //    var currentUser: User?
-    
+
+    static func newLogin() -> UserLoginViewController {
+        let storyboard = UIStoryboard(name: "UserLogin", bundle: nil)
+        let loginVC = storyboard.instantiateViewController(withIdentifier: "UserLoginViewController") as! UserLoginViewController
+        return loginVC
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         updateViews()
         
         let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
         view.addGestureRecognizer(tap)
+    }
+
+    @IBAction func showStore() {
+        let storeVC = CategoryViewController.goToStore()
+//        show(categoryVC, sender: self)
+        self.navigationController?.pushViewController(storeVC, animated: true)
+//        present(storeVC, animated: true, completion: nil)
     }
     
     @IBAction func loginTapped(_ sender: UIButton) {
@@ -51,7 +64,8 @@ class UserLoginViewController: UIViewController {
                     DispatchQueue.main.async {
                         self.userEmailTextField.text = ""
                         self.userPasswordTextField.text = ""
-                        self.performSegue(withIdentifier: "ShowStoreSegue", sender: self)
+                        self.showStore()
+//                        self.performSegue(withIdentifier: "ShowStoreSegue", sender: self)
                     }
                 } else {
                     print("password match: false")

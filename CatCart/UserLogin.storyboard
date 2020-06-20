@@ -84,7 +84,6 @@
                                 <state key="normal" title="Submit"/>
                                 <connections>
                                     <action selector="createAccount:" destination="tDQ-2h-ec7" eventType="touchUpInside" id="2ef-oh-OhE"/>
-                                    <segue destination="SWy-LE-ac5" kind="show" identifier="ShowStoreSegue" id="RRh-or-BwZ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k3x-DK-r7L">
@@ -92,7 +91,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Already have an account? Log in."/>
                                 <connections>
-                                    <segue destination="Flz-FX-azB" kind="presentation" identifier="ToLoginFromCreate" id="H4I-cI-PdS"/>
+                                    <action selector="showLogin" destination="tDQ-2h-ec7" eventType="touchUpInside" id="uOK-dp-C4T"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -137,7 +136,7 @@
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                         <state key="normal" title="Login"/>
                                         <connections>
-                                            <segue destination="Flz-FX-azB" kind="presentation" identifier="PresentLoginScreen" id="pHE-12-gpc"/>
+                                            <action selector="showLogin" destination="f9y-8j-CP9" eventType="touchUpInside" id="JUc-S4-gAX"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rCa-K0-xeu">
@@ -171,19 +170,19 @@
         <!--User Login View Controller-->
         <scene sceneID="8iK-OT-YAG">
             <objects>
-                <viewController id="Flz-FX-azB" customClass="UserLoginViewController" customModule="CatCart" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UserLoginViewController" id="Flz-FX-azB" customClass="UserLoginViewController" customModule="CatCart" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iTT-rH-5iH">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Irm-RK-sCd">
-                                <rect key="frame" x="40" y="83" width="84.5" height="41"/>
+                                <rect key="frame" x="40" y="127" width="84.5" height="41"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="JNB-8Z-ffK">
-                                <rect key="frame" x="40" y="189" width="334" height="173"/>
+                                <rect key="frame" x="40" y="233" width="334" height="173"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="Kfc-dL-rZs" userLabel="Email Stack">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="66.5"/>
@@ -240,16 +239,15 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cof-53-06M">
-                                <rect key="frame" x="158" y="382" width="98" height="53"/>
+                                <rect key="frame" x="158" y="426" width="98" height="53"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                 <state key="normal" title="Log in!"/>
                                 <connections>
                                     <action selector="loginTapped:" destination="Flz-FX-azB" eventType="touchUpInside" id="iuz-6h-141"/>
-                                    <segue destination="SWy-LE-ac5" kind="show" identifier="ShowStoreSegue" id="67X-Kl-3RS"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oeV-x7-GQb">
-                                <rect key="frame" x="71" y="429" width="272" height="33"/>
+                                <rect key="frame" x="71" y="473" width="272" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Don't have an account? Create one."/>
                                 <connections>
@@ -282,16 +280,6 @@
             </objects>
             <point key="canvasLocation" x="2039" y="-149"/>
         </scene>
-        <!--CatsForSale-->
-        <scene sceneID="nu5-eV-QFH">
-            <objects>
-                <viewControllerPlaceholder storyboardName="CatsForSale" id="SWy-LE-ac5" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="q7S-Tg-gOw"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="DBx-Ur-YOT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2962" y="221"/>
-        </scene>
         <!--Landing Page Nav View Controller-->
         <scene sceneID="yMH-ks-ead">
             <objects>
@@ -312,8 +300,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="RRh-or-BwZ"/>
-        <segue reference="H4I-cI-PdS"/>
         <segue reference="lnJ-Vz-Rz9"/>
     </inferredMetricsTieBreakers>
 </document>
