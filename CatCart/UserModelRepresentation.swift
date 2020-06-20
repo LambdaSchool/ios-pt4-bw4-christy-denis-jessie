@@ -10,5 +10,6 @@ import Foundation
 
 struct UserRepresentation: Codable {
     var password: String
-    var userEmail: String
+    var userName: String
+  
 }

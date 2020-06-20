@@ -18,25 +18,22 @@ enum HTTPMethod: String {
 }
 
 class UserController {
-    // Linking to firebase database for testing networking code
-    //TODO: CREATE NEW FIREBASE ACCOUNT AFTER TESTING 
-    private let baseURL = URL(string: "https://watermyplants-6308f.firebaseio.com/user")!
+
+    private let baseURL = URL(string: "https://catcart-65be0.firebaseio.com/user")!
     
-    //    var bearer: Bearer?
     var passwordMatch: Bool = false
     var usernameMatch: Bool = false
-    var phoneNumber: String = ""
-    
     
     // MARK: - Register New User
     func signUp(with user: UserRepresentation, completion: @escaping (Error?) -> Void) {
         
         let getUserURL = baseURL
-            .appendingPathComponent(user.userEmail)
-            .appendingPathComponent("userEmail")
+            .appendingPathComponent(user.userName)
+            .appendingPathComponent("email")
             .appendingPathExtension("json")
         var getUserRequest = URLRequest(url: getUserURL)
         getUserRequest.httpMethod = HTTPMethod.get.rawValue
+        print("\(getUserURL)")
         
         
         URLSession.shared.dataTask(with: getUserRequest) { data, response, error in
@@ -59,22 +56,25 @@ class UserController {
             
             let decoder = JSONDecoder()
             do {
-                let userEmail = try decoder.decode(String.self, from: data)
-                if user.userEmail == userEmail {
-                    print("\(userEmail) already exists")
+                let userName = try decoder.decode(String.self, from: data)
+                print("\(userName)")
+                if user.userName == userName {
+                    print("\(userName) already exists")
                     self.usernameMatch = true
                 } else {
-                    print("\(user.userEmail) does not exist")
+                    print("\(user.userName) does not exist")
                     self.usernameMatch = false
                 }
             } catch {
-                print("Username \(user.userEmail) does not exist or there was an error docoding username: \(error)")
+                print("Username \(user.userName) does not exist or there was an error docoding username: \(error)")
                 
                 let registerUserURL = self.baseURL
-                    .appendingPathComponent(user.userEmail)
+                    .appendingPathComponent(user.userName)
                     .appendingPathExtension("json")
+                
                 var request = URLRequest(url: registerUserURL)
                 request.httpMethod = HTTPMethod.put.rawValue
+                
                 do {
                     request.httpBody = try JSONEncoder().encode(user)
                 } catch {
@@ -104,7 +104,7 @@ class UserController {
     func signIn(with user: UserRepresentation, completion: @escaping (Error?) -> Void) {
         
         let logInURL = baseURL
-            .appendingPathComponent(user.userEmail)
+            .appendingPathComponent(user.userName)
             .appendingPathComponent("password")
             .appendingPathExtension("json")
         

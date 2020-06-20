@@ -15,17 +15,17 @@ class UserLoginViewController: UIViewController {
     @IBOutlet weak var loginButton: UIButton!
     
     var userController =  UserController()
+    var user: UserRepresentation?
     
     //TODO: need a user model from core data
     //    var currentUser: User?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        updateViews()
         
         let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
         view.addGestureRecognizer(tap)
-        
     }
     
     @IBAction func loginTapped(_ sender: UIButton) {
@@ -35,12 +35,11 @@ class UserLoginViewController: UIViewController {
             !password.isEmpty {
             
             let user = UserRepresentation(password: password,
-                                          userEmail: userEmail)
+                                          userName: userEmail)
             
             //                   currentUser = User(password: password,
-            //                                      username: userEmail)
-            
-            //run sign in API call
+            //                                      email: userEmail)
+
             userController.signIn(with: user) { error in
                 
                 if let error = error {
@@ -48,21 +47,21 @@ class UserLoginViewController: UIViewController {
                 }
                 
                 if self.userController.passwordMatch == true {
-                    print("true")
+                    print("password match: true")
                     DispatchQueue.main.async {
                         self.userEmailTextField.text = ""
                         self.userPasswordTextField.text = ""
-                        self.performSegue(withIdentifier: "PlantSegue", sender: self)
+                        self.performSegue(withIdentifier: "ShowStoreSegue", sender: self)
                     }
                 } else {
-                    print("false")
+                    print("password match: false")
                     DispatchQueue.main.async {
                         self.userEmailTextField.text = ""
                         self.userPasswordTextField.text = ""
                         
                         let alertController = UIAlertController(
-                            title: "Sign In UnSuccessfull",
-                            message: "Incorrect Password.",
+                            title: "Sign In Un-Successfull",
+                            message: "Incorrect Password or Username.",
                             preferredStyle: .alert)
                         
                         let alertAction = UIAlertAction(
@@ -81,20 +80,20 @@ class UserLoginViewController: UIViewController {
     
     private func updateViews() {
         guard isViewLoaded else { return }
-        //        guard let currentUser = currentUser else { return }
-        //
-        //        userEmailTextField.text = currentUser.username
-        //        passwordTextField.text = currentUser.password
+        guard let user = user else { return }
+        
+        userEmailTextField.text = user.userName
+        userPasswordTextField.text = user.password
     }
     
-    // MARK: - Navigation
-    //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    //        if sugue.identifier == "MAYBECatCartTableViewSegue" {
-    //            if let catCartUserVC = segue.destination as? MAYBECatCartTableViewController {
-    //                catCartUserVC.user = currentUser
-    //            }
-    //        }
-    //    }
+//     MARK: - Navigation
+//        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//            if segue.identifier == "ShowStoreSegue" {
+//                if let catCartUserVC = segue.destination as? CategoryViewController {
+//                    catCartUserVC.user = user
+//                }
+//            }
+//        }
     
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
