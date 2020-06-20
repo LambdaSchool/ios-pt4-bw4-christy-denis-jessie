@@ -16,7 +16,9 @@ class CategoryViewController: UIViewController {
         let storyboard = UIStoryboard(name: "CatsForSale", bundle: nil)
         print(storyboard)
         let categoryVC = storyboard.instantiateViewController(withIdentifier: "CategoryViewController") as! CategoryViewController
-//        let navController = UINavigationController(rootViewController: categoryVC)
+        
+        categoryVC.modalPresentationStyle = .fullScreen
+        
         return categoryVC
     }
 

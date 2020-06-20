@@ -36,9 +36,8 @@ class UserLoginViewController: UIViewController {
 
     @IBAction func showStore() {
         let storeVC = CategoryViewController.goToStore()
-//        show(categoryVC, sender: self)
-        self.navigationController?.pushViewController(storeVC, animated: true)
-//        present(storeVC, animated: true, completion: nil)
+        show(storeVC, sender: self)
+
     }
     
     @IBAction func loginTapped(_ sender: UIButton) {
