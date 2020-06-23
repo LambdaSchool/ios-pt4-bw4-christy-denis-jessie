@@ -7,24 +7,49 @@
 //
 
 import UIKit
+import MapKit
+import CoreData
 
-class CatsNearbyMapViewController: UIViewController {
+extension String {
+    static let annotationReuseIdentifier = "CatAnnotationView"
+}
 
+class MapViewController: UIViewController {
+    
+    var cats: [Cat] = []
+    
+    @IBOutlet var mapView: MKMapView!
+    
+    private var userTrackingButton: MKUserTrackingButton!
+    var locationManager: CLLocationManager?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        locationManager?.requestWhenInUseAuthorization()
+        
+        userTrackingButton = MKUserTrackingButton(mapView: mapView)
+        userTrackingButton.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(userTrackingButton)
+        
+        NSLayoutConstraint.activate([
+            userTrackingButton.leadingAnchor.constraint(equalTo: mapView.leadingAnchor, constant: 20),
+            mapView.bottomAnchor.constraint(equalTo: userTrackingButton.bottomAnchor, constant: 20)
+        ])
+        
+        mapView.register(MKMarkerAnnotationView.self, forAnnotationViewWithReuseIdentifier: .annotationReuseIdentifier)
+        
+        fetchCats(cats)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func fetchCats(_ cats: [Cat]) {
+        for cat in cats {
+            let annotations = MKPointAnnotation()
+            annotations.title = cat.name
+            annotations.subtitle = "\(String(describing: cat.price))"
+            annotations.coordinate = CLLocationCoordinate2D(latitude:
+                cat.latitude, longitude: cat.longitude)
+            mapView.addAnnotation(annotations)
+        }
     }
-    */
-
 }
+

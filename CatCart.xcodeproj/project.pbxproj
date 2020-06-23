@@ -115,7 +115,6 @@
 			isa = PBXGroup;
 			children = (
 				95A6446D249C6B0600870401 /* View Controllers */,
-				12BE94BC249C2E9400AD1542 /* Model */,
 				12BE94B7249C2E3B00AD1542 /* Model Controllers */,
 				9590BA04249B0982008E7AD9 /* Storyboards */,
 				12BE9449249B035D00AD1542 /* AppDelegate.swift */,
@@ -134,14 +133,6 @@
 				12BE94B5249C2E2A00AD1542 /* UserController.swift */,
 			);
 			name = "Model Controllers";
-			sourceTree = "<group>";
-		};
-		12BE94BC249C2E9400AD1542 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				12BE94BA249C2E8C00AD1542 /* UserModelRepresentation.swift */,
-			);
-			name = Model;
 			sourceTree = "<group>";
 		};
 		9590BA04249B0982008E7AD9 /* Storyboards */ = {
@@ -226,6 +217,7 @@
 		BA2F223D249C5B52005944D8 /* Model Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				12BE94BA249C2E8C00AD1542 /* UserModelRepresentation.swift */,
 				BA49E62824A18EF5009CEEF6 /* CatRepresentation.swift */,
 				BA49E62C24A1AC52009CEEF6 /* ProductRepresentation.swift */,
 				BA49E62E24A1ADBE009CEEF6 /* Product+Convenience.swift */,
