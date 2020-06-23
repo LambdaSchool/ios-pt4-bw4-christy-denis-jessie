@@ -18,7 +18,7 @@
 		9590BA0A249B0A63008E7AD9 /* CatsForSale.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9590BA09249B0A63008E7AD9 /* CatsForSale.storyboard */; };
 		9590BA0C249B0A72008E7AD9 /* ProductsForSale.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9590BA0B249B0A72008E7AD9 /* ProductsForSale.storyboard */; };
 		9590BA0F249B1285008E7AD9 /* UserLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9590BA0E249B1285008E7AD9 /* UserLoginViewController.swift */; };
-		9590BA11249B12E5008E7AD9 /* CreateUserAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9590BA10249B12E5008E7AD9 /* CreateUserAccountViewController.swift */; };
+		9590BA11249B12E5008E7AD9 /* UserSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9590BA10249B12E5008E7AD9 /* UserSignUpViewController.swift */; };
 		9590BA13249B130A008E7AD9 /* LandingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9590BA12249B130A008E7AD9 /* LandingPageViewController.swift */; };
 		9590BA15249B136A008E7AD9 /* LandingPageNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9590BA14249B136A008E7AD9 /* LandingPageNavViewController.swift */; };
 		95A64470249C6B5700870401 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A6446F249C6B5700870401 /* CategoryViewController.swift */; };
@@ -54,7 +54,7 @@
 		9590BA09249B0A63008E7AD9 /* CatsForSale.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CatsForSale.storyboard; sourceTree = "<group>"; };
 		9590BA0B249B0A72008E7AD9 /* ProductsForSale.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProductsForSale.storyboard; sourceTree = "<group>"; };
 		9590BA0E249B1285008E7AD9 /* UserLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLoginViewController.swift; sourceTree = "<group>"; };
-		9590BA10249B12E5008E7AD9 /* CreateUserAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserAccountViewController.swift; sourceTree = "<group>"; };
+		9590BA10249B12E5008E7AD9 /* UserSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSignUpViewController.swift; sourceTree = "<group>"; };
 		9590BA12249B130A008E7AD9 /* LandingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingPageViewController.swift; sourceTree = "<group>"; };
 		9590BA14249B136A008E7AD9 /* LandingPageNavViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingPageNavViewController.swift; sourceTree = "<group>"; };
 		95A6446F249C6B5700870401 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
@@ -161,7 +161,7 @@
 				9590BA14249B136A008E7AD9 /* LandingPageNavViewController.swift */,
 				9590BA12249B130A008E7AD9 /* LandingPageViewController.swift */,
 				9590BA0E249B1285008E7AD9 /* UserLoginViewController.swift */,
-				9590BA10249B12E5008E7AD9 /* CreateUserAccountViewController.swift */,
+				9590BA10249B12E5008E7AD9 /* UserSignUpViewController.swift */,
 			);
 			name = "User View Controllers";
 			sourceTree = "<group>";
@@ -169,6 +169,7 @@
 		95A6446D249C6B0600870401 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				95D9570C24A1970E00AAA206 /* Products For Sale View Controllers */,
 				95A6446E249C6B1B00870401 /* Cats For Sale View Controllers */,
 				9590BA0D249B1252008E7AD9 /* User View Controllers */,
 			);
@@ -184,6 +185,13 @@
 				95A64475249C6BFF00870401 /* CatDetailViewController.swift */,
 			);
 			name = "Cats For Sale View Controllers";
+			sourceTree = "<group>";
+		};
+		95D9570C24A1970E00AAA206 /* Products For Sale View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Products For Sale View Controllers";
 			sourceTree = "<group>";
 		};
 		BA2F223C249C5B07005944D8 /* Core Data */ = {
@@ -295,7 +303,7 @@
 				BA49E62F24A1ADBE009CEEF6 /* Product+Convenience.swift in Sources */,
 				BA2F2237249C52A0005944D8 /* CatCoreData.xcdatamodeld in Sources */,
 				12BE944A249B035D00AD1542 /* AppDelegate.swift in Sources */,
-				9590BA11249B12E5008E7AD9 /* CreateUserAccountViewController.swift in Sources */,
+				9590BA11249B12E5008E7AD9 /* UserSignUpViewController.swift in Sources */,
 				95A64474249C6BCD00870401 /* AllCatsTableViewController.swift in Sources */,
 				95A64472249C6B8700870401 /* CatsNearbyMapViewController.swift in Sources */,
 				12BE944C249B035D00AD1542 /* SceneDelegate.swift in Sources */,

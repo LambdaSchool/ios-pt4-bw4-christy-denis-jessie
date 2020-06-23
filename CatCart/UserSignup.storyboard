@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Create User Account View Controller-->
+        <!--User Sign Up View Controller-->
         <scene sceneID="ECq-Jy-fZm">
             <objects>
-                <viewController id="zRM-oP-8X3" customClass="CreateUserAccountViewController" customModule="CatCart" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="zRM-oP-8X3" customClass="UserSignUpViewController" customModule="CatCart" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ODn-g4-BAg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

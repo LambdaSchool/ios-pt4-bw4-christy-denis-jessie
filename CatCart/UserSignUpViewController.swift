@@ -1,5 +1,5 @@
 //
-//  CreateUserAccountViewController.swift
+//  UserSignUpViewController.swift
 //  CatCart
 //
 //  Created by Jessie Ann Griffin on 6/17/20.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CreateUserAccountViewController: UIViewController {
+class UserSignUpViewController: UIViewController {
     
     @IBOutlet weak var userEmailTextField: UITextField!
     @IBOutlet weak var userPasswordTextField: UITextField!
