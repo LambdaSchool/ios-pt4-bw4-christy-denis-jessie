@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Landing Page View Controller-->
+        <scene sceneID="fgO-Ps-fHV">
+            <objects>
+                <viewController id="nh9-RW-Ti1" customClass="LandingPageViewController" customModule="CatCart" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="y3W-un-VeZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="94" translatesAutoresizingMaskIntoConstraints="NO" id="12c-Bw-PGA">
+                                <rect key="frame" x="95.5" y="355" width="223" height="186"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3z4-WI-Fbp">
+                                        <rect key="frame" x="78" y="0.0" width="67" height="46"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                        <state key="normal" title="Login"/>
+                                        <connections>
+                                            <action selector="showLogin" destination="nh9-RW-Ti1" eventType="touchUpInside" id="b67-zT-uq6"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HF5-hb-Jbh">
+                                        <rect key="frame" x="0.0" y="140" width="223" height="46"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                        <state key="normal" title="Create an Account"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="12c-Bw-PGA" firstAttribute="centerY" secondItem="y3W-un-VeZ" secondAttribute="centerY" id="nf0-CZ-Zsz"/>
+                            <constraint firstItem="12c-Bw-PGA" firstAttribute="centerX" secondItem="y3W-un-VeZ" secondAttribute="centerX" id="sEw-Ul-9VD"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="FJa-G0-bTZ"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="w94-Ac-pof"/>
+                    <connections>
+                        <outlet property="toCreateAccountScreen" destination="HF5-hb-Jbh" id="diP-xI-sFq"/>
+                        <outlet property="toLoginScreenButton" destination="3z4-WI-Fbp" id="p58-BK-w1S"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="huZ-Cl-kwF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1047.8260869565217" y="118.52678571428571"/>
+        </scene>
+        <!--Landing Page Nav View Controller-->
+        <scene sceneID="LFu-Fb-quT">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8ef-Bu-zm7" customClass="LandingPageNavViewController" customModule="CatCart" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4Td-kL-U6l">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="nh9-RW-Ti1" kind="relationship" relationship="rootViewController" id="o0d-6S-W0e"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8d1-qj-Fgg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="118.52678571428571"/>
+        </scene>
+    </scenes>
+</document>
