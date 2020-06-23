@@ -27,6 +27,11 @@
 		95A64476249C6BFF00870401 /* CatDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A64475249C6BFF00870401 /* CatDetailViewController.swift */; };
 		95D956FF24A1925F00AAA206 /* LandingPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95D956FE24A1925F00AAA206 /* LandingPage.storyboard */; };
 		95D9570124A1932800AAA206 /* UserSignup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95D9570024A1932800AAA206 /* UserSignup.storyboard */; };
+		95D9570324A194B700AAA206 /* CategoryCollection.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95D9570224A194B700AAA206 /* CategoryCollection.storyboard */; };
+		95D9570524A1950400AAA206 /* CatsNearby.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95D9570424A1950300AAA206 /* CatsNearby.storyboard */; };
+		95D9570724A1952900AAA206 /* CatDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95D9570624A1952900AAA206 /* CatDetail.storyboard */; };
+		95D9570924A1957D00AAA206 /* ProductDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95D9570824A1957D00AAA206 /* ProductDetail.storyboard */; };
+		95D9570B24A195AD00AAA206 /* PaymentPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95D9570A24A195AD00AAA206 /* PaymentPage.storyboard */; };
 		BA2F2237249C52A0005944D8 /* CatCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BA2F2235249C52A0005944D8 /* CatCoreData.xcdatamodeld */; };
 		BA2F2239249C5339005944D8 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2F2238249C5339005944D8 /* CoreDataStack.swift */; };
 		BA49E62924A18EF5009CEEF6 /* CatRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA49E62824A18EF5009CEEF6 /* CatRepresentation.swift */; };
@@ -58,6 +63,11 @@
 		95A64475249C6BFF00870401 /* CatDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatDetailViewController.swift; sourceTree = "<group>"; };
 		95D956FE24A1925F00AAA206 /* LandingPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LandingPage.storyboard; sourceTree = "<group>"; };
 		95D9570024A1932800AAA206 /* UserSignup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserSignup.storyboard; sourceTree = "<group>"; };
+		95D9570224A194B700AAA206 /* CategoryCollection.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CategoryCollection.storyboard; sourceTree = "<group>"; };
+		95D9570424A1950300AAA206 /* CatsNearby.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CatsNearby.storyboard; sourceTree = "<group>"; };
+		95D9570624A1952900AAA206 /* CatDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CatDetail.storyboard; sourceTree = "<group>"; };
+		95D9570824A1957D00AAA206 /* ProductDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProductDetail.storyboard; sourceTree = "<group>"; };
+		95D9570A24A195AD00AAA206 /* PaymentPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PaymentPage.storyboard; sourceTree = "<group>"; };
 		BA2F2236249C52A0005944D8 /* CatCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CatCoreData.xcdatamodel; sourceTree = "<group>"; };
 		BA2F2238249C5339005944D8 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		BA49E62824A18EF5009CEEF6 /* CatRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatRepresentation.swift; sourceTree = "<group>"; };
@@ -133,9 +143,14 @@
 				95D956FE24A1925F00AAA206 /* LandingPage.storyboard */,
 				9590BA05249B09CC008E7AD9 /* UserLogin.storyboard */,
 				95D9570024A1932800AAA206 /* UserSignup.storyboard */,
-				9590BA07249B0A06008E7AD9 /* ShoppingCart.storyboard */,
+				95D9570224A194B700AAA206 /* CategoryCollection.storyboard */,
 				9590BA09249B0A63008E7AD9 /* CatsForSale.storyboard */,
+				95D9570424A1950300AAA206 /* CatsNearby.storyboard */,
+				95D9570624A1952900AAA206 /* CatDetail.storyboard */,
 				9590BA0B249B0A72008E7AD9 /* ProductsForSale.storyboard */,
+				95D9570824A1957D00AAA206 /* ProductDetail.storyboard */,
+				9590BA07249B0A06008E7AD9 /* ShoppingCart.storyboard */,
+				95D9570A24A195AD00AAA206 /* PaymentPage.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -250,13 +265,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				9590BA0C249B0A72008E7AD9 /* ProductsForSale.storyboard in Resources */,
+				95D9570B24A195AD00AAA206 /* PaymentPage.storyboard in Resources */,
 				95D9570124A1932800AAA206 /* UserSignup.storyboard in Resources */,
+				95D9570524A1950400AAA206 /* CatsNearby.storyboard in Resources */,
 				9590BA08249B0A06008E7AD9 /* ShoppingCart.storyboard in Resources */,
 				12BE9456249B036700AD1542 /* LaunchScreen.storyboard in Resources */,
 				12BE9453249B036700AD1542 /* Assets.xcassets in Resources */,
+				95D9570324A194B700AAA206 /* CategoryCollection.storyboard in Resources */,
 				95D956FF24A1925F00AAA206 /* LandingPage.storyboard in Resources */,
+				95D9570724A1952900AAA206 /* CatDetail.storyboard in Resources */,
 				9590BA0A249B0A63008E7AD9 /* CatsForSale.storyboard in Resources */,
 				9590BA06249B09CC008E7AD9 /* UserLogin.storyboard in Resources */,
+				95D9570924A1957D00AAA206 /* ProductDetail.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

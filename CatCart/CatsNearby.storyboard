@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Cats Nearby Map View Controller-->
+        <scene sceneID="Erf-kh-eSr">
+            <objects>
+                <viewController id="lWF-Lp-FPK" customClass="CatsNearbyMapViewController" customModule="CatCart" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="AGB-SY-Ftz">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="DPi-zY-rJw">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="RVE-H4-VcS" firstAttribute="bottom" secondItem="DPi-zY-rJw" secondAttribute="bottom" id="CBL-s6-lAm"/>
+                            <constraint firstItem="RVE-H4-VcS" firstAttribute="trailing" secondItem="DPi-zY-rJw" secondAttribute="trailing" id="Ts5-nV-7RE"/>
+                            <constraint firstItem="DPi-zY-rJw" firstAttribute="top" secondItem="RVE-H4-VcS" secondAttribute="top" id="e0X-6r-Zsr"/>
+                            <constraint firstItem="DPi-zY-rJw" firstAttribute="leading" secondItem="RVE-H4-VcS" secondAttribute="leading" id="grj-XV-0vL"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="RVE-H4-VcS"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="41g-Uh-2Uf"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rj5-eG-Fby" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2870" y="559"/>
+        </scene>
+    </scenes>
+</document>
