@@ -14,7 +14,7 @@ class UserSignUpViewController: UIViewController {
     @IBOutlet weak var userPasswordTextField: UITextField!
     @IBOutlet weak var createAccountButton: UIButton!
     
-    var userController = UserController()
+    var userController: UserController?
     var user: UserRepresentation?
     //    var currentUser: User?
     
@@ -32,6 +32,9 @@ class UserSignUpViewController: UIViewController {
     }
     
     @IBAction func createAccount(_ sender: UIButton) {
+
+        guard let userController = userController else { return }
+
         if let userEmail = userEmailTextField.text,
             !userEmail.isEmpty,
             let password = userPasswordTextField.text,
