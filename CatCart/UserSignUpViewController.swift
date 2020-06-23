@@ -1,5 +1,5 @@
 //
-//  CreateUserAccountViewController.swift
+//  UserSignUpViewController.swift
 //  CatCart
 //
 //  Created by Jessie Ann Griffin on 6/17/20.
@@ -8,13 +8,13 @@
 
 import UIKit
 
-class CreateUserAccountViewController: UIViewController {
+class UserSignUpViewController: UIViewController {
     
     @IBOutlet weak var userEmailTextField: UITextField!
     @IBOutlet weak var userPasswordTextField: UITextField!
     @IBOutlet weak var createAccountButton: UIButton!
     
-    var userController = UserController()
+    var userController: UserController?
     var user: UserRepresentation?
     //    var currentUser: User?
     
@@ -32,6 +32,9 @@ class CreateUserAccountViewController: UIViewController {
     }
     
     @IBAction func createAccount(_ sender: UIButton) {
+
+        guard let userController = userController else { return }
+
         if let userEmail = userEmailTextField.text,
             !userEmail.isEmpty,
             let password = userPasswordTextField.text,

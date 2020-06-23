@@ -12,12 +12,15 @@ class CategoryViewController: UIViewController {
 
     @IBOutlet weak var categoryCollectionView: UICollectionView!
 
+    let userController = UserController()
+    var user: UserRepresentation?
+
     static func goToStore() -> CategoryViewController {
-        let storyboard = UIStoryboard(name: "CatsForSale", bundle: nil)
+        let storyboard = UIStoryboard(name: "CategoryCollection", bundle: nil)
         print(storyboard)
         let categoryVC = storyboard.instantiateViewController(withIdentifier: "CategoryViewController") as! CategoryViewController
         
-        categoryVC.modalPresentationStyle = .fullScreen
+        //categoryVC.modalPresentationStyle = .fullScreen
         
         return categoryVC
     }
@@ -28,15 +31,25 @@ class CategoryViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        // If user is logged in
+        // Go to CategoryView
+        if user == nil {
+            performSegue(withIdentifier: "ToLandingPage", sender: nil)
+        }
     }
-    */
-
 }
+//
+//extension CategoryViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//        return 6
+//    }
+//
+//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+//        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ShowAllCats", for: indexPath)
+//            else { return UICollectionViewCell() }
+//
+//        return cell
+//    }
+//}
