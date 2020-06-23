@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Cat Detail View Controller-->
+        <scene sceneID="klK-NI-wsH">
+            <objects>
+                <viewController id="e24-DT-aKD" customClass="CatDetailViewController" customModule="CatCart" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oX6-tE-F6e">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Oh7-JY-qjM">
+                                <rect key="frame" x="24" y="68" width="366" height="366"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Oh7-JY-qjM" secondAttribute="height" multiplier="1:1" id="LXM-Ta-kSf"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="UDT-GL-EhK">
+                                <rect key="frame" x="24" y="458" width="366" height="130"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6k6-97-aBw">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="62q-vi-BMg">
+                                        <rect key="frame" x="0.0" y="48" width="118.5" height="29"/>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="24"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rUe-ml-Jbk">
+                                        <rect key="frame" x="0.0" y="101" width="56" height="29"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KsK-Wj-3RO">
+                                <rect key="frame" x="32" y="615" width="350" height="42"/>
+                                <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="ADD TO CART"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="UDT-GL-EhK" firstAttribute="top" secondItem="Oh7-JY-qjM" secondAttribute="bottom" constant="24" id="0Dd-Ix-0nL"/>
+                            <constraint firstItem="KsK-Wj-3RO" firstAttribute="centerX" secondItem="oX6-tE-F6e" secondAttribute="centerX" id="2oT-Ht-X6I"/>
+                            <constraint firstItem="CEC-ZM-VBB" firstAttribute="trailing" secondItem="UDT-GL-EhK" secondAttribute="trailing" constant="24" id="HBv-Do-07l"/>
+                            <constraint firstItem="Oh7-JY-qjM" firstAttribute="top" secondItem="CEC-ZM-VBB" secondAttribute="top" constant="24" id="M5E-lX-DON"/>
+                            <constraint firstItem="Oh7-JY-qjM" firstAttribute="leading" secondItem="CEC-ZM-VBB" secondAttribute="leading" constant="24" id="SNK-x7-ecz"/>
+                            <constraint firstItem="CEC-ZM-VBB" firstAttribute="trailing" secondItem="Oh7-JY-qjM" secondAttribute="trailing" constant="24" id="U9R-r9-5LG"/>
+                            <constraint firstItem="KsK-Wj-3RO" firstAttribute="top" secondItem="UDT-GL-EhK" secondAttribute="bottom" constant="27" id="WRf-NJ-Zzt"/>
+                            <constraint firstItem="KsK-Wj-3RO" firstAttribute="leading" secondItem="CEC-ZM-VBB" secondAttribute="leading" constant="32" id="Yja-PY-ihk"/>
+                            <constraint firstItem="CEC-ZM-VBB" firstAttribute="trailing" secondItem="KsK-Wj-3RO" secondAttribute="trailing" constant="32" id="goI-lv-Umv"/>
+                            <constraint firstItem="UDT-GL-EhK" firstAttribute="leading" secondItem="CEC-ZM-VBB" secondAttribute="leading" constant="24" id="zsC-et-S1l"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="CEC-ZM-VBB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="c7D-63-ygV">
+                        <barButtonItem key="rightBarButtonItem" image="cart" catalog="system" id="pQb-vl-Bev"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ghD-Pw-AQ3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3869.5652173913045" y="227.67857142857142"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="cart" catalog="system" width="128" height="102"/>
+    </resources>
+</document>
