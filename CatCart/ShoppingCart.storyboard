@@ -10,7 +10,7 @@
         <!--Shopping Cart View Controller-->
         <scene sceneID="id0-dw-Rza">
             <objects>
-                <viewController storyboardIdentifier="ShoppingCart" id="Yr1-wD-lEh" customClass="ShoppingCartViewController" customModule="CatCart" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ShoppingCartViewController" id="Yr1-wD-lEh" customClass="ShoppingCartViewController" customModule="CatCart" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZwD-27-xbx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

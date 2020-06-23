@@ -9,8 +9,7 @@
         <!--All Cats Table View Controller-->
         <scene sceneID="xSF-nq-eat">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Cf9-XX-XF5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <tableViewController storyboardIdentifier="CatsForSale" id="cO3-8a-msz" customClass="AllCatsTableViewController" customModule="CatCart" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="AllCatsTableViewController" id="cO3-8a-msz" customClass="AllCatsTableViewController" customModule="CatCart" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="1zP-qh-eav">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -69,6 +68,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="DXh-G4-j89"/>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cf9-XX-XF5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2895.6521739130435" y="-150"/>
         </scene>

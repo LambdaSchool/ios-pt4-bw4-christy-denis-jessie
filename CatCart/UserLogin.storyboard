@@ -10,7 +10,7 @@
         <!--User Login View Controller-->
         <scene sceneID="8iK-OT-YAG">
             <objects>
-                <viewController storyboardIdentifier="UserLogin" id="Flz-FX-azB" customClass="UserLoginViewController" customModule="CatCart" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UserLoginViewController" id="Flz-FX-azB" customClass="UserLoginViewController" customModule="CatCart" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iTT-rH-5iH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -84,6 +84,7 @@
                                 <state key="normal" title="Log in!"/>
                                 <connections>
                                     <action selector="loginTapped:" destination="Flz-FX-azB" eventType="touchUpInside" id="iuz-6h-141"/>
+                                    <action selector="showStore" destination="Flz-FX-azB" eventType="touchUpInside" id="aUV-Hg-b9z"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oeV-x7-GQb">
