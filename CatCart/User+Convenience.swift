@@ -11,7 +11,7 @@ import CoreData
 
 extension User {
     
-    convenience init(
+    @discardableResult convenience init(
         userName: String,
         password: String,
         firstName: String?,
@@ -39,7 +39,7 @@ extension User {
         self.zipCode = zipCode ?? 0
     }
     
-    convenience init?(userRepresentation: UserRepresentation, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
+   @discardableResult convenience init?(userRepresentation: UserRepresentation, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
         
         let userName = userRepresentation.userName
         let password = userRepresentation.password

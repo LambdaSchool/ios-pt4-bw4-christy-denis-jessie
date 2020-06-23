@@ -15,8 +15,7 @@ class UserSignUpViewController: UIViewController {
     @IBOutlet weak var createAccountButton: UIButton!
     
     var userController: UserController?
-    var user: UserRepresentation?
-    //    var currentUser: User?
+    var currentUser: User?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +26,7 @@ class UserSignUpViewController: UIViewController {
 
     @IBAction func showLogin() {
         let loginVC = UserLoginViewController.newLogin()
-        loginVC.user = user
+        loginVC.currentUser = currentUser
         present(loginVC, animated: true, completion: nil)
     }
     
@@ -40,13 +39,23 @@ class UserSignUpViewController: UIViewController {
             let password = userPasswordTextField.text,
             !password.isEmpty {
             
-//            currentUser = User(password: password,
-//                               email: userEmail)
+
+            let user = UserRepresentation(password: password,
+                                          userName: userEmail)
             
-            self.user = UserRepresentation(password: password,
-                                           userName: userEmail)
+            currentUser = User(userName: user.userName,
+                               password: user.password,
+                               firstName: nil,
+                               lastName: nil,
+                               email: nil,
+                               longitude: nil,
+                               latitude: nil,
+                               streetAddress: nil,
+                               city: nil,
+                               state: nil,
+                               zipCode: nil)
             
-            userController.signUp(with: self.user!) { error in
+            userController.signUp(with: user) { error in
                 
                 if let error = error {
                     
@@ -60,7 +69,6 @@ class UserSignUpViewController: UIViewController {
                             style: UIAlertAction.Style.default,
                             handler: { action -> Void in
                                 self.showLogin()
-//                                self.performSegue(withIdentifier: "ToLoginFromCreate", sender: self)
                         })
                         
                         alertController.addAction(alertAction)
@@ -97,9 +105,7 @@ class UserSignUpViewController: UIViewController {
          override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
              if segue.identifier == "ToLoginFromCreate" {
                  if let signInVC = segue.destination as? UserLoginViewController {
-//                     signInVC.currentUser = currentUser
-                    signInVC.user = self.user
-                    
+                    signInVC.currentUser = self.currentUser
                  }
              }
          }

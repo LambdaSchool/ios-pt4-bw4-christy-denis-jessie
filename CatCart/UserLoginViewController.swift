@@ -15,10 +15,8 @@ class UserLoginViewController: UIViewController {
     @IBOutlet weak var loginButton: UIButton!
     
     var userController: UserController?
-    var user: UserRepresentation?
-    
-    //TODO: need a user model from core data
-    //    var currentUser: User?
+//    var user: UserRepresentation?
+    var currentUser: User?
 
     static func newLogin() -> UserLoginViewController {
         let storyboard = UIStoryboard(name: "UserLogin", bundle: nil)
@@ -36,6 +34,7 @@ class UserLoginViewController: UIViewController {
 
     @IBAction func showStore() {
         let storeVC = CategoryViewController.goToStore()
+        storeVC.currentUser = currentUser
         show(storeVC, sender: self)
     }
     
@@ -48,12 +47,22 @@ class UserLoginViewController: UIViewController {
             let password = userPasswordTextField.text,
             !password.isEmpty {
             
-            user = UserRepresentation(password: password,
+            let user = UserRepresentation(password: password,
                                           userName: userEmail)
             
-            //                   currentUser = User(password: password,
-            //                                      email: userEmail)
-            guard let user = user else { return }
+            currentUser = User(userName: user.userName,
+                               password: user.password,
+                               firstName: nil,
+                               lastName: nil,
+                               email: nil,
+                               longitude: nil,
+                               latitude: nil,
+                               streetAddress: nil,
+                               city: nil,
+                               state: nil,
+                               zipCode: nil)
+            
+//            guard let user = user else { return }
             userController.signIn(with: user) { error in
                 
                 if let error = error {
@@ -66,7 +75,7 @@ class UserLoginViewController: UIViewController {
                         self.userEmailTextField.text = ""
                         self.userPasswordTextField.text = ""
                         self.showStore()
-//                        self.performSegue(withIdentifier: "ShowStoreSegue", sender: self)
+
                     }
                 } else {
                     print("password match: false")
@@ -95,7 +104,7 @@ class UserLoginViewController: UIViewController {
     
     private func updateViews() {
         guard isViewLoaded else { return }
-        guard let user = user else { return }
+        guard let user = currentUser else { return }
         
         userEmailTextField.text = user.userName
         userPasswordTextField.text = user.password

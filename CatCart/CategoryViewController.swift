@@ -13,7 +13,8 @@ class CategoryViewController: UIViewController {
     @IBOutlet weak var categoryCollectionView: UICollectionView!
 
     let userController = UserController()
-    var user: UserRepresentation?
+//    var user: UserRepresentation?
+    var currentUser: User?
 
     static func goToStore() -> CategoryViewController {
         let storyboard = UIStoryboard(name: "CategoryCollection", bundle: nil)
@@ -35,7 +36,7 @@ class CategoryViewController: UIViewController {
         super.viewDidAppear(animated)
         // If user is logged in
         // Go to CategoryView
-        if user == nil {
+        if currentUser == nil {
             performSegue(withIdentifier: "ToLandingPage", sender: nil)
         }
     }
