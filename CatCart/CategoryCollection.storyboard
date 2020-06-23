@@ -11,7 +11,7 @@
         <!--Category View Controller-->
         <scene sceneID="snS-fU-PYw">
             <objects>
-                <viewController storyboardIdentifier="CategoryCollection" id="gwI-j2-Bpa" customClass="CategoryViewController" customModule="CatCart" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CategoryViewController" id="gwI-j2-Bpa" customClass="CategoryViewController" customModule="CatCart" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pUW-9x-I14">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -10,7 +10,7 @@
         <!--Landing Page View Controller-->
         <scene sceneID="fgO-Ps-fHV">
             <objects>
-                <viewController id="nh9-RW-Ti1" customClass="LandingPageViewController" customModule="CatCart" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LandingPageViewController" id="nh9-RW-Ti1" customClass="LandingPageViewController" customModule="CatCart" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="y3W-un-VeZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

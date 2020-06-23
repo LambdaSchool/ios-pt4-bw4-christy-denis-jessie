@@ -10,7 +10,7 @@
         <!--Cats Nearby Map View Controller-->
         <scene sceneID="Erf-kh-eSr">
             <objects>
-                <viewController storyboardIdentifier="CatsNearby" id="lWF-Lp-FPK" customClass="CatsNearbyMapViewController" customModule="CatCart" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CatsNearbyMapViewController" id="lWF-Lp-FPK" customClass="CatsNearbyMapViewController" customModule="CatCart" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AGB-SY-Ftz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
