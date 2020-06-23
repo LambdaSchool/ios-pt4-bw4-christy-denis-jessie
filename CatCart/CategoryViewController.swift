@@ -12,6 +12,8 @@ class CategoryViewController: UIViewController {
 
     @IBOutlet weak var categoryCollectionView: UICollectionView!
 
+    let userController = UserController()
+
     static func goToStore() -> CategoryViewController {
         let storyboard = UIStoryboard(name: "CatsForSale", bundle: nil)
         print(storyboard)
@@ -28,6 +30,10 @@ class CategoryViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        performSegue(withIdentifier: "ToLandingPage", sender: nil)
+    }
 
     /*
     // MARK: - Navigation
