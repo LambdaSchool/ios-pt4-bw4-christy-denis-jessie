@@ -20,7 +20,6 @@ struct CatRepresentation: Codable {
 }
 
 func ==(lhs: CatRepresentation, rhs: Cat) -> Bool {
-<<<<<<< HEAD
     return rhs.id == lhs.id &&
         rhs.name == lhs.name &&
         rhs.price == lhs.price &&
@@ -29,12 +28,6 @@ func ==(lhs: CatRepresentation, rhs: Cat) -> Bool {
         rhs.years == lhs.years &&
         rhs.months == lhs.months &&
         rhs.imageURL == lhs.imageURL
-=======
-    return rhs.title == lhs.title &&
-        rhs.bodyText == lhs.bodyText &&
-        rhs.mood == lhs.mood &&
-        rhs.identifier == lhs.identifier
->>>>>>> d3fb23a... Created and configured CatRepresentation
 }
 
 func ==(lhs: Cat, rhs: CatRepresentation) -> Bool {
