@@ -10,7 +10,7 @@
         <!--Payment Page View Controller-->
         <scene sceneID="OBK-Wp-tvX">
             <objects>
-                <viewController id="qTq-Cv-5gg" customClass="PaymentPageViewController" customModule="CatCart" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PaymentPage" id="qTq-Cv-5gg" customClass="PaymentPageViewController" customModule="CatCart" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uxD-oY-Zed">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
