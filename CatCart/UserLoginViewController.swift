@@ -14,7 +14,7 @@ class UserLoginViewController: UIViewController {
     @IBOutlet weak var userPasswordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     
-    var userController =  UserController()
+    var userController: UserController?
     var user: UserRepresentation?
     
     //TODO: need a user model from core data
@@ -40,24 +40,27 @@ class UserLoginViewController: UIViewController {
     }
     
     @IBAction func loginTapped(_ sender: UIButton) {
+
+        guard let userController = userController else { return }
+        
         if let userEmail = userEmailTextField.text,
             !userEmail.isEmpty,
             let password = userPasswordTextField.text,
             !password.isEmpty {
             
-            let user = UserRepresentation(password: password,
+            user = UserRepresentation(password: password,
                                           userName: userEmail)
             
             //                   currentUser = User(password: password,
             //                                      email: userEmail)
-
+            guard let user = user else { return }
             userController.signIn(with: user) { error in
                 
                 if let error = error {
                     print("Error occurred during sign up: \(error)")
                 }
                 
-                if self.userController.passwordMatch == true {
+                if userController.passwordMatch == true {
                     print("password match: true")
                     DispatchQueue.main.async {
                         self.userEmailTextField.text = ""
