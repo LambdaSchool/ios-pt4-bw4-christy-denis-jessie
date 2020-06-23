@@ -29,6 +29,8 @@
 		BA2F2239249C5339005944D8 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2F2238249C5339005944D8 /* CoreDataStack.swift */; };
 		BA49E62924A18EF5009CEEF6 /* CatRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA49E62824A18EF5009CEEF6 /* CatRepresentation.swift */; };
 		BA49E62B24A1923F009CEEF6 /* Cat+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA49E62A24A1923F009CEEF6 /* Cat+Convenience.swift */; };
+		BA49E62D24A1AC52009CEEF6 /* ProductRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA49E62C24A1AC52009CEEF6 /* ProductRepresentation.swift */; };
+		BA49E62F24A1ADBE009CEEF6 /* Product+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA49E62E24A1ADBE009CEEF6 /* Product+Convenience.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +58,8 @@
 		BA2F2238249C5339005944D8 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		BA49E62824A18EF5009CEEF6 /* CatRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatRepresentation.swift; sourceTree = "<group>"; };
 		BA49E62A24A1923F009CEEF6 /* Cat+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cat+Convenience.swift"; sourceTree = "<group>"; };
+		BA49E62C24A1AC52009CEEF6 /* ProductRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductRepresentation.swift; sourceTree = "<group>"; };
+		BA49E62E24A1ADBE009CEEF6 /* Product+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Product+Convenience.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +178,8 @@
 			isa = PBXGroup;
 			children = (
 				BA49E62824A18EF5009CEEF6 /* CatRepresentation.swift */,
+				BA49E62C24A1AC52009CEEF6 /* ProductRepresentation.swift */,
+				BA49E62E24A1ADBE009CEEF6 /* Product+Convenience.swift */,
 				BA49E62A24A1923F009CEEF6 /* Cat+Convenience.swift */,
 			);
 			name = "Model Helpers";
@@ -258,6 +264,7 @@
 				12BE94B6249C2E2A00AD1542 /* UserController.swift in Sources */,
 				9590BA13249B130A008E7AD9 /* LandingPageViewController.swift in Sources */,
 				BA2F2239249C5339005944D8 /* CoreDataStack.swift in Sources */,
+				BA49E62F24A1ADBE009CEEF6 /* Product+Convenience.swift in Sources */,
 				BA2F2237249C52A0005944D8 /* CatCoreData.xcdatamodeld in Sources */,
 				12BE944A249B035D00AD1542 /* AppDelegate.swift in Sources */,
 				9590BA11249B12E5008E7AD9 /* CreateUserAccountViewController.swift in Sources */,
@@ -269,6 +276,7 @@
 				95A64470249C6B5700870401 /* CategoryViewController.swift in Sources */,
 				95A64476249C6BFF00870401 /* CatDetailViewController.swift in Sources */,
 				12BE94BB249C2E8C00AD1542 /* UserModelRepresentation.swift in Sources */,
+				BA49E62D24A1AC52009CEEF6 /* ProductRepresentation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
