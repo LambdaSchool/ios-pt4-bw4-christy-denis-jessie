@@ -15,7 +15,7 @@ class CategoryViewController: UIViewController {
     let userController = UserController()
 
     static func goToStore() -> CategoryViewController {
-        let storyboard = UIStoryboard(name: "CatsForSale", bundle: nil)
+        let storyboard = UIStoryboard(name: "CategoryCollection", bundle: nil)
         print(storyboard)
         let categoryVC = storyboard.instantiateViewController(withIdentifier: "CategoryViewController") as! CategoryViewController
         
