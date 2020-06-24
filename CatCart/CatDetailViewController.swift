@@ -10,6 +10,10 @@ import UIKit
 
 class CatDetailViewController: UIViewController {
 
+    static func addNewCat() {
+
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,5 +30,4 @@ class CatDetailViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
 }

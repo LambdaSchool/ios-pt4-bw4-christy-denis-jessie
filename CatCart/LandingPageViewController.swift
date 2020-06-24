@@ -27,6 +27,7 @@ class LandingPageViewController: UIViewController {
 
     @IBAction func showLogin() {
         let loginVC = UserLoginViewController.newLogin()
+        loginVC.userController = userController
         present(loginVC, animated: true, completion: nil)
     }
 }

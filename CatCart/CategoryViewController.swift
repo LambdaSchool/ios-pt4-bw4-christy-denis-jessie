@@ -17,7 +17,7 @@ class CategoryViewController: UIViewController {
 
     let userController = UserController()
 //    var user: UserRepresentation?
-    var currentUser: User?
+    var currentUser: UserRepresentation?
 
     static func goToStore() -> CategoryViewController {
         let storyboard = UIStoryboard(name: "CategoryCollection", bundle: nil)
@@ -39,8 +39,7 @@ class CategoryViewController: UIViewController {
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        // If user is logged in
-        // Go to CategoryView
+
         if currentUser == nil {
             performSegue(withIdentifier: "ToLandingPage", sender: nil)
         }
@@ -54,8 +53,13 @@ class CategoryViewController: UIViewController {
     }
 
     @IBAction func viewAllCatsButton(_ sender: Any) {
+        let seeAllCatsVC = AllCatsTableViewController.seeTheCats()
+//        seeAllCatsVC.currentUser = currentUser
+        present(seeAllCatsVC, animated: true, completion: nil)
     }
+
     @IBAction func viewCatsNearbyButton(_ sender: Any) {
+
     }
 
     @IBAction func viewProductsButton() {

@@ -173,7 +173,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="gBP-Xo-5Qw"/>
                     <connections>
-                        <outlet property="allCatsButton" destination="wNQ-eA-z3v" id="esi-4U-bQc"/>
                         <outlet property="catsNearbyButton" destination="oec-Ua-q3h" id="dcB-rQ-yI9"/>
                         <outletCollection property="productsButtons" destination="aBw-k2-06I" collectionClass="NSMutableArray" id="QRe-6I-EzY"/>
                         <outletCollection property="productsButtons" destination="7Sw-1E-Ers" collectionClass="NSMutableArray" id="TP4-LL-h8U"/>

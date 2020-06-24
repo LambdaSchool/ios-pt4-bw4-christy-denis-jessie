@@ -15,7 +15,7 @@ class UserLoginViewController: UIViewController {
     @IBOutlet weak var loginButton: UIButton!
     
     var userController: UserController?
-//    var user: UserRepresentation?
+    var user: UserRepresentation?
     var currentUser: User?
 
     static func newLogin() -> UserLoginViewController {
@@ -32,10 +32,11 @@ class UserLoginViewController: UIViewController {
         view.addGestureRecognizer(tap)
     }
 
-    @IBAction func showStore() {
+    func showStore() {
         let storeVC = CategoryViewController.goToStore()
-        storeVC.currentUser = currentUser
-        show(storeVC, sender: self)
+        storeVC.currentUser = user
+//        show(storeVC, sender: self)
+        present(storeVC, animated: true)
     }
     
     @IBAction func loginTapped(_ sender: UIButton) {
@@ -46,23 +47,28 @@ class UserLoginViewController: UIViewController {
             !userEmail.isEmpty,
             let password = userPasswordTextField.text,
             !password.isEmpty {
+
+            print("Email:", userEmail)
             
-            let user = UserRepresentation(password: password,
+            self.user = UserRepresentation(password: password,
                                           userName: userEmail)
+
+            print("USER: ", user)
+
             
-            currentUser = User(userName: user.userName,
-                               password: user.password,
-                               firstName: nil,
-                               lastName: nil,
-                               email: nil,
-                               longitude: nil,
-                               latitude: nil,
-                               streetAddress: nil,
-                               city: nil,
-                               state: nil,
-                               zipCode: nil)
+//            currentUser = User(userName: user.userName,
+//                               password: user.password,
+//                               firstName: nil,
+//                               lastName: nil,
+//                               email: nil,
+//                               longitude: nil,
+//                               latitude: nil,
+//                               streetAddress: nil,
+//                               city: nil,
+//                               state: nil,
+//                               zipCode: nil)
             
-//            guard let user = user else { return }
+            guard let user = user else { return }
             userController.signIn(with: user) { error in
                 
                 if let error = error {
@@ -75,7 +81,6 @@ class UserLoginViewController: UIViewController {
                         self.userEmailTextField.text = ""
                         self.userPasswordTextField.text = ""
                         self.showStore()
-
                     }
                 } else {
                     print("password match: false")
@@ -99,7 +104,6 @@ class UserLoginViewController: UIViewController {
                 }
             }
         }
-        
     }
     
     private func updateViews() {

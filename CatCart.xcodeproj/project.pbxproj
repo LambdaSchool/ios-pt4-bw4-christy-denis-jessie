@@ -14,6 +14,7 @@
 		12BE9456249B036700AD1542 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12BE9454249B036700AD1542 /* LaunchScreen.storyboard */; };
 		12BE94B6249C2E2A00AD1542 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12BE94B5249C2E2A00AD1542 /* UserController.swift */; };
 		12BE94BB249C2E8C00AD1542 /* UserModelRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12BE94BA249C2E8C00AD1542 /* UserModelRepresentation.swift */; };
+		950316CE24A2EDDE00AA8A59 /* CatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950316CD24A2EDDD00AA8A59 /* CatTableViewCell.swift */; };
 		9590BA06249B09CC008E7AD9 /* UserLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9590BA05249B09CC008E7AD9 /* UserLogin.storyboard */; };
 		9590BA08249B0A06008E7AD9 /* ShoppingCart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9590BA07249B0A06008E7AD9 /* ShoppingCart.storyboard */; };
 		9590BA0A249B0A63008E7AD9 /* CatsForSale.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9590BA09249B0A63008E7AD9 /* CatsForSale.storyboard */; };
@@ -55,6 +56,7 @@
 		12BE9457249B036700AD1542 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		12BE94B5249C2E2A00AD1542 /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		12BE94BA249C2E8C00AD1542 /* UserModelRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModelRepresentation.swift; sourceTree = "<group>"; };
+		950316CD24A2EDDD00AA8A59 /* CatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatTableViewCell.swift; sourceTree = "<group>"; };
 		9590BA05249B09CC008E7AD9 /* UserLogin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserLogin.storyboard; sourceTree = "<group>"; };
 		9590BA07249B0A06008E7AD9 /* ShoppingCart.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ShoppingCart.storyboard; sourceTree = "<group>"; };
 		9590BA09249B0A63008E7AD9 /* CatsForSale.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CatsForSale.storyboard; sourceTree = "<group>"; };
@@ -137,6 +139,14 @@
 			name = "Model Controllers";
 			sourceTree = "<group>";
 		};
+		950316CC24A2EDB700AA8A59 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				950316CD24A2EDDD00AA8A59 /* CatTableViewCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		9590BA04249B0982008E7AD9 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
@@ -170,6 +180,7 @@
 		95A6446D249C6B0600870401 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				950316CC24A2EDB700AA8A59 /* Views */,
 				9590BA0D249B1252008E7AD9 /* User View Controllers */,
 				95A6446E249C6B1B00870401 /* Cats For Sale View Controllers */,
 				95D9570C24A1970E00AAA206 /* Products For Sale View Controllers */,
@@ -314,6 +325,7 @@
 				9590BA15249B136A008E7AD9 /* LandingPageNavViewController.swift in Sources */,
 				95D9571324A19B8100AAA206 /* ShoppingCartViewController.swift in Sources */,
 				12BE94B6249C2E2A00AD1542 /* UserController.swift in Sources */,
+				950316CE24A2EDDE00AA8A59 /* CatTableViewCell.swift in Sources */,
 				12806BB924A1BCDB00778400 /* User+Convenience.swift in Sources */,
 				95D9570E24A19B0900AAA206 /* ProductDetailViewController.swift in Sources */,
 				95D9571024A19B2400AAA206 /* AllProductsTableViewController.swift in Sources */,
