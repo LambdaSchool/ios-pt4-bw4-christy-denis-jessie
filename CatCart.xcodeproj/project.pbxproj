@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		12806BB924A1BCDB00778400 /* User+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12806BB824A1BCDB00778400 /* User+Convenience.swift */; };
 		12BE944A249B035D00AD1542 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12BE9449249B035D00AD1542 /* AppDelegate.swift */; };
 		12BE944C249B035D00AD1542 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12BE944B249B035D00AD1542 /* SceneDelegate.swift */; };
 		12BE9453249B036700AD1542 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12BE9452249B036700AD1542 /* Assets.xcassets */; };
@@ -45,6 +46,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		12806BB824A1BCDB00778400 /* User+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+Convenience.swift"; sourceTree = "<group>"; };
 		12BE9446249B035D00AD1542 /* CatCart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CatCart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		12BE9449249B035D00AD1542 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		12BE944B249B035D00AD1542 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -115,7 +117,6 @@
 			isa = PBXGroup;
 			children = (
 				95A6446D249C6B0600870401 /* View Controllers */,
-				12BE94BC249C2E9400AD1542 /* Model */,
 				12BE94B7249C2E3B00AD1542 /* Model Controllers */,
 				9590BA04249B0982008E7AD9 /* Storyboards */,
 				12BE9449249B035D00AD1542 /* AppDelegate.swift */,
@@ -134,14 +135,6 @@
 				12BE94B5249C2E2A00AD1542 /* UserController.swift */,
 			);
 			name = "Model Controllers";
-			sourceTree = "<group>";
-		};
-		12BE94BC249C2E9400AD1542 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				12BE94BA249C2E8C00AD1542 /* UserModelRepresentation.swift */,
-			);
-			name = Model;
 			sourceTree = "<group>";
 		};
 		9590BA04249B0982008E7AD9 /* Storyboards */ = {
@@ -226,6 +219,8 @@
 		BA2F223D249C5B52005944D8 /* Model Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				12BE94BA249C2E8C00AD1542 /* UserModelRepresentation.swift */,
+				12806BB824A1BCDB00778400 /* User+Convenience.swift */,
 				BA49E62824A18EF5009CEEF6 /* CatRepresentation.swift */,
 				BA49E62C24A1AC52009CEEF6 /* ProductRepresentation.swift */,
 				BA49E62E24A1ADBE009CEEF6 /* Product+Convenience.swift */,
@@ -319,6 +314,7 @@
 				9590BA15249B136A008E7AD9 /* LandingPageNavViewController.swift in Sources */,
 				95D9571324A19B8100AAA206 /* ShoppingCartViewController.swift in Sources */,
 				12BE94B6249C2E2A00AD1542 /* UserController.swift in Sources */,
+				12806BB924A1BCDB00778400 /* User+Convenience.swift in Sources */,
 				95D9570E24A19B0900AAA206 /* ProductDetailViewController.swift in Sources */,
 				95D9571024A19B2400AAA206 /* AllProductsTableViewController.swift in Sources */,
 				9590BA13249B130A008E7AD9 /* LandingPageViewController.swift in Sources */,

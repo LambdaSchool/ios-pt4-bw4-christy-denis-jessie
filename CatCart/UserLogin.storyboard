@@ -84,7 +84,6 @@
                                 <state key="normal" title="Log in!"/>
                                 <connections>
                                     <action selector="loginTapped:" destination="Flz-FX-azB" eventType="touchUpInside" id="iuz-6h-141"/>
-                                    <action selector="showStore" destination="Flz-FX-azB" eventType="touchUpInside" id="aUV-Hg-b9z"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oeV-x7-GQb">
