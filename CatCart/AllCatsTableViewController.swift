@@ -16,12 +16,12 @@ class AllCatsTableViewController: UITableViewController {
         return catsForSaleVC
     }
 
-    let cat1 = Cat(name: "Bosco", price: 250.00, latitude: 0.0, longitude: 0.0, years: 13, months: 3, imageURL: nil)
+//    let cat1 = Cat(name: "Bosco", price: 250.00, latitude: 0.0, longitude: 0.0, years: 13, months: 3, imageURL: nil)
     var cats: [Cat] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        cats.append(cat1)
+//        cats.append(cat1)
     }
 
     // MARK: - Table view data source
