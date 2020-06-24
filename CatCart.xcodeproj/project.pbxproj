@@ -43,6 +43,7 @@
 		BA49E62B24A1923F009CEEF6 /* Cat+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA49E62A24A1923F009CEEF6 /* Cat+Convenience.swift */; };
 		BA49E62D24A1AC52009CEEF6 /* ProductRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA49E62C24A1AC52009CEEF6 /* ProductRepresentation.swift */; };
 		BA49E62F24A1ADBE009CEEF6 /* Product+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA49E62E24A1ADBE009CEEF6 /* Product+Convenience.swift */; };
+		BA5318D424A3ACB000C0B379 /* CatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5318D324A3ACB000C0B379 /* CatTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,6 +85,7 @@
 		BA49E62A24A1923F009CEEF6 /* Cat+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cat+Convenience.swift"; sourceTree = "<group>"; };
 		BA49E62C24A1AC52009CEEF6 /* ProductRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductRepresentation.swift; sourceTree = "<group>"; };
 		BA49E62E24A1ADBE009CEEF6 /* Product+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Product+Convenience.swift"; sourceTree = "<group>"; };
+		BA5318D324A3ACB000C0B379 /* CatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +187,7 @@
 				95A64471249C6B8700870401 /* CatsNearbyMapViewController.swift */,
 				95A64473249C6BCD00870401 /* AllCatsTableViewController.swift */,
 				95A64475249C6BFF00870401 /* CatDetailViewController.swift */,
+				BA5318D324A3ACB000C0B379 /* CatTableViewCell.swift */,
 			);
 			name = "Cats For Sale View Controllers";
 			sourceTree = "<group>";
@@ -222,9 +225,9 @@
 				12BE94BA249C2E8C00AD1542 /* UserModelRepresentation.swift */,
 				12806BB824A1BCDB00778400 /* User+Convenience.swift */,
 				BA49E62824A18EF5009CEEF6 /* CatRepresentation.swift */,
+				BA49E62A24A1923F009CEEF6 /* Cat+Convenience.swift */,
 				BA49E62C24A1AC52009CEEF6 /* ProductRepresentation.swift */,
 				BA49E62E24A1ADBE009CEEF6 /* Product+Convenience.swift */,
-				BA49E62A24A1923F009CEEF6 /* Cat+Convenience.swift */,
 			);
 			name = "Model Helpers";
 			sourceTree = "<group>";
@@ -330,6 +333,7 @@
 				BA49E62924A18EF5009CEEF6 /* CatRepresentation.swift in Sources */,
 				9590BA0F249B1285008E7AD9 /* UserLoginViewController.swift in Sources */,
 				95A64470249C6B5700870401 /* CategoryViewController.swift in Sources */,
+				BA5318D424A3ACB000C0B379 /* CatTableViewCell.swift in Sources */,
 				95A64476249C6BFF00870401 /* CatDetailViewController.swift in Sources */,
 				12BE94BB249C2E8C00AD1542 /* UserModelRepresentation.swift in Sources */,
 				BA49E62D24A1AC52009CEEF6 /* ProductRepresentation.swift in Sources */,
