@@ -10,11 +10,11 @@ import UIKit
 
 class UserLoginViewController: UIViewController {
     
-    @IBOutlet weak var userEmailTextField: UITextField!
+    @IBOutlet weak var userNameTextField: UITextField!
     @IBOutlet weak var userPasswordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     
-    var userController: UserController?
+    var userController = UserController()
 //    var user: UserRepresentation?
     var currentUser: User?
 
@@ -35,20 +35,21 @@ class UserLoginViewController: UIViewController {
     @IBAction func showStore() {
         let storeVC = CategoryViewController.goToStore()
         storeVC.currentUser = currentUser
+//        self.navigationController?.popViewController(animated: true)
         show(storeVC, sender: self)
     }
     
     @IBAction func loginTapped(_ sender: UIButton) {
 
-        guard let userController = userController else { return }
+       // guard let userController = userController else { return }
         
-        if let userEmail = userEmailTextField.text,
-            !userEmail.isEmpty,
+        if let userName = userNameTextField.text,
+            !userName.isEmpty,
             let password = userPasswordTextField.text,
             !password.isEmpty {
             
             let user = UserRepresentation(password: password,
-                                          userName: userEmail)
+                                          userName: userName)
             
             currentUser = User(userName: user.userName,
                                password: user.password,
@@ -69,18 +70,18 @@ class UserLoginViewController: UIViewController {
                     print("Error occurred during sign up: \(error)")
                 }
                 
-                if userController.passwordMatch == true {
+                if self.userController.passwordMatch == true {
                     print("password match: true")
                     DispatchQueue.main.async {
-                        self.userEmailTextField.text = ""
+                        self.userNameTextField.text = ""
                         self.userPasswordTextField.text = ""
-                        self.showStore()
-
+                       // self.showStore()
+                        
                     }
                 } else {
                     print("password match: false")
                     DispatchQueue.main.async {
-                        self.userEmailTextField.text = ""
+                        self.userNameTextField.text = ""
                         self.userPasswordTextField.text = ""
                         
                         let alertController = UIAlertController(
@@ -106,7 +107,7 @@ class UserLoginViewController: UIViewController {
         guard isViewLoaded else { return }
         guard let user = currentUser else { return }
         
-        userEmailTextField.text = user.userName
+        userNameTextField.text = user.userName
         userPasswordTextField.text = user.password
     }
     
