@@ -15,24 +15,14 @@ class CatTableViewCell: UITableViewCell {
     @IBOutlet var catPriceLabel: UILabel!
     @IBOutlet var catNameLabel: UILabel!
 
-        // Mark: Properties
+    // MARK: - Properties
     var cat: Cat? {
         didSet {
             updateViews()
         }
     }
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-    
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    
+    // MARK: - View
     func updateViews() {
         guard let cat = cat else { return }
             catPriceLabel.text = "$\(cat.price)"
@@ -54,5 +44,4 @@ class CatTableViewCell: UITableViewCell {
             }
         }
     }
-    
 }
