@@ -10,20 +10,23 @@ import UIKit
 
 class UserLoginViewController: UIViewController {
     
+    // MARK: - Outlets
     @IBOutlet weak var userNameTextField: UITextField!
     @IBOutlet weak var userPasswordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     
+    // MARK: - Properties
     var userController = UserController()
-//    var user: UserRepresentation?
     var currentUser: User?
 
+    // MARK: - Setup
     static func newLogin() -> UserLoginViewController {
         let storyboard = UIStoryboard(name: "UserLogin", bundle: nil)
         let loginVC = storyboard.instantiateViewController(withIdentifier: "UserLoginViewController") as! UserLoginViewController
         return loginVC
     }
 
+    // MARK: - View
     override func viewDidLoad() {
         super.viewDidLoad()
         updateViews()
@@ -31,18 +34,28 @@ class UserLoginViewController: UIViewController {
         let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
         view.addGestureRecognizer(tap)
     }
+    
+    private func updateViews() {
+        guard isViewLoaded else { return }
+        guard let user = currentUser else { return }
+        
+        userNameTextField.text = user.userName
+        userPasswordTextField.text = user.password
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
 
+    // MARK: - Actions
     @IBAction func showStore() {
         let storeVC = CategoryViewController.goToStore()
         storeVC.currentUser = currentUser
-//        self.navigationController?.popViewController(animated: true)
         show(storeVC, sender: self)
     }
     
     @IBAction func loginTapped(_ sender: UIButton) {
-
-       // guard let userController = userController else { return }
-        
         if let userName = userNameTextField.text,
             !userName.isEmpty,
             let password = userPasswordTextField.text,
@@ -63,7 +76,6 @@ class UserLoginViewController: UIViewController {
                                state: nil,
                                zipCode: nil)
             
-//            guard let user = user else { return }
             userController.signIn(with: user) { error in
                 
                 if let error = error {
@@ -75,8 +87,6 @@ class UserLoginViewController: UIViewController {
                     DispatchQueue.main.async {
                         self.userNameTextField.text = ""
                         self.userPasswordTextField.text = ""
-                       // self.showStore()
-                        
                     }
                 } else {
                     print("password match: false")
@@ -100,16 +110,9 @@ class UserLoginViewController: UIViewController {
                 }
             }
         }
-        
     }
     
-    private func updateViews() {
-        guard isViewLoaded else { return }
-        guard let user = currentUser else { return }
-        
-        userNameTextField.text = user.userName
-        userPasswordTextField.text = user.password
-    }
+    
     
 //     MARK: - Navigation
 //        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -121,9 +124,5 @@ class UserLoginViewController: UIViewController {
 //        }
     
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        self.view.endEditing(true)
-        return false
-    }
-    
+
 }

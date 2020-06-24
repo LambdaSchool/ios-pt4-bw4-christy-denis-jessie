@@ -10,12 +10,10 @@ import UIKit
 
 class CategoryViewController: UIViewController {
 
-    //@IBOutlet weak var categoryCollectionView: UICollectionView!
-//
-//    let userController = UserController()
-//    var user: UserRepresentation?
+    // MARK: - Properties
     var currentUser: User?
 
+    // MARK: - Setup
     static func goToStore() -> CategoryViewController {
         let storyboard = UIStoryboard(name: "CatsForSale", bundle: nil)
         print(storyboard)
@@ -26,10 +24,10 @@ class CategoryViewController: UIViewController {
         return categoryVC
     }
 
+    // MARK: - View
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -41,16 +39,4 @@ class CategoryViewController: UIViewController {
         }
     }
 }
-//
-//extension CategoryViewController: UICollectionViewDelegate, UICollectionViewDataSource {
-//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        return 6
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ShowAllCats", for: indexPath)
-//            else { return UICollectionViewCell() }
-//
-//        return cell
-//    }
-//}
+
