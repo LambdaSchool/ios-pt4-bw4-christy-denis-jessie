@@ -110,7 +110,7 @@
                     <navigationItem key="navigationItem" id="SCb-s1-xKV"/>
                     <connections>
                         <outlet property="loginButton" destination="cof-53-06M" id="jTN-ek-8Jw"/>
-                        <outlet property="userEmailTextField" destination="kJH-DL-Ttg" id="lN6-U6-dU3"/>
+                        <outlet property="userNameTextField" destination="kJH-DL-Ttg" id="lN6-U6-dU3"/>
                         <outlet property="userPasswordTextField" destination="68l-Qf-ybY" id="4jV-dl-HoF"/>
                     </connections>
                 </viewController>

@@ -7,6 +7,16 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--LandingPage-->
+        <scene sceneID="HyP-wZ-Vdu">
+            <objects>
+                <viewControllerPlaceholder storyboardName="LandingPage" id="IYf-Kg-ngQ" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="O1w-R8-767"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HP7-Pm-YUN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2583" y="181"/>
+        </scene>
         <!--Category View Controller-->
         <scene sceneID="40h-YQ-e2g">
             <objects>
@@ -64,6 +74,9 @@
                         <viewLayoutGuide key="safeArea" id="rsu-t0-MlG"/>
                     </view>
                     <navigationItem key="navigationItem" id="Fyi-1Z-ccb"/>
+                    <connections>
+                        <segue destination="IYf-Kg-ngQ" kind="show" identifier="ToLandingPage" id="M2U-Ya-RZO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nMQ-oV-off" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -10,18 +10,18 @@ import UIKit
 
 class CategoryViewController: UIViewController {
 
-    @IBOutlet weak var categoryCollectionView: UICollectionView!
-
-    let userController = UserController()
+    //@IBOutlet weak var categoryCollectionView: UICollectionView!
+//
+//    let userController = UserController()
 //    var user: UserRepresentation?
     var currentUser: User?
 
     static func goToStore() -> CategoryViewController {
-        let storyboard = UIStoryboard(name: "CategoryCollection", bundle: nil)
+        let storyboard = UIStoryboard(name: "CatsForSale", bundle: nil)
         print(storyboard)
         let categoryVC = storyboard.instantiateViewController(withIdentifier: "CategoryViewController") as! CategoryViewController
         
-        //categoryVC.modalPresentationStyle = .fullScreen
+        categoryVC.modalPresentationStyle = .fullScreen
         
         return categoryVC
     }
