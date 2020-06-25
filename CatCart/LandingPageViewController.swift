@@ -14,6 +14,7 @@ class LandingPageViewController: UIViewController {
     @IBOutlet weak var toCreateAccountScreen: UIButton!
 
     var userController: UserController?
+    var currentUser: User?
 
 //    static func goToLandingPage() -> LandingPageViewController {
 //        let storyboard = UIStoryboard(name: "LandingPage", bundle: nil)
@@ -23,6 +24,13 @@ class LandingPageViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if currentUser != nil {
+            self.dismiss(animated: true, completion: nil)
+        }
     }
 
     @IBAction func showLogin() {

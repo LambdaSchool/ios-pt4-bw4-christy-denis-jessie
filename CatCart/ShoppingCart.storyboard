@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xhY-R1-9mF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Yr1-wD-lEh">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -116,6 +116,14 @@
                                     <segue destination="3it-b0-5CN" kind="show" identifier="ShowPaymentPage" id="5n5-Hx-ZCu"/>
                                 </connections>
                             </button>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v9T-bc-Fp3">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <items>
+                                    <navigationItem title="Shopping Cart" id="9ys-Of-PCq">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="7Hc-6k-dJF"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -123,11 +131,14 @@
                             <constraint firstItem="2tq-8Y-Ack" firstAttribute="trailing" secondItem="TUi-y2-lEi" secondAttribute="trailing" constant="24" id="4gh-Gq-gZE"/>
                             <constraint firstItem="2tq-8Y-Ack" firstAttribute="trailing" secondItem="LAW-Uc-4xk" secondAttribute="trailing" id="AgF-Di-76J"/>
                             <constraint firstItem="2tq-8Y-Ack" firstAttribute="bottom" secondItem="LAW-Uc-4xk" secondAttribute="bottom" id="HPa-Kq-aKE"/>
-                            <constraint firstItem="sSu-Qg-Opn" firstAttribute="top" secondItem="2tq-8Y-Ack" secondAttribute="top" constant="24" id="LQY-KO-grT"/>
+                            <constraint firstItem="sSu-Qg-Opn" firstAttribute="top" secondItem="v9T-bc-Fp3" secondAttribute="bottom" constant="24" id="LQY-KO-grT"/>
                             <constraint firstItem="TUi-y2-lEi" firstAttribute="leading" secondItem="2tq-8Y-Ack" secondAttribute="leading" constant="24" id="Tjj-D9-HvI"/>
                             <constraint firstItem="sSu-Qg-Opn" firstAttribute="leading" secondItem="2tq-8Y-Ack" secondAttribute="leading" constant="24" id="V71-fk-9a0"/>
                             <constraint firstItem="TUi-y2-lEi" firstAttribute="top" secondItem="5BL-pO-QDk" secondAttribute="bottom" constant="30" id="ZLe-pv-ftB"/>
                             <constraint firstItem="LAW-Uc-4xk" firstAttribute="leading" secondItem="2tq-8Y-Ack" secondAttribute="leading" id="fbw-bk-609"/>
+                            <constraint firstItem="v9T-bc-Fp3" firstAttribute="top" secondItem="2tq-8Y-Ack" secondAttribute="top" id="fda-Qy-3ff"/>
+                            <constraint firstItem="v9T-bc-Fp3" firstAttribute="leading" secondItem="2tq-8Y-Ack" secondAttribute="leading" id="n7Y-th-fl2"/>
+                            <constraint firstItem="v9T-bc-Fp3" firstAttribute="trailing" secondItem="2tq-8Y-Ack" secondAttribute="trailing" id="pEm-qI-bSH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="2tq-8Y-Ack"/>
                     </view>
@@ -151,24 +162,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f1z-0j-dxV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2290" y="201"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="yh2-UI-ldq">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xhY-R1-9mF" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="qoJ-45-20S">
-                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="Yr1-wD-lEh" kind="relationship" relationship="rootViewController" id="GYc-gQ-JXj"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8ad-zW-0pu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="755.07246376811599" y="264.50892857142856"/>
         </scene>
     </scenes>
 </document>
