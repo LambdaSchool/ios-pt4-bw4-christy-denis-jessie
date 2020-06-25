@@ -10,6 +10,8 @@ import UIKit
 
 class AllCatsTableViewController: UITableViewController {
 
+    var cartController: ShoppingCartController?
+    
     // MARK: - Mock Data
     let cat1 = Cat(name: "Mysty", price: 14.99, latitude: 50, longitude: -100, years: 0, months: 2, imageURL: "https://imagizer.imageshack.com/img922/2816/kDUKLs.jpg")
     let cat2 = Cat(name: "Arya", price: 2.49, latitude: 41, longitude: -100, years: 0, months: 6, imageURL: "https://imagizer.imageshack.com/img923/6269/C6kuyK.jpg")
@@ -76,6 +78,7 @@ class AllCatsTableViewController: UITableViewController {
         if segue.identifier == "showCatDetailSegue" {
             let catDetailVC = segue.destination as! CatDetailViewController
             catDetailVC.cat = self.cat
+            catDetailVC.cartController = cartController
         }
     }
 }

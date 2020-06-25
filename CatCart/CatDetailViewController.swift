@@ -16,9 +16,11 @@ class CatDetailViewController: UIViewController {
     @IBOutlet var priceLabel: UILabel!
     @IBOutlet var yearsLabel: UILabel!
     @IBOutlet var monthsLabel: UILabel!
-    
+    @IBOutlet weak var cartButton: UIBarButtonItem!
+
     // MARK: - Properties
     var cat: Cat?
+    var cartController: ShoppingCartController?
     
     // MARK: - View
     override func viewDidLoad() {
@@ -48,6 +50,23 @@ class CatDetailViewController: UIViewController {
                     self.catImageView.image = catImage
                 }
             }
+        }
+    }
+    @IBAction func addToCart(_ sender: Any) {
+        guard let cartController = cartController, let cat = cat, let name = cat.name else { return }
+        cartController.addItem(itemName: name, itemPrice: cat.price)
+//        cartButton.badge = cartController.itemNames.count
+
+    }
+
+    @IBAction func cartButtonPressed(_ sender: UIBarButtonItem) {
+        performSegue(withIdentifier: "ShowShoppingCart", sender: self)
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowShoppingCart" {
+            let shoppingCartVC = segue.destination as! ShoppingCartViewController
+            shoppingCartVC.cartController = cartController
         }
     }
 }
