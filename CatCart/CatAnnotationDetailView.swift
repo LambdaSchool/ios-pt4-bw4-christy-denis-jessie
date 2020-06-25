@@ -9,8 +9,8 @@
 import UIKit
 
 class CatAnnotationDetailView: UIView {
-
- var cat: Cat? {
+    
+    var cat: Cat? {
         didSet {
             updateSubviews()
         }
@@ -18,6 +18,9 @@ class CatAnnotationDetailView: UIView {
     
     private let nameLabel = UILabel()
     private let priceLabel = UILabel()
+    private let yearLabel = UILabel()
+    private let monthLabel = UILabel()
+    private var viewImageButton = UIButton()
     private let latitudeLabel = UILabel()
     private let longitudeLabel = UILabel()
     
@@ -31,10 +34,19 @@ class CatAnnotationDetailView: UIView {
         return result
     }()
     
+    @objc func buttonAction(sender: UIButton!) {
+        print("Button tapped")
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
         latitudeLabel.setContentHuggingPriority(.defaultLow+1, for: .horizontal)
+        
+        viewImageButton = UIButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
+        viewImageButton.backgroundColor = .blue
+        viewImageButton.setTitle("View Image", for: .normal)
+        viewImageButton.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
         
         let placeDateStackView = UIStackView(arrangedSubviews: [nameLabel, priceLabel])
         placeDateStackView.spacing = UIStackView.spacingUseSystem
@@ -65,5 +77,5 @@ class CatAnnotationDetailView: UIView {
         latitudeLabel.text = "Lat: " + latLonFormatter.string(from: cat.latitude as NSNumber)!
         longitudeLabel.text = "Lon: " + latLonFormatter.string(from: cat.longitude as NSNumber)!
     }
-
+    
 }
