@@ -332,7 +332,7 @@
                         <barButtonItem key="rightBarButtonItem" image="cart.badge.plus" catalog="system" id="pPZ-te-4U2">
                             <connections>
                                 <action selector="cartButtonPressed:" destination="iGu-rw-Dz4" id="w7f-4D-jhg"/>
-                                <segue destination="kv9-q5-LfH" kind="show" identifier="ShowShoppingCart" id="IFH-Gz-TtD"/>
+                                <segue destination="kv9-q5-LfH" kind="show" identifier="ShowShoppingCart" id="8yb-1A-pQ8"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
