@@ -86,13 +86,21 @@ extension CatsNearbyMapViewController: MKMapViewDelegate {
         view?.canShowCallout = true
         
         let detailView = CatAnnotationDetailView()
+        detailView.delegate = self
         detailView.cat = cat
         view?.detailCalloutAccessoryView = detailView
         return view
     }
   
-    
-    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+}
 
+extension CatsNearbyMapViewController: MapDetailViewDelegate {
+    func didPressButton(with cat: Cat) {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let detailView = storyBoard.instantiateViewController(withIdentifier: "CatDetailViewController") as! CatDetailViewController
+        detailView.cat = cat
+        present(detailView, animated: true)
     }
+    
+    
 }
