@@ -47,7 +47,7 @@
                                 <rect key="frame" x="191" y="349" width="32" height="30"/>
                                 <state key="normal" title="Cats"/>
                                 <connections>
-                                    <segue destination="cO3-8a-msz" kind="show" id="kKA-tz-qo6"/>
+                                    <segue destination="cO3-8a-msz" kind="show" identifier="ShowCatsForSale" id="kKA-tz-qo6"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="72H-U4-Fsn">
@@ -253,6 +253,9 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="ADD TO CART"/>
+                                <connections>
+                                    <action selector="addToCart:" destination="iGu-rw-Dz4" eventType="touchUpInside" id="Q65-SD-eCl"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="R0Y-Th-ys3">
                                 <rect key="frame" x="20" y="498" width="374" height="41"/>
@@ -326,13 +329,15 @@
                         <viewLayoutGuide key="safeArea" id="UvP-Lu-RiI"/>
                     </view>
                     <navigationItem key="navigationItem" id="TSL-R2-rzA">
-                        <barButtonItem key="rightBarButtonItem" image="cart" catalog="system" id="pPZ-te-4U2">
+                        <barButtonItem key="rightBarButtonItem" image="cart.badge.plus" catalog="system" id="pPZ-te-4U2">
                             <connections>
+                                <action selector="cartButtonPressed:" destination="iGu-rw-Dz4" id="w7f-4D-jhg"/>
                                 <segue destination="kv9-q5-LfH" kind="show" identifier="ShowShoppingCart" id="8yb-1A-pQ8"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="cartButton" destination="pPZ-te-4U2" id="N5C-QU-5Rh"/>
                         <outlet property="catImageView" destination="w5G-bk-z6G" id="PGS-uV-K5c"/>
                         <outlet property="monthsLabel" destination="dit-z8-VKM" id="RjP-FA-D2Z"/>
                         <outlet property="nameLabel" destination="eb4-Dc-1qg" id="VaY-Qb-dQl"/>
@@ -385,7 +390,7 @@
     </scenes>
     <resources>
         <image name="Cat10" width="250" height="200"/>
-        <image name="cart" catalog="system" width="128" height="102"/>
+        <image name="cart.badge.plus" catalog="system" width="128" height="98"/>
         <image name="mouse" width="253" height="199"/>
     </resources>
 </document>

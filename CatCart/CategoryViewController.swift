@@ -12,15 +12,16 @@ class CategoryViewController: UIViewController {
 
     // MARK: - Properties
     var currentUser: User?
-
+    var cartController = ShoppingCartController()
+    
     // MARK: - Setup
     static func goToStore() -> CategoryViewController {
         let storyboard = UIStoryboard(name: "CatsForSale", bundle: nil)
         print(storyboard)
         let categoryVC = storyboard.instantiateViewController(withIdentifier: "CategoryViewController") as! CategoryViewController
-        
+
         categoryVC.modalPresentationStyle = .fullScreen
-        
+
         return categoryVC
     }
 
@@ -32,10 +33,15 @@ class CategoryViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        // If user is logged in
-        // Go to CategoryView
         if currentUser == nil {
             performSegue(withIdentifier: "ToLandingPage", sender: nil)
+        }
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowCatsForSale" {
+            let destinationVC = segue.destination as! AllCatsTableViewController
+            destinationVC.cartController = cartController
         }
     }
 }
