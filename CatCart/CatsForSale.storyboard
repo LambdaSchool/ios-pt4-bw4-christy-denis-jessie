@@ -309,6 +309,19 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AwL-UU-HgX">
+                                <rect key="frame" x="0.0" y="88" width="414" height="44"/>
+                                <items>
+                                    <navigationItem id="RMu-Rh-dba">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="99C-ks-PzB"/>
+                                        <barButtonItem key="rightBarButtonItem" title="Item" image="cart.badge.plus" catalog="system" id="uEe-PC-Th7">
+                                            <connections>
+                                                <segue destination="kv9-q5-LfH" kind="show" identifier="ShowShoppingCart" id="oe9-GQ-ZTU"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -318,12 +331,15 @@
                             <constraint firstItem="stE-Ca-EYd" firstAttribute="leading" secondItem="UvP-Lu-RiI" secondAttribute="leading" constant="32" id="AHf-a6-5sA"/>
                             <constraint firstItem="stE-Ca-EYd" firstAttribute="centerX" secondItem="FiM-wl-rnS" secondAttribute="centerX" id="B9l-RJ-DP4"/>
                             <constraint firstItem="0lO-TF-KyT" firstAttribute="top" secondItem="R0Y-Th-ys3" secondAttribute="bottom" constant="20" id="CZ6-tV-Jj1"/>
-                            <constraint firstItem="w5G-bk-z6G" firstAttribute="top" secondItem="UvP-Lu-RiI" secondAttribute="top" constant="44" id="I9V-br-riH"/>
+                            <constraint firstItem="AwL-UU-HgX" firstAttribute="top" secondItem="UvP-Lu-RiI" secondAttribute="top" id="LEZ-7s-GyE"/>
                             <constraint firstItem="stE-Ca-EYd" firstAttribute="centerX" secondItem="FiM-wl-rnS" secondAttribute="centerX" id="OJL-gA-hq0"/>
                             <constraint firstItem="w5G-bk-z6G" firstAttribute="leading" secondItem="UvP-Lu-RiI" secondAttribute="leading" constant="24" id="R1j-xN-38m"/>
                             <constraint firstItem="UvP-Lu-RiI" firstAttribute="trailing" secondItem="stE-Ca-EYd" secondAttribute="trailing" constant="32" id="Tvu-E1-Dbc"/>
+                            <constraint firstItem="AwL-UU-HgX" firstAttribute="trailing" secondItem="UvP-Lu-RiI" secondAttribute="trailing" id="X8z-pc-fc4"/>
                             <constraint firstItem="R0Y-Th-ys3" firstAttribute="top" secondItem="w5G-bk-z6G" secondAttribute="bottom" constant="20" id="YgI-AA-XzG"/>
+                            <constraint firstItem="AwL-UU-HgX" firstAttribute="leading" secondItem="UvP-Lu-RiI" secondAttribute="leading" id="c1j-c3-YND"/>
                             <constraint firstItem="UvP-Lu-RiI" firstAttribute="trailing" secondItem="R0Y-Th-ys3" secondAttribute="trailing" constant="20" id="ekz-1b-mNL"/>
+                            <constraint firstItem="w5G-bk-z6G" firstAttribute="top" secondItem="AwL-UU-HgX" secondAttribute="bottom" id="gY3-ql-OWk"/>
                             <constraint firstItem="stE-Ca-EYd" firstAttribute="top" secondItem="0lO-TF-KyT" secondAttribute="bottom" constant="20" id="p6s-qK-oo7"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="UvP-Lu-RiI"/>
@@ -332,7 +348,6 @@
                         <barButtonItem key="rightBarButtonItem" image="cart.badge.plus" catalog="system" id="pPZ-te-4U2">
                             <connections>
                                 <action selector="cartButtonPressed:" destination="iGu-rw-Dz4" id="w7f-4D-jhg"/>
-                                <segue destination="kv9-q5-LfH" kind="show" identifier="ShowShoppingCart" id="8yb-1A-pQ8"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

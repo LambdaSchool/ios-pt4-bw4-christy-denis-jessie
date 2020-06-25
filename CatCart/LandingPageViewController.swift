@@ -29,6 +29,13 @@ class LandingPageViewController: UIViewController {
         }
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if currentUser != nil {
+            self.dismiss(animated: true, completion: nil)
+        }
+    }
+
     @IBAction func showLogin() {
         let loginVC = UserLoginViewController.newLogin()
         self.present(loginVC, animated: true)
