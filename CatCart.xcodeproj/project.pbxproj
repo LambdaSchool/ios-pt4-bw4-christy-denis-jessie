@@ -45,6 +45,7 @@
 		BA49E62D24A1AC52009CEEF6 /* ProductRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA49E62C24A1AC52009CEEF6 /* ProductRepresentation.swift */; };
 		BA49E62F24A1ADBE009CEEF6 /* Product+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA49E62E24A1ADBE009CEEF6 /* Product+Convenience.swift */; };
 		BA5318D424A3ACB000C0B379 /* CatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5318D324A3ACB000C0B379 /* CatTableViewCell.swift */; };
+		BA5318D824A44AB200C0B379 /* ProductTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA5318D724A44AB200C0B379 /* ProductTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,6 +89,9 @@
 		BA49E62C24A1AC52009CEEF6 /* ProductRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductRepresentation.swift; sourceTree = "<group>"; };
 		BA49E62E24A1ADBE009CEEF6 /* Product+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Product+Convenience.swift"; sourceTree = "<group>"; };
 		BA5318D324A3ACB000C0B379 /* CatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatTableViewCell.swift; sourceTree = "<group>"; };
+		BA5318D524A44AB200C0B379 /* CatCart-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CatCart-Bridging-Header.h"; sourceTree = "<group>"; };
+		BA5318D624A44AB200C0B379 /* ProductTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProductTableViewCell.h; sourceTree = "<group>"; };
+		BA5318D724A44AB200C0B379 /* ProductTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProductTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,7 +202,10 @@
 			isa = PBXGroup;
 			children = (
 				95D9570F24A19B2400AAA206 /* AllProductsTableViewController.swift */,
+				BA5318D624A44AB200C0B379 /* ProductTableViewCell.h */,
+				BA5318D724A44AB200C0B379 /* ProductTableViewCell.m */,
 				95D9570D24A19B0900AAA206 /* ProductDetailViewController.swift */,
+				BA5318D524A44AB200C0B379 /* CatCart-Bridging-Header.h */,
 			);
 			name = "Products For Sale View Controllers";
 			sourceTree = "<group>";
@@ -267,6 +274,7 @@
 				TargetAttributes = {
 					12BE9445249B035D00AD1542 = {
 						CreatedOnToolsVersion = 11.4.1;
+						LastSwiftMigration = 1150;
 					};
 				};
 			};
@@ -336,6 +344,7 @@
 				12806BE824A511D900778400 /* Cat+Annotation.swift in Sources */,
 				BA49E62924A18EF5009CEEF6 /* CatRepresentation.swift in Sources */,
 				9590BA0F249B1285008E7AD9 /* UserLoginViewController.swift in Sources */,
+				BA5318D824A44AB200C0B379 /* ProductTableViewCell.m in Sources */,
 				95A64470249C6B5700870401 /* CategoryViewController.swift in Sources */,
 				BA5318D424A3ACB000C0B379 /* CatTableViewCell.swift in Sources */,
 				95A64476249C6BFF00870401 /* CatDetailViewController.swift in Sources */,
@@ -476,6 +485,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WDB2NWAVF2;
 				INFOPLIST_FILE = CatCart/Info.plist;
@@ -485,6 +495,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.CatCartCo.CatCart;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CatCart/CatCart-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -494,6 +506,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WDB2NWAVF2;
 				INFOPLIST_FILE = CatCart/Info.plist;
@@ -503,6 +516,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.CatCartCo.CatCart;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CatCart/CatCart-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

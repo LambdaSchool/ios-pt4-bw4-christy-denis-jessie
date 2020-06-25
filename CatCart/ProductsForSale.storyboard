@@ -16,14 +16,52 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="EAO-FG-bSS">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProductCell" id="EAO-FG-bSS" customClass="ProductTableViewCell">
+                                <rect key="frame" x="0.0" y="28" width="414" height="150.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="EAO-FG-bSS" id="xuY-8B-C4l">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="150.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GZL-3p-cYZ">
+                                            <rect key="frame" x="0.0" y="0.0" width="150.5" height="150.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="150" id="T7d-TD-sKm"/>
+                                                <constraint firstAttribute="width" secondItem="GZL-3p-cYZ" secondAttribute="height" multiplier="1:1" id="dgo-uj-Q1e"/>
+                                            </constraints>
+                                        </imageView>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="IRL-cC-PM1">
+                                            <rect key="frame" x="160.5" y="21" width="223.5" height="108.5"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r8D-FC-159">
+                                                    <rect key="frame" x="0.0" y="0.0" width="87" height="57.5"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5k7-am-ujZ">
+                                                    <rect key="frame" x="0.0" y="67.5" width="48" height="41"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="GZL-3p-cYZ" secondAttribute="bottom" id="EyA-fm-Iox"/>
+                                        <constraint firstItem="GZL-3p-cYZ" firstAttribute="leading" secondItem="xuY-8B-C4l" secondAttribute="leading" id="K12-a0-Lxk"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="IRL-cC-PM1" secondAttribute="trailing" constant="10" id="KCb-EY-0TQ"/>
+                                        <constraint firstItem="IRL-cC-PM1" firstAttribute="leading" secondItem="GZL-3p-cYZ" secondAttribute="trailing" constant="10" id="NRD-eI-4po"/>
+                                        <constraint firstItem="IRL-cC-PM1" firstAttribute="top" secondItem="xuY-8B-C4l" secondAttribute="topMargin" constant="10" id="i39-7X-Xe0"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="IRL-cC-PM1" secondAttribute="bottom" constant="10" id="v4H-5g-2Sw"/>
+                                        <constraint firstItem="GZL-3p-cYZ" firstAttribute="top" secondItem="xuY-8B-C4l" secondAttribute="top" id="yz7-y0-QPf"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="nameLabel" destination="r8D-FC-159" id="aIh-4B-gKI"/>
+                                    <outlet property="priceLabel" destination="5k7-am-ujZ" id="pMd-9A-yG6"/>
+                                    <outlet property="productImageView" destination="GZL-3p-cYZ" id="tWp-6G-APH"/>
                                     <segue destination="4Nq-oW-5UE" kind="show" id="RLZ-uc-hEd"/>
                                 </connections>
                             </tableViewCell>
