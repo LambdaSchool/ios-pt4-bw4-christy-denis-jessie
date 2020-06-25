@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LAW-Uc-4xk">
-                                <rect key="frame" x="0.0" y="210.5" width="414" height="651.5"/>
+                                <rect key="frame" x="0.0" y="182.5" width="414" height="679.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ItemCell" rowHeight="121" id="QFP-kg-Q7N" customClass="ItemTableViewCell" customModule="CatCart" customModuleProvider="target">
@@ -88,7 +88,7 @@
                                 </prototypes>
                             </tableView>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="sSu-Qg-Opn">
-                                <rect key="frame" x="24" y="112" width="202.5" height="20.5"/>
+                                <rect key="frame" x="24" y="84" width="202.5" height="20.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subtotal (# items):" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NMh-M1-Dcf">
                                         <rect key="frame" x="0.0" y="0.0" width="142" height="20.5"/>
@@ -105,7 +105,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TUi-y2-lEi">
-                                <rect key="frame" x="24" y="162.5" width="366" height="36"/>
+                                <rect key="frame" x="24" y="134.5" width="366" height="36"/>
                                 <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Proceed to checkout">
@@ -116,14 +116,6 @@
                                     <segue destination="3it-b0-5CN" kind="show" identifier="ShowPaymentPage" id="5n5-Hx-ZCu"/>
                                 </connections>
                             </button>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v9T-bc-Fp3">
-                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                                <items>
-                                    <navigationItem title="Shopping Cart" id="9ys-Of-PCq">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="7Hc-6k-dJF"/>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -131,14 +123,11 @@
                             <constraint firstItem="2tq-8Y-Ack" firstAttribute="trailing" secondItem="TUi-y2-lEi" secondAttribute="trailing" constant="24" id="4gh-Gq-gZE"/>
                             <constraint firstItem="2tq-8Y-Ack" firstAttribute="trailing" secondItem="LAW-Uc-4xk" secondAttribute="trailing" id="AgF-Di-76J"/>
                             <constraint firstItem="2tq-8Y-Ack" firstAttribute="bottom" secondItem="LAW-Uc-4xk" secondAttribute="bottom" id="HPa-Kq-aKE"/>
-                            <constraint firstItem="sSu-Qg-Opn" firstAttribute="top" secondItem="v9T-bc-Fp3" secondAttribute="bottom" constant="24" id="LQY-KO-grT"/>
+                            <constraint firstItem="sSu-Qg-Opn" firstAttribute="top" secondItem="2tq-8Y-Ack" secondAttribute="top" constant="40" id="Iir-Nz-ZLa"/>
                             <constraint firstItem="TUi-y2-lEi" firstAttribute="leading" secondItem="2tq-8Y-Ack" secondAttribute="leading" constant="24" id="Tjj-D9-HvI"/>
                             <constraint firstItem="sSu-Qg-Opn" firstAttribute="leading" secondItem="2tq-8Y-Ack" secondAttribute="leading" constant="24" id="V71-fk-9a0"/>
                             <constraint firstItem="TUi-y2-lEi" firstAttribute="top" secondItem="5BL-pO-QDk" secondAttribute="bottom" constant="30" id="ZLe-pv-ftB"/>
                             <constraint firstItem="LAW-Uc-4xk" firstAttribute="leading" secondItem="2tq-8Y-Ack" secondAttribute="leading" id="fbw-bk-609"/>
-                            <constraint firstItem="v9T-bc-Fp3" firstAttribute="top" secondItem="2tq-8Y-Ack" secondAttribute="top" id="fda-Qy-3ff"/>
-                            <constraint firstItem="v9T-bc-Fp3" firstAttribute="leading" secondItem="2tq-8Y-Ack" secondAttribute="leading" id="n7Y-th-fl2"/>
-                            <constraint firstItem="v9T-bc-Fp3" firstAttribute="trailing" secondItem="2tq-8Y-Ack" secondAttribute="trailing" id="pEm-qI-bSH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="2tq-8Y-Ack"/>
                     </view>
