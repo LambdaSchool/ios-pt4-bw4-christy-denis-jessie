@@ -14,7 +14,7 @@ extension String {
     static let annotationReuseIdentifier = "CatAnnotationView"
 }
 
-class MapViewController: UIViewController {
+class CatsNearbyMapViewController: UIViewController, CLLocationManagerDelegate {
     // MARK: - Mock Data
 
        let cat1 = Cat(name: "Mysty", price: 14.99, latitude: 37.333768, longitude: -122.033954, years: 0, months: 2, imageURL: "https://imagizer.imageshack.com/img922/2816/kDUKLs.jpg")
@@ -32,16 +32,35 @@ class MapViewController: UIViewController {
        }
        
     var cats: [Cat] = []
+    private var userTrackingButton: MKUserTrackingButton!
+    var locationManager = CLLocationManager()
     
     @IBOutlet var mapView: MKMapView!
     
-    private var userTrackingButton: MKUserTrackingButton!
-    var locationManager: CLLocationManager?
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        locationManager.requestWhenInUseAuthorization()
+        
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager.startUpdatingLocation()
+        }
+        
+        mapView.delegate = self
+        mapView.register(MKMarkerAnnotationView.self, forAnnotationViewWithReuseIdentifier: "CatAnnotationView")
         addMockData()
-        locationManager?.requestWhenInUseAuthorization()
+        
+        DispatchQueue.main.async {
+            self.mapView.addAnnotations(self.cats)
+            guard let cat = self.cats.first else {return}
+            
+            let span = MKCoordinateSpan(latitudeDelta: 0.25, longitudeDelta: 0.25)
+            let region = MKCoordinateRegion(center: cat.coordinate, span: span)
+            self.mapView.setRegion(region, animated: true)
+        }
         
         userTrackingButton = MKUserTrackingButton(mapView: mapView)
         userTrackingButton.translatesAutoresizingMaskIntoConstraints = false
@@ -51,21 +70,29 @@ class MapViewController: UIViewController {
             userTrackingButton.leadingAnchor.constraint(equalTo: mapView.leadingAnchor, constant: 20),
             mapView.bottomAnchor.constraint(equalTo: userTrackingButton.bottomAnchor, constant: 20)
         ])
-        
-        mapView.register(MKMarkerAnnotationView.self, forAnnotationViewWithReuseIdentifier: .annotationReuseIdentifier)
-        
-        fetchCats(cats)
     }
-    
-    func fetchCats(_ cats: [Cat]) {
-        for cat in cats {
-            let annotations = MKPointAnnotation()
-            annotations.title = cat.name
-            annotations.subtitle = "\(String(describing: cat.price))"
-            annotations.coordinate = CLLocationCoordinate2D(latitude:
-                cat.latitude, longitude: cat.longitude)
-            mapView.addAnnotation(annotations)
-        }
-    }
+
 }
 
+extension CatsNearbyMapViewController: MKMapViewDelegate {
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        
+        guard let cat = annotation as? Cat else { return nil }
+        
+        let view = mapView.dequeueReusableAnnotationView(withIdentifier: "CatAnnotationView", for: cat) as? MKMarkerAnnotationView
+        
+        view?.markerTintColor = .systemBlue
+        view?.canShowCallout = true
+        
+        let detailView = CatAnnotationDetailView()
+        detailView.cat = cat
+        view?.detailCalloutAccessoryView = detailView
+        return view
+    }
+  
+    
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+
+    }
+}
