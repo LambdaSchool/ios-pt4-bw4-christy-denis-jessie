@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol MapDetailViewDelegate: AnyObject {
+    func didPressButton(with cat: Cat)
+}
+
 class CatAnnotationDetailView: UIView {
     
     var cat: Cat? {
@@ -24,6 +28,7 @@ class CatAnnotationDetailView: UIView {
     private let latitudeLabel = UILabel()
     private let longitudeLabel = UILabel()
     
+    weak var delegate: MapDetailViewDelegate?
     
     private lazy var latLonFormatter: NumberFormatter = {
         let result = NumberFormatter()
@@ -36,6 +41,9 @@ class CatAnnotationDetailView: UIView {
     
     @objc func buttonAction(sender: UIButton!) {
         print("Button tapped")
+        
+        delegate?.didPressButton(with: cat!)
+        
     }
     
     override init(frame: CGRect) {
