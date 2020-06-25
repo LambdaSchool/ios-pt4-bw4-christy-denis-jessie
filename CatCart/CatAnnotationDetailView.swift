@@ -52,9 +52,13 @@ class CatAnnotationDetailView: UIView {
         latitudeLabel.setContentHuggingPriority(.defaultLow+1, for: .horizontal)
         
         viewImageButton = UIButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
-        viewImageButton.backgroundColor = .blue
+        viewImageButton.backgroundColor = .clear
         viewImageButton.setTitle("View Image", for: .normal)
         viewImageButton.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
+        
+        viewImageButton.setTitleColor(.systemBlue, for: .normal)
+        viewImageButton.titleLabel?.textAlignment = .center
+        viewImageButton.titleLabel?.font = UIFont(name: "helvetica", size: 14)
         
         let placeDateStackView = UIStackView(arrangedSubviews: [nameLabel, priceLabel])
         placeDateStackView.spacing = UIStackView.spacingUseSystem
@@ -77,7 +81,6 @@ class CatAnnotationDetailView: UIView {
     }
     
     // MARK: - Private
-    
     private func updateSubviews() {
         guard let cat = cat else { return }
         nameLabel.text = cat.name
