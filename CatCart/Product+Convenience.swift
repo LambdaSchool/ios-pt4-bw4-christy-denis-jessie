@@ -9,6 +9,7 @@
 import Foundation
 import CoreData
 
+@objc(CKProduct)
 extension Product {
     
     convenience init(id: UUID = UUID(),
@@ -31,7 +32,7 @@ extension Product {
         self.imageURL = imageURL
     }
     
-    convenience init?(productRepresentation: ProductRepresentation, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
+    @nonobjc convenience init?(productRepresentation: ProductRepresentation, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
         
         guard let id = productRepresentation.id,
             let name = productRepresentation.name,
