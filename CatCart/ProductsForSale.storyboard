@@ -59,9 +59,9 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="nameLabel" destination="r8D-FC-159" id="aIh-4B-gKI"/>
-                                    <outlet property="priceLabel" destination="5k7-am-ujZ" id="pMd-9A-yG6"/>
                                     <outlet property="productImageView" destination="GZL-3p-cYZ" id="tWp-6G-APH"/>
+                                    <outlet property="productNameLabel" destination="r8D-FC-159" id="dx9-Ip-iqa"/>
+                                    <outlet property="productPriceLabel" destination="5k7-am-ujZ" id="jqg-8G-TOt"/>
                                     <segue destination="4Nq-oW-5UE" kind="show" id="RLZ-uc-hEd"/>
                                 </connections>
                             </tableViewCell>

@@ -7,13 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CatCart-Swift.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ProductTableViewCell : UITableViewCell
 @property (strong, nonatomic) IBOutlet UIImageView *productImageView;
-@property (strong, nonatomic) IBOutlet UILabel *nameLabel;
-@property (strong, nonatomic) IBOutlet UILabel *priceLabel;
+@property (strong, nonatomic) IBOutlet UILabel *productNameLabel;
+@property (strong, nonatomic) IBOutlet UILabel *productPriceLabel;
+// TODO: fix to correctly read as CKProduct
+// TODO: verify that this is formatted correctly
+@property (strong, nonatomic) Product *product;
+
 @end
 
 NS_ASSUME_NONNULL_END
