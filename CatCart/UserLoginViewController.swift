@@ -49,11 +49,11 @@ class UserLoginViewController: UIViewController {
     }
 
     // MARK: - Actions
-    @IBAction func showStore() {
-        let storeVC = CategoryViewController.goToStore()
-        storeVC.currentUser = currentUser
-        show(storeVC, sender: self)
-    }
+//    @IBAction func showStore() {
+//        let storeVC = CategoryViewController.goToStore()
+//        storeVC.currentUser = currentUser
+//        show(storeVC, sender: self)
+//    }
     
     @IBAction func loginTapped(_ sender: UIButton) {
         if let userName = userNameTextField.text,
@@ -87,6 +87,7 @@ class UserLoginViewController: UIViewController {
                     DispatchQueue.main.async {
                         self.userNameTextField.text = ""
                         self.userPasswordTextField.text = ""
+                        self.dismiss(animated: true, completion: nil)
                     }
                 } else {
                     print("password match: false")

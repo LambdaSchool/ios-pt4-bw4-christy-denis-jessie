@@ -15,15 +15,15 @@ class CategoryViewController: UIViewController {
     var cartController = ShoppingCartController()
     
     // MARK: - Setup
-    static func goToStore() -> CategoryViewController {
-        let storyboard = UIStoryboard(name: "CatsForSale", bundle: nil)
-        print(storyboard)
-        let categoryVC = storyboard.instantiateViewController(withIdentifier: "CategoryViewController") as! CategoryViewController
-
-        categoryVC.modalPresentationStyle = .fullScreen
-
-        return categoryVC
-    }
+//    static func goToStore() -> CategoryViewController {
+//        let storyboard = UIStoryboard(name: "CatsForSale", bundle: nil)
+//        print(storyboard)
+//        let categoryVC = storyboard.instantiateViewController(withIdentifier: "CategoryViewController") as! CategoryViewController
+//
+//        categoryVC.modalPresentationStyle = .fullScreen
+//
+//        return categoryVC
+//    }
 
     // MARK: - View
     override func viewDidLoad() {
@@ -42,7 +42,14 @@ class CategoryViewController: UIViewController {
         if segue.identifier == "ShowCatsForSale" {
             let destinationVC = segue.destination as! AllCatsTableViewController
             destinationVC.cartController = cartController
+        } else if segue.identifier == "ToLandingPage" {
+            if let user = currentUser {
+                let destinationVC = segue.destination as! LandingPageViewController
+                destinationVC.currentUser = user
+            }
         }
     }
+
+    @IBAction func unwindToCategories(segue: UIStoryboard) {}
 }
 
