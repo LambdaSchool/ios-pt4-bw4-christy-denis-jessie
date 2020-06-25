@@ -16,25 +16,21 @@ class LandingPageViewController: UIViewController {
     var userController: UserController?
     var currentUser: User?
 
-//    static func goToLandingPage() -> LandingPageViewController {
-//        let storyboard = UIStoryboard(name: "LandingPage", bundle: nil)
-//        let landingPageVC = storyboard.instantiateViewController(withIdentifier: "LandingPageViewController") as! LandingPageViewController
-//        return landingPageVC
-//    }
+    //    static func goToLandingPage() -> LandingPageViewController {
+    //        let storyboard = UIStoryboard(name: "LandingPage", bundle: nil)
+    //        let landingPageVC = storyboard.instantiateViewController(withIdentifier: "LandingPageViewController") as! LandingPageViewController
+    //        return landingPageVC
+    //    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        if currentUser != nil {
+        if userController != nil {
             self.dismiss(animated: true, completion: nil)
         }
     }
 
     @IBAction func showLogin() {
         let loginVC = UserLoginViewController.newLogin()
-        present(loginVC, animated: true, completion: nil)
+        self.present(loginVC, animated: true)
     }
 }
