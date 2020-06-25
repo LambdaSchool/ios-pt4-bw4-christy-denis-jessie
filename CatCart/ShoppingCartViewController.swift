@@ -8,23 +8,45 @@
 
 import UIKit
 
-class ShoppingCartViewController: UIViewController {
+class ShoppingCartViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var subtotalLabel: UILabel!
+    @IBOutlet weak var numberOfItemsLabel: UILabel!
+
+
+    var cartController: ShoppingCartController?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        tableView.delegate = self
+        tableView.dataSource = self
     }
-    
 
-    /*
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
+        if segue.identifier == "ShowPaymentPage" {
+            let paymentPageVC = segue.destination as! PaymentPageViewController
+        }
+    }
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return cartController?.itemNames.count ?? 0
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath) as! ItemTableViewCell
+
+        cell.nameLabel.text = cartController?.itemNames[indexPath.row]
+        let price = cartController?.itemPrices[indexPath.row]
+        cell.priceLabel.text = "$\(String(describing: price))"
+        
+        return cell
+    }
+
+    @IBAction func checkoutButtonPressed(_ sender: Any) {
+        performSegue(withIdentifier: "ShowPaymentPage", sender: self)
+    }
 }
