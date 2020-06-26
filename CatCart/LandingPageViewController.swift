@@ -24,7 +24,7 @@ class LandingPageViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        if userController != nil {
+        if currentUser != nil {
             self.dismiss(animated: true, completion: nil)
         }
     }
