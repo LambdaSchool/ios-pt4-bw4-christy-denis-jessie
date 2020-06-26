@@ -103,8 +103,6 @@ class PaymentPageViewController: UIViewController {
             expDateTextField.text == "" ||
             cVVCodeTextField.text == "" ) {
             
-            
-            
             DispatchQueue.main.async {
                 let alertController = UIAlertController(
                     title: "Missing Information",
@@ -117,9 +115,6 @@ class PaymentPageViewController: UIViewController {
                 alertController.addAction(alertAction)
                 self.present(alertController, animated: true)
             }
-            
-            
-            
         } else {
             
             let firstName = firstNameTextField.text
@@ -170,8 +165,21 @@ class PaymentPageViewController: UIViewController {
             
             performSegue(withIdentifier: "ShowCheckOutSegue", sender: AnyObject.self)
 
+            currentUserShippingAddress = ShippingAdress(
+                shippingAddress: shippingAddress!,
+                shippingCity: shippingCity!,
+                shippingState: shippingState!,
+                shippingZip: shippingZip!)
+            
+            currentUserCreditCard = CreditCard(
+                creditCardNumber: creditCardNumber!,
+                creditCardEXP: creditCardEXP!,
+                creditCardCVV: creditCardCVV!)
+            
+            print("Name: \(String(describing: currentUser?.firstName))")
+            print("State: \(String(describing: currentUserShippingAddress?.shippingState))")
+            print("CVV: \(String(describing: currentUserCreditCard?.creditCardCVV))")
         }
-        
     }
     
     override func viewDidLoad() {
@@ -179,7 +187,6 @@ class PaymentPageViewController: UIViewController {
         
         // Do any additional setup after loading the view.
     }
-    
     
     
     // MARK: - Navigation
@@ -195,15 +202,4 @@ class PaymentPageViewController: UIViewController {
             }
         }
     }
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
 }
