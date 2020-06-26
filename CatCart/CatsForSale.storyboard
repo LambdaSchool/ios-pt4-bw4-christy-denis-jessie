@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--LandingPage-->
+        <!--UserLogin-->
         <scene sceneID="HyP-wZ-Vdu">
             <objects>
-                <viewControllerPlaceholder storyboardName="LandingPage" id="IYf-Kg-ngQ" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="UserLogin" id="IYf-Kg-ngQ" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="O1w-R8-767"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HP7-Pm-YUN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -25,51 +25,76 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose a category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U7w-5n-SQh">
-                                <rect key="frame" x="134.5" y="108" width="145" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cat10" translatesAutoresizingMaskIntoConstraints="NO" id="0lC-a9-lcy">
-                                <rect key="frame" x="107" y="139" width="200" height="200"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="Wl1-D6-T5A"/>
-                                </constraints>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mouse" translatesAutoresizingMaskIntoConstraints="NO" id="df6-bC-Jyt">
-                                <rect key="frame" x="107" y="389" width="200" height="199"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="riv-mQ-2Q6"/>
-                                </constraints>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ln3-mb-6lH">
-                                <rect key="frame" x="191" y="349" width="32" height="30"/>
-                                <state key="normal" title="Cats"/>
-                                <connections>
-                                    <segue destination="cO3-8a-msz" kind="show" identifier="ShowCatsForSale" id="kKA-tz-qo6"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="72H-U4-Fsn">
-                                <rect key="frame" x="162" y="608" width="90" height="30"/>
-                                <state key="normal" title="Cat Products"/>
-                                <connections>
-                                    <segue destination="6e9-pj-4SN" kind="show" id="wgn-FB-sQU"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="UBc-Ck-6Az">
+                                <rect key="frame" x="12" y="103.5" width="390" height="689.5"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="M3m-PH-YfT">
+                                        <rect key="frame" x="95" y="0.0" width="200" height="242"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cat10" translatesAutoresizingMaskIntoConstraints="NO" id="0lC-a9-lcy">
+                                                <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="200" id="Wl1-D6-T5A"/>
+                                                </constraints>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ln3-mb-6lH">
+                                                <rect key="frame" x="84" y="212" width="32" height="30"/>
+                                                <state key="normal" title="Cats"/>
+                                                <connections>
+                                                    <segue destination="cO3-8a-msz" kind="show" identifier="ShowCatsForSale" id="kKA-tz-qo6"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="BKd-3k-MyJ">
+                                        <rect key="frame" x="95" y="254" width="200" height="241"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mouse" translatesAutoresizingMaskIntoConstraints="NO" id="df6-bC-Jyt">
+                                                <rect key="frame" x="0.0" y="0.0" width="200" height="199"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="200" id="riv-mQ-2Q6"/>
+                                                </constraints>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="72H-U4-Fsn">
+                                                <rect key="frame" x="55" y="211" width="90" height="30"/>
+                                                <state key="normal" title="Cat Products"/>
+                                                <connections>
+                                                    <segue destination="6e9-pj-4SN" kind="show" id="wgn-FB-sQU"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="WYM-Kr-jyd">
+                                        <rect key="frame" x="120" y="507" width="150" height="182.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FGe-D2-ksA">
+                                                <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="150" id="bdb-Rj-NF3"/>
+                                                    <constraint firstAttribute="width" secondItem="FGe-D2-ksA" secondAttribute="height" multiplier="1:1" id="mXa-7P-80f"/>
+                                                </constraints>
+                                                <state key="normal" title="Button" image="Cat2"/>
+                                                <connections>
+                                                    <segue destination="ob2-EK-jzc" kind="show" identifier="ShowCatsNearbySegue" id="rda-jg-JMS"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cats Nearby" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e3M-tf-YRt">
+                                                <rect key="frame" x="28" y="162" width="94.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="U7w-5n-SQh" firstAttribute="centerX" secondItem="gvE-t6-gOf" secondAttribute="centerX" id="7go-DG-3OO"/>
-                            <constraint firstItem="df6-bC-Jyt" firstAttribute="top" secondItem="0lC-a9-lcy" secondAttribute="bottom" constant="50" id="DOY-eE-BRR"/>
-                            <constraint firstItem="0lC-a9-lcy" firstAttribute="centerX" secondItem="gvE-t6-gOf" secondAttribute="centerX" id="MSW-fx-tqo"/>
-                            <constraint firstItem="72H-U4-Fsn" firstAttribute="top" secondItem="df6-bC-Jyt" secondAttribute="bottom" constant="20" id="bF6-VY-bEc"/>
-                            <constraint firstItem="72H-U4-Fsn" firstAttribute="centerX" secondItem="gvE-t6-gOf" secondAttribute="centerX" id="dID-Tl-8Ud"/>
-                            <constraint firstItem="0lC-a9-lcy" firstAttribute="top" secondItem="U7w-5n-SQh" secondAttribute="bottom" constant="10" id="egj-RI-O0s"/>
-                            <constraint firstItem="ln3-mb-6lH" firstAttribute="centerX" secondItem="gvE-t6-gOf" secondAttribute="centerX" id="lA9-DJ-e3t"/>
-                            <constraint firstItem="ln3-mb-6lH" firstAttribute="top" secondItem="0lC-a9-lcy" secondAttribute="bottom" constant="10" id="rRc-P0-QPj"/>
-                            <constraint firstItem="df6-bC-Jyt" firstAttribute="centerX" secondItem="gvE-t6-gOf" secondAttribute="centerX" id="xFo-Qn-9lx"/>
-                            <constraint firstItem="U7w-5n-SQh" firstAttribute="top" secondItem="rsu-t0-MlG" secondAttribute="top" constant="20" id="xlE-Ld-zel"/>
+                            <constraint firstItem="UBc-Ck-6Az" firstAttribute="centerX" secondItem="gvE-t6-gOf" secondAttribute="centerX" id="N4g-Ge-Cop"/>
+                            <constraint firstItem="UBc-Ck-6Az" firstAttribute="leading" secondItem="rsu-t0-MlG" secondAttribute="leading" constant="12" id="RiA-3i-tbC"/>
+                            <constraint firstItem="UBc-Ck-6Az" firstAttribute="centerY" secondItem="gvE-t6-gOf" secondAttribute="centerY" id="eeB-wc-Fs7"/>
+                            <constraint firstItem="rsu-t0-MlG" firstAttribute="trailing" secondItem="UBc-Ck-6Az" secondAttribute="trailing" constant="12" id="ij1-Zh-VLU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="rsu-t0-MlG"/>
                     </view>
@@ -215,7 +240,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="RLI-vJ-iyD">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -390,6 +415,7 @@
     </scenes>
     <resources>
         <image name="Cat10" width="250" height="200"/>
+        <image name="Cat2" width="250" height="300"/>
         <image name="cart.badge.plus" catalog="system" width="128" height="98"/>
         <image name="mouse" width="253" height="199"/>
     </resources>
