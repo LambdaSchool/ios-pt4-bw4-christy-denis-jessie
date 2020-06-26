@@ -7,6 +7,7 @@
 //
 
 #import "ProductTableViewCell.h"
+#import "CatCart-Swift.h"
 
 @implementation ProductTableViewCell
 
