@@ -8,6 +8,19 @@
 
 import UIKit
 
+struct CreditCard {
+    let creditCardNumber: Int
+    let creditCardEXP: Int // convert to date
+    let creditCardCVV: Int
+}
+
+struct ShippingAdress {
+    let shippingAddress: String
+    let shippingCity: String
+    let shippingState: String
+    let shippingZip: Int
+}
+
 class PaymentPageViewController: UIViewController {
     
     @IBOutlet weak var firstNameTextField: UITextField!
@@ -29,7 +42,9 @@ class PaymentPageViewController: UIViewController {
     
     @IBOutlet weak var checkOutButton: UIButton!
     
-    var user: User?
+    var currentUser: User?
+    var currentUserCreditCard: CreditCard?
+    var currentUserShippingAddress: ShippingAdress?
     
     @IBAction func isShippingTheSameAsBillingSwitch(_ sender: UISwitch) {
         
@@ -72,7 +87,7 @@ class PaymentPageViewController: UIViewController {
     
     @IBAction func checkOutButtonTapped(_ sender: UIButton) {
         
-        if  firstNameTextField.text == "" ||
+        if  (firstNameTextField.text == "" ||
             lastNameTextField.text == "" ||
             emailTextField.text == "" ||
             billingAddressTextField.text == "" ||
@@ -85,7 +100,7 @@ class PaymentPageViewController: UIViewController {
             shippingZipCodeTextField.text == "" ||
             creditCardNumberTextField.text == "" ||
             expDateTextField.text == "" ||
-            cVVCodeTextField.text == "" {
+            cVVCodeTextField.text == "" ) {
             
             DispatchQueue.main.async {
                 let alertController = UIAlertController(
@@ -99,11 +114,57 @@ class PaymentPageViewController: UIViewController {
                 alertController.addAction(alertAction)
                 self.present(alertController, animated: true)
             }
-            
         } else {
+            
+            let firstName = firstNameTextField.text
+            let lastName = lastNameTextField.text
+            let email = emailTextField.text
+            let address = billingAddressTextField.text
+            let city = billingCityTextField.text
+            let state = billingStateTextField.text
+            let zipCode = Int16(billingZipCodeTextField.text ?? "0")
+            
+            let shippingAddress = shippingAddressTextFeild.text
+            let shippingCity = shippingCityTextField.text
+            let shippingState = shippingStateTextField.text
+            let shippingZip = Int(shippingZipCodeTextField.text ?? "0")
+            
+            let creditCardNumber = Int(creditCardNumberTextField.text ?? "0")
+            let creditCardEXP = Int(expDateTextField.text ?? "0") // convert to date formatt
+            let creditCardCVV = Int(cVVCodeTextField.text ?? "0")
+            
+            currentUser = User(
+                userName: "user1",
+                password: "password123",
+                firstName: firstName,
+                lastName: lastName,
+                email: email,
+                longitude: nil,
+                latitude: nil,
+                streetAddress: address,
+                city: city,
+                state: state,
+                zipCode: zipCode)
+            
 
+            currentUserShippingAddress = ShippingAdress(
+                shippingAddress: shippingAddress!,
+                shippingCity: shippingCity!,
+                shippingState: shippingState!,
+                shippingZip: shippingZip!)
+            
+            currentUserCreditCard = CreditCard(
+                creditCardNumber: creditCardNumber!,
+                creditCardEXP: creditCardEXP!,
+                creditCardCVV: creditCardCVV!)
+            
+            print("Name: \(String(describing: currentUser?.firstName))")
+            print("State: \(String(describing: currentUserShippingAddress?.shippingState))")
+            print("CVV: \(String(describing: currentUserCreditCard?.creditCardCVV))")
         }
+   
     }
+    
     
     
     
@@ -114,7 +175,7 @@ class PaymentPageViewController: UIViewController {
     }
     
     
-    /*
+    
      // MARK: - Navigation
      
      // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -122,6 +183,6 @@ class PaymentPageViewController: UIViewController {
      // Get the new view controller using segue.destination.
      // Pass the selected object to the new view controller.
      }
-     */
+     
     
 }
