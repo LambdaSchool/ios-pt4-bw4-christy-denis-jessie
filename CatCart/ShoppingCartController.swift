@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class ShoppingCartController {
 
@@ -15,13 +16,15 @@ class ShoppingCartController {
 
     var itemNames: [String] = []
     var itemPrices: [Double] = []
+    var itemImages: [UIImage] = []
 
     var userController: UserController?
     var currentUser: User?
 
-    func addItem(itemName: String, itemPrice: Double) {
+    func addItem(itemName: String, itemPrice: Double, image: UIImage) {
         itemNames.append(itemName)
         itemPrices.append(itemPrice)
+        itemImages.append(image)
     }
 
     func updateCart() { // POST

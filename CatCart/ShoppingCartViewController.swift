@@ -14,19 +14,26 @@ class ShoppingCartViewController: UIViewController, UITableViewDelegate, UITable
     @IBOutlet weak var subtotalLabel: UILabel!
     @IBOutlet weak var numberOfItemsLabel: UILabel!
 
-
     var cartController: ShoppingCartController?
+//    var cat: Cat?
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+
+        let currencyFormatter = NumberFormatter()
+        currencyFormatter.usesGroupingSeparator = true
+        currencyFormatter.numberStyle = .currency
+        currencyFormatter.locale = Locale.current
+
+        updateViews(formatter: currencyFormatter)
     }
 
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-
         if segue.identifier == "ShowPaymentPage" {
             let paymentPageVC = segue.destination as! PaymentPageViewController
         }
@@ -43,21 +50,38 @@ class ShoppingCartViewController: UIViewController, UITableViewDelegate, UITable
         if let price = cartController?.itemPrices[indexPath.row] {
             cell.priceLabel.text = "$\(price)"
         }
-        
+        cell.itemImageView?.image = cartController?.itemImages[indexPath.row]
+//        guard let cat = item else { return }
+//        if let catImageURLString = cat.imageURL {
+//            guard let catImageURL = URL(string: catImageURLString) else { return }
+//            DispatchQueue.global().async {
+//                guard let imageData = try? Data(contentsOf: catImageURL) else { return }
+//
+//                let catImage = UIImage(data: imageData)
+//                DispatchQueue.main.async {
+//                    cell.catImageView.image = catImage
+//                }
+//            }
+//        }
         return cell
     }
 
     @IBAction func checkoutButtonPressed(_ sender: Any) {
-        performSegue(withIdentifier: "ShowPaymentPage", sender: self)
+//        performSegue(withIdentifier: "ShowPaymentPage", sender: self)
     }
 
-    func updateViews() {
+    func updateViews(formatter: NumberFormatter) {
+
         tableView.reloadData()
         guard let cartController = cartController else { return }
         var subtotal = 0.0
         for price in cartController.itemPrices {
             subtotal += price
         }
-        subtotalLabel.text = "$\(subtotal)"
+
+        if let total = formatter.string(from: NSNumber(value: subtotal)) {
+            subtotalLabel.text = "\(total)"
+        }
+        numberOfItemsLabel.text = "Subtotal (\(cartController.itemNames.count) items):"
     }
 }

@@ -81,6 +81,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="imageView" destination="rA1-9q-Kbj" id="RhD-4O-2CS"/>
                                             <outlet property="nameLabel" destination="YzQ-8i-NSU" id="9Mt-gy-FrA"/>
                                             <outlet property="priceLabel" destination="F8I-0Y-Szm" id="8tm-kn-tES"/>
                                         </connections>
