@@ -19,10 +19,24 @@ class UserSignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
         view.addGestureRecognizer(tap)
     }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if currentUser != nil {
+            self.dismiss(animated: true, completion: nil)
+        }
+    }
+
+    static func newSignUp() -> UserSignUpViewController {
+        let storyboard = UIStoryboard(name: "UserSignup", bundle: nil)
+        let signupVC = storyboard.instantiateViewController(withIdentifier: "UserSignUpViewController") as! UserSignUpViewController
+        return signupVC
+    }
+
 
     @IBAction func showLogin() {
         let loginVC = UserLoginViewController.newLogin()

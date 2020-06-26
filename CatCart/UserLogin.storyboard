@@ -90,6 +90,9 @@
                                 <rect key="frame" x="71" y="473" width="272" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Don't have an account? Create one."/>
+                                <connections>
+                                    <action selector="showSignUp" destination="Flz-FX-azB" eventType="touchUpInside" id="oPf-Oy-Stz"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
