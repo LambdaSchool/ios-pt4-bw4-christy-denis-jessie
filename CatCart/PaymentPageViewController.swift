@@ -10,6 +10,29 @@ import UIKit
 
 class PaymentPageViewController: UIViewController {
 
+    @IBOutlet weak var firstNameTextField: UITextField!
+    @IBOutlet weak var lastNameTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var billingAddressTextField: UITextField!
+    @IBOutlet weak var billingCityTextField: UITextField!
+    @IBOutlet weak var billingStateTextField: UITextField!
+    @IBOutlet weak var billingZipCodeTextField: UITextField!
+    
+    @IBOutlet weak var shippingAddressTextFeild: UITextField!
+    @IBOutlet weak var shippingCityTextField: UITextField!
+    @IBOutlet weak var shippingStateTextField: UITextField!
+    @IBOutlet weak var shippingZipCodeTextField: UITextField!
+        
+    @IBOutlet weak var creditCardNumberTextField: UITextField!
+    @IBOutlet weak var expDateTextField: UITextField!
+    @IBOutlet weak var cVVCodeTextField: UITextField!
+    
+    @IBOutlet weak var checkOutButton: UIButton!
+    @IBOutlet weak var isShippingtheSameAsBilling: UISwitch!
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
