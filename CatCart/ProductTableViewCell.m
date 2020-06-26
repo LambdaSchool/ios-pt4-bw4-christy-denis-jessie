@@ -13,11 +13,11 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    
-    if (_product!=nil) {
-        _productNameLabel.text=_product.name;
-        _productPriceLabel.text=[NSString stringWithFormat:@"$%.2lf", _product.price];
-    }
+}
+
+- (void)setProduct:(Product *)product {
+    _productNameLabel.text = product.name;
+    _productPriceLabel.text=[NSString stringWithFormat:@"$%.2lf", product.price];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
