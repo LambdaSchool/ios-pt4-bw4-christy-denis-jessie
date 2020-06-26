@@ -40,13 +40,24 @@ class ShoppingCartViewController: UIViewController, UITableViewDelegate, UITable
         let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath) as! ItemTableViewCell
 
         cell.nameLabel.text = cartController?.itemNames[indexPath.row]
-        let price = cartController?.itemPrices[indexPath.row]
-        cell.priceLabel.text = "$\(String(describing: price))"
+        if let price = cartController?.itemPrices[indexPath.row] {
+            cell.priceLabel.text = "$\(price)"
+        }
         
         return cell
     }
 
     @IBAction func checkoutButtonPressed(_ sender: Any) {
         performSegue(withIdentifier: "ShowPaymentPage", sender: self)
+    }
+
+    func updateViews() {
+        tableView.reloadData()
+        guard let cartController = cartController else { return }
+        var subtotal = 0.0
+        for price in cartController.itemPrices {
+            subtotal += price
+        }
+        subtotalLabel.text = "$\(subtotal)"
     }
 }
