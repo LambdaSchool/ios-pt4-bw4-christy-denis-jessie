@@ -37,11 +37,12 @@ class UserSignUpViewController: UIViewController {
         return signupVC
     }
 
-
-    @IBAction func showLogin() {
+    func showLogin() {
+//    func showLogin(completion: @escaping () -> Void) {
         let loginVC = UserLoginViewController.newLogin()
         loginVC.currentUser = currentUser
-        present(loginVC, animated: true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
+//        present(loginVC, animated: true, completion: nil)
     }
     
     @IBAction func createAccount(_ sender: UIButton) {
