@@ -9,7 +9,7 @@
 import UIKit
 
 class PaymentPageViewController: UIViewController {
-
+    
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
@@ -22,32 +22,70 @@ class PaymentPageViewController: UIViewController {
     @IBOutlet weak var shippingCityTextField: UITextField!
     @IBOutlet weak var shippingStateTextField: UITextField!
     @IBOutlet weak var shippingZipCodeTextField: UITextField!
-        
+    
     @IBOutlet weak var creditCardNumberTextField: UITextField!
     @IBOutlet weak var expDateTextField: UITextField!
     @IBOutlet weak var cVVCodeTextField: UITextField!
     
     @IBOutlet weak var checkOutButton: UIButton!
-    @IBOutlet weak var isShippingtheSameAsBilling: UISwitch!
     
+    
+    @IBAction func isShippingTheSameAsBillingSwitch(_ sender: UISwitch) {
+        
+        if (sender.isOn == true) {
+            
+            if billingAddressTextField.text == "" || billingCityTextField.text == "" ||
+                billingStateTextField.text == "" ||  billingZipCodeTextField.text == "" {
+                DispatchQueue.main.async {
+                    let alertController = UIAlertController(
+                        title: "Billing Address needed",
+                        message: "Please fill required Billing address fields.",
+                        preferredStyle: .alert)
+                    let alertAction = UIAlertAction(
+                        title: "OK",
+                        style: UIAlertAction.Style.default,
+                        handler: nil)
+                    alertController.addAction(alertAction)
+                    self.present(alertController, animated: true)
+                    sender.isOn = false
+                    
+                    self.shippingAddressTextFeild.text = ""
+                    self.shippingCityTextField.text = ""
+                    self.shippingStateTextField.text = ""
+                    self.shippingZipCodeTextField.text = ""
+                }
+            }
+            
+            shippingAddressTextFeild.text = billingAddressTextField.text
+            shippingCityTextField.text = billingCityTextField.text
+            shippingStateTextField.text = billingStateTextField.text
+            shippingZipCodeTextField.text = billingZipCodeTextField.text
+            
+        } else if (sender.isOn == false) {
+            shippingAddressTextFeild.text = ""
+            shippingCityTextField.text = ""
+            shippingStateTextField.text = ""
+            shippingZipCodeTextField.text = ""
+        }
+    }
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
     
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
