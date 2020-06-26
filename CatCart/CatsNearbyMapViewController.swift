@@ -80,6 +80,7 @@ extension CatsNearbyMapViewController: MKMapViewDelegate {
         guard let cat = annotation as? Cat else { return nil }
         let view = mapView.dequeueReusableAnnotationView(withIdentifier: "CatAnnotationView", for: cat) as? MKMarkerAnnotationView
         
+        view?.glyphImage = UIImage(named: "KittyIcon")
         view?.markerTintColor = .systemBlue
         view?.canShowCallout = true
         
