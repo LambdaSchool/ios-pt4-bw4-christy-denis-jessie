@@ -54,6 +54,11 @@ class UserLoginViewController: UIViewController {
 //        storeVC.currentUser = currentUser
 //        show(storeVC, sender: self)
 //    }
+    @IBAction func showSignUp() {
+        let signupVC = UserSignUpViewController.newSignUp()
+        signupVC.userController = userController
+        present(signupVC, animated: true, completion: nil)
+    }
     
     @IBAction func loginTapped(_ sender: UIButton) {
         if let userName = userNameTextField.text,
