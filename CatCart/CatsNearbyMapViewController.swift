@@ -81,7 +81,7 @@ extension CatsNearbyMapViewController: MKMapViewDelegate {
         let view = mapView.dequeueReusableAnnotationView(withIdentifier: "CatAnnotationView", for: cat) as? MKMarkerAnnotationView
         
         view?.glyphImage = UIImage(named: "KittyIcon")
-        view?.markerTintColor = .systemBlue
+        view?.markerTintColor = .black
         view?.canShowCallout = true
         
         let detailView = CatAnnotationDetailView()
