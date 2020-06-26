@@ -29,11 +29,11 @@ class PaymentPageViewController: UIViewController {
     
     @IBOutlet weak var checkOutButton: UIButton!
     
+    var user: User?
     
     @IBAction func isShippingTheSameAsBillingSwitch(_ sender: UISwitch) {
         
         if (sender.isOn == true) {
-            
             if billingAddressTextField.text == "" || billingCityTextField.text == "" ||
                 billingStateTextField.text == "" ||  billingZipCodeTextField.text == "" {
                 DispatchQueue.main.async {
@@ -66,6 +66,42 @@ class PaymentPageViewController: UIViewController {
             shippingCityTextField.text = ""
             shippingStateTextField.text = ""
             shippingZipCodeTextField.text = ""
+        }
+    }
+    
+    
+    @IBAction func checkOutButtonTapped(_ sender: UIButton) {
+        
+        if  firstNameTextField.text == "" ||
+            lastNameTextField.text == "" ||
+            emailTextField.text == "" ||
+            billingAddressTextField.text == "" ||
+            billingCityTextField.text == "" ||
+            billingStateTextField.text == "" ||
+            billingZipCodeTextField.text == "" ||
+            shippingAddressTextFeild.text == "" ||
+            shippingCityTextField.text == "" ||
+            shippingStateTextField.text == "" ||
+            shippingZipCodeTextField.text == "" ||
+            creditCardNumberTextField.text == "" ||
+            expDateTextField.text == "" ||
+            cVVCodeTextField.text == "" {
+            
+            DispatchQueue.main.async {
+                let alertController = UIAlertController(
+                    title: "Missing Information",
+                    message: "Please fill all fields.",
+                    preferredStyle: .alert)
+                let alertAction = UIAlertAction(
+                    title: "OK",
+                    style: UIAlertAction.Style.default,
+                    handler: nil)
+                alertController.addAction(alertAction)
+                self.present(alertController, animated: true)
+            }
+            
+        } else {
+
         }
     }
     

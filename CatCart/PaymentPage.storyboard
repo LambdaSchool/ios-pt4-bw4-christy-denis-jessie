@@ -306,6 +306,9 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <color key="titleShadowColor" red="0.0" green="0.3411764706" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="checkOutButtonTapped:" destination="qTq-Cv-5gg" eventType="touchUpInside" id="mdx-Y2-ccX"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
