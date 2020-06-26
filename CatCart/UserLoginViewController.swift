@@ -34,7 +34,12 @@ class UserLoginViewController: UIViewController {
         let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
         view.addGestureRecognizer(tap)
     }
-    
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        updateViews()
+    }
+
     private func updateViews() {
         guard isViewLoaded else { return }
         guard let user = currentUser else { return }
@@ -94,6 +99,7 @@ class UserLoginViewController: UIViewController {
                         self.userPasswordTextField.text = ""
                         self.dismiss(animated: true, completion: nil)
                     }
+
                 } else {
                     print("password match: false")
                     DispatchQueue.main.async {
