@@ -60,7 +60,7 @@ class CatAnnotationDetailView: UIView {
         viewImageButton.titleLabel?.textAlignment = .center
         viewImageButton.titleLabel?.font = UIFont(name: "helvetica", size: 14)
         
-        let placeDateStackView = UIStackView(arrangedSubviews: [nameLabel, priceLabel])
+        let placeDateStackView = UIStackView(arrangedSubviews: [priceLabel, viewImageButton])
         placeDateStackView.spacing = UIStackView.spacingUseSystem
         let latLonStackView = UIStackView(arrangedSubviews: [latitudeLabel, longitudeLabel])
         latLonStackView.spacing = UIStackView.spacingUseSystem
@@ -84,7 +84,7 @@ class CatAnnotationDetailView: UIView {
     private func updateSubviews() {
         guard let cat = cat else { return }
         nameLabel.text = cat.name
-        priceLabel.text = "\(cat.price)"
+        priceLabel.text = "Price: $\(cat.price)"
         latitudeLabel.text = "Lat: " + latLonFormatter.string(from: cat.latitude as NSNumber)!
         longitudeLabel.text = "Lon: " + latLonFormatter.string(from: cat.longitude as NSNumber)!
     }

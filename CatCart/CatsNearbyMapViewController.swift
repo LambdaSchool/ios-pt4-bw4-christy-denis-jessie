@@ -93,7 +93,7 @@ extension CatsNearbyMapViewController: MKMapViewDelegate {
 
 extension CatsNearbyMapViewController: MapDetailViewDelegate {
     func didPressButton(with cat: Cat) {
-        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let storyBoard: UIStoryboard = UIStoryboard(name: "CatsForSale", bundle: nil)
         let detailView = storyBoard.instantiateViewController(withIdentifier: "CatDetailViewController") as! CatDetailViewController
         detailView.cat = cat
         present(detailView, animated: true)
