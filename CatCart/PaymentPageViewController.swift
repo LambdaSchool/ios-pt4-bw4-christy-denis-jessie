@@ -174,48 +174,6 @@ class PaymentPageViewController: UIViewController {
         
     }
     
-    
-    @IBAction func isShippingTheSameAsBillingSwitch(_ sender: UISwitch) {
-        
-        if (sender.isOn == true) {
-            
-            if billingAddressTextField.text == "" || billingCityTextField.text == "" ||
-                billingStateTextField.text == "" ||  billingZipCodeTextField.text == "" {
-                DispatchQueue.main.async {
-                    let alertController = UIAlertController(
-                        title: "Billing Address needed",
-                        message: "Please fill required Billing address fields.",
-                        preferredStyle: .alert)
-                    let alertAction = UIAlertAction(
-                        title: "OK",
-                        style: UIAlertAction.Style.default,
-                        handler: nil)
-                    alertController.addAction(alertAction)
-                    self.present(alertController, animated: true)
-                    sender.isOn = false
-                    
-                    self.shippingAddressTextFeild.text = ""
-                    self.shippingCityTextField.text = ""
-                    self.shippingStateTextField.text = ""
-                    self.shippingZipCodeTextField.text = ""
-                }
-            }
-            
-            shippingAddressTextFeild.text = billingAddressTextField.text
-            shippingCityTextField.text = billingCityTextField.text
-            shippingStateTextField.text = billingStateTextField.text
-            shippingZipCodeTextField.text = billingZipCodeTextField.text
-            
-        } else if (sender.isOn == false) {
-            shippingAddressTextFeild.text = ""
-            shippingCityTextField.text = ""
-            shippingStateTextField.text = ""
-            shippingZipCodeTextField.text = ""
-        }
-    }
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
