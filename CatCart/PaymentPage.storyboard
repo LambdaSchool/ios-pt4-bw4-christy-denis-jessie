@@ -317,6 +317,24 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ZQj-Yg-Ltc"/>
                     </view>
+                    <connections>
+                        <outlet property="billingAddressTextField" destination="ENt-sX-rWN" id="0ao-cj-Vei"/>
+                        <outlet property="billingCityTextField" destination="p3M-NA-9ar" id="x70-7P-6le"/>
+                        <outlet property="billingStateTextField" destination="sIF-0R-3DO" id="8kx-zL-wKQ"/>
+                        <outlet property="billingZipCodeTextField" destination="kfs-Vo-jiX" id="cnz-nc-s0C"/>
+                        <outlet property="cVVCodeTextField" destination="yyd-Iq-6c5" id="nyb-kF-j16"/>
+                        <outlet property="checkOutButton" destination="GCs-ic-r1m" id="Ajt-N6-Nef"/>
+                        <outlet property="creditCardNumberTextField" destination="6UQ-um-1Hf" id="Gkf-ym-jfP"/>
+                        <outlet property="emailTextField" destination="vpi-Ng-wna" id="Gib-NQ-iEm"/>
+                        <outlet property="expDateTextField" destination="GPX-YJ-pPd" id="9qf-gU-4At"/>
+                        <outlet property="firstNameTextField" destination="Q6L-a8-pqL" id="bmQ-YA-HXN"/>
+                        <outlet property="isShippingtheSameAsBilling" destination="Khr-1H-UOz" id="nEH-Rh-O8h"/>
+                        <outlet property="lastNameTextField" destination="1ef-OI-WUW" id="4vk-Tt-wda"/>
+                        <outlet property="shippingAddressTextFeild" destination="DqR-bj-DOg" id="DT8-eJ-ho5"/>
+                        <outlet property="shippingCityTextField" destination="6Fy-SY-qXk" id="WNZ-V8-dKS"/>
+                        <outlet property="shippingStateTextField" destination="5Pf-h5-r2D" id="rBf-oY-IfA"/>
+                        <outlet property="shippingZipCodeTextField" destination="9Fw-Au-b15" id="Njf-05-lyL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dHq-8c-MCS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
