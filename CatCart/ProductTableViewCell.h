@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CatCart-Swift.h"
+
+@class CKProduct;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -17,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) IBOutlet UILabel *productPriceLabel;
 // TODO: fix to correctly read as CKProduct
 // TODO: verify that this is formatted correctly
-@property (strong, nonatomic) Product *product;
+@property (nonatomic) CKProduct *product;
 
 @end
 
