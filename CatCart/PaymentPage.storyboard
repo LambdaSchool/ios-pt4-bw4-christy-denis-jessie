@@ -334,7 +334,6 @@
                         <outlet property="emailTextField" destination="vpi-Ng-wna" id="Gib-NQ-iEm"/>
                         <outlet property="expDateTextField" destination="GPX-YJ-pPd" id="9qf-gU-4At"/>
                         <outlet property="firstNameTextField" destination="Q6L-a8-pqL" id="bmQ-YA-HXN"/>
-                        <outlet property="isShippingtheSameAsBilling" destination="Khr-1H-UOz" id="nEH-Rh-O8h"/>
                         <outlet property="lastNameTextField" destination="1ef-OI-WUW" id="4vk-Tt-wda"/>
                         <outlet property="shippingAddressTextFeild" destination="DqR-bj-DOg" id="DT8-eJ-ho5"/>
                         <outlet property="shippingCityTextField" destination="6Fy-SY-qXk" id="WNZ-V8-dKS"/>
