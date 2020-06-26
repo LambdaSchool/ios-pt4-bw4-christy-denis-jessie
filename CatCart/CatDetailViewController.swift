@@ -58,8 +58,23 @@ class CatDetailViewController: UIViewController {
         if let image = self.catImageView.image {
             cartController.addItem(itemName: name, itemPrice: cat.price, image: image)
         }
-//        cartButton.badge = cartController.itemNames.count
 
+        if let name = cat.name {
+            DispatchQueue.main.async {
+                let alertController = UIAlertController(
+                    title: "Meow!",
+                    message: "\(String(describing: name)) was added to your cart!",
+                    preferredStyle: .alert)
+                let alertAction = UIAlertAction(
+                    title: "OK",
+                    style: UIAlertAction.Style.default,
+                    handler: nil )
+
+                alertController.addAction(alertAction)
+                self.present(alertController, animated: true)
+                //        cartButton.badge = cartController.itemNames.count
+            }
+        }
     }
 
     @IBAction func cartButtonPressed(_ sender: UIBarButtonItem) {
@@ -72,4 +87,5 @@ class CatDetailViewController: UIViewController {
             shoppingCartVC.cartController = cartController
         }
     }
+
 }
