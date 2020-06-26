@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		12806BB924A1BCDB00778400 /* User+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12806BB824A1BCDB00778400 /* User+Convenience.swift */; };
+		12806BE824A511D900778400 /* Cat+Annotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12806BE724A511D900778400 /* Cat+Annotation.swift */; };
+		12806BEA24A5128200778400 /* CatAnnotationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12806BE924A5128200778400 /* CatAnnotationDetailView.swift */; };
 		12BE944A249B035D00AD1542 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12BE9449249B035D00AD1542 /* AppDelegate.swift */; };
 		12BE944C249B035D00AD1542 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12BE944B249B035D00AD1542 /* SceneDelegate.swift */; };
 		12BE9453249B036700AD1542 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12BE9452249B036700AD1542 /* Assets.xcassets */; };
@@ -48,6 +50,8 @@
 
 /* Begin PBXFileReference section */
 		12806BB824A1BCDB00778400 /* User+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+Convenience.swift"; sourceTree = "<group>"; };
+		12806BE724A511D900778400 /* Cat+Annotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cat+Annotation.swift"; sourceTree = "<group>"; };
+		12806BE924A5128200778400 /* CatAnnotationDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatAnnotationDetailView.swift; sourceTree = "<group>"; };
 		12BE9446249B035D00AD1542 /* CatCart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CatCart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		12BE9449249B035D00AD1542 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		12BE944B249B035D00AD1542 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -184,6 +188,8 @@
 			children = (
 				95A6446F249C6B5700870401 /* CategoryViewController.swift */,
 				95A64471249C6B8700870401 /* CatsNearbyMapViewController.swift */,
+				12806BE724A511D900778400 /* Cat+Annotation.swift */,
+				12806BE924A5128200778400 /* CatAnnotationDetailView.swift */,
 				95A64473249C6BCD00870401 /* AllCatsTableViewController.swift */,
 				95A64475249C6BFF00870401 /* CatDetailViewController.swift */,
 				BA5318D324A3ACB000C0B379 /* CatTableViewCell.swift */,
@@ -314,6 +320,7 @@
 				BA49E62B24A1923F009CEEF6 /* Cat+Convenience.swift in Sources */,
 				9590BA15249B136A008E7AD9 /* LandingPageNavViewController.swift in Sources */,
 				95D9571324A19B8100AAA206 /* ShoppingCartViewController.swift in Sources */,
+				12806BEA24A5128200778400 /* CatAnnotationDetailView.swift in Sources */,
 				12BE94B6249C2E2A00AD1542 /* UserController.swift in Sources */,
 				12806BB924A1BCDB00778400 /* User+Convenience.swift in Sources */,
 				9574A9C924A43B8900CC1012 /* ShoppingCartController.swift in Sources */,
@@ -330,6 +337,7 @@
 				95A64474249C6BCD00870401 /* AllCatsTableViewController.swift in Sources */,
 				95A64472249C6B8700870401 /* CatsNearbyMapViewController.swift in Sources */,
 				12BE944C249B035D00AD1542 /* SceneDelegate.swift in Sources */,
+				12806BE824A511D900778400 /* Cat+Annotation.swift in Sources */,
 				BA49E62924A18EF5009CEEF6 /* CatRepresentation.swift in Sources */,
 				9590BA0F249B1285008E7AD9 /* UserLoginViewController.swift in Sources */,
 				95A64470249C6B5700870401 /* CategoryViewController.swift in Sources */,
