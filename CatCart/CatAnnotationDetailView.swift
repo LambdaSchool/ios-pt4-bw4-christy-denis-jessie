@@ -60,11 +60,13 @@ class CatAnnotationDetailView: UIView {
         viewImageButton.titleLabel?.textAlignment = .center
         viewImageButton.titleLabel?.font = UIFont(name: "helvetica", size: 14)
         
-        let placeDateStackView = UIStackView(arrangedSubviews: [priceLabel, viewImageButton])
-        placeDateStackView.spacing = UIStackView.spacingUseSystem
-        let latLonStackView = UIStackView(arrangedSubviews: [latitudeLabel, longitudeLabel])
-        latLonStackView.spacing = UIStackView.spacingUseSystem
-        let mainStackView = UIStackView(arrangedSubviews: [placeDateStackView, latLonStackView])
+        let priceStackView = UIStackView(arrangedSubviews: [priceLabel, viewImageButton])
+        priceStackView.spacing = UIStackView.spacingUseSystem
+        
+        let ageStackView = UIStackView(arrangedSubviews: [yearLabel, monthLabel])
+        ageStackView.spacing = UIStackView.spacingUseSystem
+        
+        let mainStackView = UIStackView(arrangedSubviews: [priceStackView, ageStackView])
         mainStackView.axis = .vertical
         mainStackView.spacing = UIStackView.spacingUseSystem
         
@@ -85,8 +87,9 @@ class CatAnnotationDetailView: UIView {
         guard let cat = cat else { return }
         nameLabel.text = cat.name
         priceLabel.text = "Price: $\(cat.price)"
-        latitudeLabel.text = "Lat: " + latLonFormatter.string(from: cat.latitude as NSNumber)!
-        longitudeLabel.text = "Lon: " + latLonFormatter.string(from: cat.longitude as NSNumber)!
+        yearLabel.text = "\(cat.years) years"
+        monthLabel.text = "\(cat.months) months old"
+
     }
     
 }
