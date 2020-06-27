@@ -103,6 +103,8 @@ class PaymentPageViewController: UIViewController {
             expDateTextField.text == "" ||
             cVVCodeTextField.text == "" ) {
             
+            
+            
             DispatchQueue.main.async {
                 let alertController = UIAlertController(
                     title: "Missing Information",
@@ -115,6 +117,9 @@ class PaymentPageViewController: UIViewController {
                 alertController.addAction(alertAction)
                 self.present(alertController, animated: true)
             }
+            
+            
+            
         } else {
             
             let firstName = firstNameTextField.text
@@ -147,7 +152,6 @@ class PaymentPageViewController: UIViewController {
                 state: state,
                 zipCode: zipCode)
             
-            
             currentUserShippingAddress = ShippingAdress(
                 shippingAddress: shippingAddress!,
                 shippingCity: shippingCity!,
@@ -165,20 +169,6 @@ class PaymentPageViewController: UIViewController {
             
             performSegue(withIdentifier: "ShowCheckOutSegue", sender: AnyObject.self)
 
-            currentUserShippingAddress = ShippingAdress(
-                shippingAddress: shippingAddress!,
-                shippingCity: shippingCity!,
-                shippingState: shippingState!,
-                shippingZip: shippingZip!)
-            
-            currentUserCreditCard = CreditCard(
-                creditCardNumber: creditCardNumber!,
-                creditCardEXP: creditCardEXP!,
-                creditCardCVV: creditCardCVV!)
-            
-            print("Name: \(String(describing: currentUser?.firstName))")
-            print("State: \(String(describing: currentUserShippingAddress?.shippingState))")
-            print("CVV: \(String(describing: currentUserCreditCard?.creditCardCVV))")
         }
     }
     

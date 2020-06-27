@@ -339,6 +339,7 @@
                         <outlet property="shippingCityTextField" destination="6Fy-SY-qXk" id="WNZ-V8-dKS"/>
                         <outlet property="shippingStateTextField" destination="5Pf-h5-r2D" id="rBf-oY-IfA"/>
                         <outlet property="shippingZipCodeTextField" destination="9Fw-Au-b15" id="Njf-05-lyL"/>
+                        <segue destination="yTy-dh-Jmj" kind="show" identifier="ShowCheckOutSegue" id="EoS-kF-DoH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dHq-8c-MCS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
