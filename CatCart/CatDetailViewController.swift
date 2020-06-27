@@ -68,11 +68,12 @@ class CatDetailViewController: UIViewController {
                 let alertAction = UIAlertAction(
                     title: "OK",
                     style: UIAlertAction.Style.default,
-                    handler: nil )
+                    handler: { action in
+                        self.navigationController?.popToRootViewController(animated: true)
+                } )
 
                 alertController.addAction(alertAction)
                 self.present(alertController, animated: true)
-                //        cartButton.badge = cartController.itemNames.count
             }
         }
     }
@@ -82,12 +83,4 @@ class CatDetailViewController: UIViewController {
         let shoppingCart = storyBoard.instantiateViewController(withIdentifier: "ShoppingCartViewController") as! ShoppingCartViewController
         navigationController?.pushViewController(shoppingCart, animated: true)
     }
-
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "ShowShoppingCart" {
-//            let shoppingCartVC = segue.destination as! ShoppingCartViewController
-//            shoppingCartVC.cartController = cartController
-//        }
-//    }
-
 }
