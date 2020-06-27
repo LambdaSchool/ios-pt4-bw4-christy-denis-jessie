@@ -14,12 +14,12 @@ class CheckOutConfirmationViewController: UIViewController {
     var currentUser: User?
     var currentUserCreditCard: CreditCard?
     var currentUserShippingAddress: ShippingAdress?
-    var cartController: ShoppingCartController?
-    
+    var cartController = ShoppingCartController.shared
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        print("\(String(describing: currentUser?.firstName)), \(String(describing: currentUserCreditCard?.creditCardCVV)), \(String(describing: currentUserShippingAddress?.shippingAddress)), \(String(describing: cartController?.itemNames.count))")
+        print("\(String(describing: currentUser?.firstName)), \(String(describing: currentUserCreditCard?.creditCardCVV)), \(String(describing: currentUserShippingAddress?.shippingAddress)), \(String(describing: cartController.itemNames.count))")
     }
     
 

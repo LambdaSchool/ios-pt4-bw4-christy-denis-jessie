@@ -20,8 +20,8 @@ class CatDetailViewController: UIViewController {
 
     // MARK: - Properties
     var cat: Cat?
-    var cartController: ShoppingCartController?
-    
+    var cartController = ShoppingCartController.shared
+
     // MARK: - View
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,7 +54,7 @@ class CatDetailViewController: UIViewController {
     }
 
     @IBAction func addToCart(_ sender: Any) {
-        guard let cartController = cartController, let cat = cat, let name = cat.name else { return }
+        guard let cat = cat, let name = cat.name else { return }
         if let image = self.catImageView.image {
             cartController.addItem(itemName: name, itemPrice: cat.price)
         }

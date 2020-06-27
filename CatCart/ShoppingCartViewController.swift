@@ -14,7 +14,7 @@ class ShoppingCartViewController: UIViewController, UITableViewDelegate, UITable
     @IBOutlet weak var subtotalLabel: UILabel!
     @IBOutlet weak var numberOfItemsLabel: UILabel!
 
-    var cartController: ShoppingCartController?
+    var cartController = ShoppingCartController.shared
 //    var cat: Cat?
 
 
@@ -41,17 +41,17 @@ class ShoppingCartViewController: UIViewController, UITableViewDelegate, UITable
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return cartController?.itemNames.count ?? 0
+        return cartController.itemNames.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath) as! ItemTableViewCell
 
-        cell.nameLabel.text = cartController?.itemNames[indexPath.row]
-        if let price = cartController?.itemPrices[indexPath.row] {
-            cell.priceLabel.text = "$\(price)"
-        }
-        cell.itemImageView?.image = cartController?.itemImages[indexPath.row]
+        cell.nameLabel.text = cartController.itemNames[indexPath.row]
+        let price = cartController.itemPrices[indexPath.row]
+        cell.priceLabel.text = "$\(price)"
+
+        cell.itemImageView?.image = cartController.itemImages[indexPath.row]
 //        guard let cat = item else { return }
 //        if let catImageURLString = cat.imageURL {
 //            guard let catImageURL = URL(string: catImageURLString) else { return }
@@ -74,7 +74,6 @@ class ShoppingCartViewController: UIViewController, UITableViewDelegate, UITable
     func updateViews(formatter: NumberFormatter) {
 
         tableView.reloadData()
-        guard let cartController = cartController else { return }
         var subtotal = 0.0
         for price in cartController.itemPrices {
             subtotal += price
