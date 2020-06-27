@@ -45,8 +45,8 @@ class PaymentPageViewController: UIViewController {
     var currentUser: User?
     var currentUserCreditCard: CreditCard?
     var currentUserShippingAddress: ShippingAdress?
-    var cartController: ShoppingCartController?
-    
+    var cartController = ShoppingCartController.shared
+
     @IBAction func isShippingTheSameAsBillingSwitch(_ sender: UISwitch) {
         
         if (sender.isOn == true) {

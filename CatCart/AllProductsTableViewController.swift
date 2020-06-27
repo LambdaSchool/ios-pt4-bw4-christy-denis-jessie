@@ -37,8 +37,8 @@ class AllProductsTableViewController: UITableViewController {
         return product
     }
     
-     var cartController: ShoppingCartController?
-    
+    var cartController = ShoppingCartController.shared
+
     // MARK: - View
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -81,7 +81,6 @@ class AllProductsTableViewController: UITableViewController {
         if segue.identifier == "ShowProductDetail" {
             let productDetailVC = segue.destination as! ProductDetailViewController
             productDetailVC.product = self.product
-            productDetailVC.cartController = cartController
         }
     }
 }

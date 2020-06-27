@@ -12,7 +12,7 @@ class CategoryViewController: UIViewController {
 
     // MARK: - Properties
     var currentUser: User?
-    var cartController = ShoppingCartController()
+    var cartController = ShoppingCartController.shared
     
     // MARK: - Setup
     //    static func goToStore() -> CategoryViewController {

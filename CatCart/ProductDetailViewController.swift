@@ -19,8 +19,8 @@ class ProductDetailViewController: UIViewController {
     
     // MARK: - Properties
     var product: Product?
-    var cartController: ShoppingCartController?
-    
+    var cartController = ShoppingCartController.shared
+
     // MARK: - View
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,31 +55,30 @@ class ProductDetailViewController: UIViewController {
     
     // MARK: - Actions
     @IBAction func addToCart(_ sender: Any) {
-        guard let cartController = cartController, let product = product, let name = product.name else { return }
+        guard let product = product, let name = product.name else { return }
         if let productImageURLString = product.imageURL {
             guard let productImageURL = URL(string: productImageURLString) else { return }
             DispatchQueue.global().async {
                 guard let imageData = try? Data(contentsOf: productImageURL) else { return }
                 
                 guard let productImage = UIImage(data: imageData) else { return }
-                
-                
-                
-                cartController.addItem(itemName: name, itemPrice: product.price)
+                self.cartController.addItem(itemName: name, itemPrice: product.price)
             }
         }
         //        cartButton.badge = cartController.itemNames.count
     }
     
     @IBAction func cartButtonPressed(_ sender: UIBarButtonItem) {
-        performSegue(withIdentifier: "ShowShoppingCart", sender: self)
+        let storyBoard: UIStoryboard = UIStoryboard(name: "ShoppingCart", bundle: nil)
+        let shoppingCart = storyBoard.instantiateViewController(withIdentifier: "ShoppingCartViewController") as! ShoppingCartViewController
+        navigationController?.pushViewController(shoppingCart, animated: true)
     }
     
     // MARK: - Navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "ShowShoppingCart" {
-            let shoppingCartVC = segue.destination as! ShoppingCartViewController
-            shoppingCartVC.cartController = cartController
-        }
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "ShowShoppingCart" {
+//            let shoppingCartVC = segue.destination as! ShoppingCartViewController
+//            shoppingCartVC.cartController = cartController
+//        }
+//    }
 }
