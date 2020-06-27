@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 struct CreditCard {
     let creditCardNumber: Int
@@ -46,6 +47,8 @@ class PaymentPageViewController: UIViewController {
     var currentUserCreditCard: CreditCard?
     var currentUserShippingAddress: ShippingAdress?
     var cartController = ShoppingCartController.shared
+    var userController = UserController()
+    
 
     @IBAction func isShippingTheSameAsBillingSwitch(_ sender: UISwitch) {
         
@@ -139,18 +142,18 @@ class PaymentPageViewController: UIViewController {
             let creditCardEXP = Int(expDateTextField.text ?? "0") // convert to date formatt
             let creditCardCVV = Int(cVVCodeTextField.text ?? "0")
             
-            currentUser = User(
-                userName: "user1",
-                password: "password123",
-                firstName: firstName,
-                lastName: lastName,
-                email: email,
-                longitude: nil,
-                latitude: nil,
-                streetAddress: address,
-                city: city,
-                state: state,
-                zipCode: zipCode)
+//            currentUser = User(
+//                userName: "user1",
+//                password: "password123",
+//                firstName: firstName,
+//                lastName: lastName,
+//                email: email,
+//                longitude: nil,
+//                latitude: nil,
+//                streetAddress: address,
+//                city: city,
+//                state: state,
+//                zipCode: zipCode)
             
             currentUserShippingAddress = ShippingAdress(
                 shippingAddress: shippingAddress!,
@@ -163,9 +166,38 @@ class PaymentPageViewController: UIViewController {
                 creditCardEXP: creditCardEXP!,
                 creditCardCVV: creditCardCVV!)
             
+//            userController.create(
+//                userName: "TestUser",
+//                password: "password123",
+//                firstName: firstName,
+//                lastName: lastName,
+//                email: email,
+//                longitude: nil,
+//                latitude: nil,
+//                streetAddress: address,
+//                city: city,
+//                state: state,
+//                zipCode: zipCode)
+//
+            userController.update(
+                user: userController.currentUser!,
+                firstName: firstName,
+                lastName: lastName,
+                email: email,
+                longitude: nil,
+                latitude: nil,
+                streetAddress: address,
+                city: city,
+                state: state,
+                zipCode: zipCode)
+            
             print("Name: \(String(describing: currentUser?.firstName))")
             print("State: \(String(describing: currentUserShippingAddress?.shippingState))")
             print("CVV: \(String(describing: currentUserCreditCard?.creditCardCVV))")
+            
+            print("User Count: \(String(describing: userController.users.count))")
+            print("User Array: \(String(describing: userController.users))")
+        
             
             performSegue(withIdentifier: "ShowCheckOutSegue", sender: AnyObject.self)
 
