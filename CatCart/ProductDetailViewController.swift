@@ -65,7 +65,7 @@ class ProductDetailViewController: UIViewController {
                 
                 
                 
-                cartController.addItem(itemName: name, itemPrice: product.price, image: productImage)
+                cartController.addItem(itemName: name, itemPrice: product.price)
             }
         }
         //        cartButton.badge = cartController.itemNames.count
