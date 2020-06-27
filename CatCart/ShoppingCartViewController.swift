@@ -36,6 +36,7 @@ class ShoppingCartViewController: UIViewController, UITableViewDelegate, UITable
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowPaymentPage" {
             let paymentPageVC = segue.destination as! PaymentPageViewController
+            paymentPageVC.cartController = cartController
         }
     }
 
