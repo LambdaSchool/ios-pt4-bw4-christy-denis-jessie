@@ -71,6 +71,7 @@ class UserLoginViewController: UIViewController {
     }
     
     @IBAction func loginTapped(_ sender: UIButton) {
+       
         if let userName = userNameTextField.text,
             !userName.isEmpty,
             let password = userPasswordTextField.text,
@@ -90,6 +91,8 @@ class UserLoginViewController: UIViewController {
                                city: nil,
                                state: nil,
                                zipCode: nil)
+            
+            print("current user signed in with username: \(String(describing: currentUser?.userName)) and password: \(String(describing: currentUser?.password))")
             
             userController.signIn(with: user) { error in
                 
