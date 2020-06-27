@@ -24,9 +24,10 @@ class UserController {
     var passwordMatch: Bool = false
     var usernameMatch: Bool = false
     
-    var users: [User] {
-        loadFromPersistentStore()
-    }
+var user: User? {
+    guard let username = UserDefaults.standard.value(forKey: "LoggedInUser") as? String else { return nil }
+    return loadFromPersistentStore(username: username)
+}
     
     var currentUser: User?
     
@@ -111,7 +112,6 @@ class UserController {
     // MARK: - Log In Existing User
     func signIn(with user: UserRepresentation, completion: @escaping (Error?) -> Void) {
         
-        print("\(users)")
         
         let logInURL = baseURL
             .appendingPathComponent(user.userName)
@@ -163,7 +163,7 @@ class UserController {
     
     
     private func saveToPersistentStore() {
-        let moc = CoreDataStack.shared.mainContext
+        let moc = CoreDataStack.shared
         do {
             try moc.save()
         } catch {
@@ -171,14 +171,16 @@ class UserController {
         }
     }
     
-    private func loadFromPersistentStore() -> [User] {
+func loadFromPersistentStore(username: String) -> User? {
         let fetchRequest: NSFetchRequest<User> = User.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "userName == %@", username)
         let moc = CoreDataStack.shared.mainContext
         do {
-            return try moc.fetch(fetchRequest)
+            let user = try moc.fetch(fetchRequest).first
+            return user
         } catch {
             print("Error fetching users: \(error)")
-            return []
+            return nil
         }
     }
     
@@ -196,29 +198,26 @@ class UserController {
         saveToPersistentStore()
     }
     
-    func getUser(userName: String, password: String) {
 
-    }
-    
-    func update(user: User, firstName: String?, lastName: String?, email: String?, longitude: Double?, latitude: Double?, streetAddress: String?, city: String?, state: String?, zipCode: Int16?) {
-        
-        guard let userIndex = users.firstIndex(of: user) else { return }
-        
-        
-        users[userIndex].firstName = firstName
-        users[userIndex].lastName = lastName
-        users[userIndex].email = email
-        users[userIndex].longitude = longitude ?? 0.0
-        users[userIndex].latitude = latitude ?? 0.0
-        users[userIndex].streetAddress = streetAddress
-        users[userIndex].city = city
-        users[userIndex].state = state
-        users[userIndex].zipCode = zipCode ?? 0
-        
-        print("User: \(users[userIndex])")
-        
-        saveToPersistentStore()
-    }
-    
+//    func update(user: User, firstName: String?, lastName: String?, email: String?, longitude: Double?, latitude: Double?, streetAddress: String?, city: String?, state: String?, zipCode: Int16?) {
+//
+//        guard let userIndex = users.firstIndex(of: user) else { return }
+//
+//
+//        users[userIndex].firstName = firstName
+//        users[userIndex].lastName = lastName
+//        users[userIndex].email = email
+//        users[userIndex].longitude = longitude ?? 0.0
+//        users[userIndex].latitude = latitude ?? 0.0
+//        users[userIndex].streetAddress = streetAddress
+//        users[userIndex].city = city
+//        users[userIndex].state = state
+//        users[userIndex].zipCode = zipCode ?? 0
+//
+//        print("User: \(users[userIndex])")
+//
+//        saveToPersistentStore()
+//    }
+//
 }
 

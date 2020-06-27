@@ -14,6 +14,7 @@ class CategoryViewController: UIViewController {
     // MARK: - Properties
     var currentUser: User?
     var cartController = ShoppingCartController.shared
+    let userController = UserController()
     
     // MARK: - Setup
     //    static func goToStore() -> CategoryViewController {
@@ -29,13 +30,24 @@ class CategoryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // currentUser = fetchResultsController
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        if currentUser == nil {
+        if UserDefaults.standard.value(forKey: "LoggedInUser") == nil {
             performSegue(withIdentifier: "ToLandingPage", sender: nil)
+        } else {
+            currentUser = userController.user
+            if let currentUser = currentUser,
+                let username = currentUser.userName,
+                let password = currentUser.password {
+                
+                print(username)
+                print(password)
+            }
         }
+
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
