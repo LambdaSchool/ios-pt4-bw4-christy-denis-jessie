@@ -35,6 +35,7 @@ class CategoryViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
         if UserDefaults.standard.value(forKey: "LoggedInUser") == nil {
             performSegue(withIdentifier: "ToLandingPage", sender: nil)
         } else {

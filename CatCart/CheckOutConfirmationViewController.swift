@@ -18,8 +18,10 @@ class CheckOutConfirmationViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        print("\(String(describing: currentUser?.firstName)), \(String(describing: currentUserCreditCard?.creditCardCVV)), \(String(describing: currentUserShippingAddress?.shippingAddress)), \(String(describing: cartController.itemNames.count))")
+        
+        if currentUser == currentUser {
+        print("First Name: \(String(describing: currentUser?.firstName)), CVV Code: \(String(describing: currentUserCreditCard?.creditCardCVV)), Shipping Address: \(String(describing: currentUserShippingAddress?.shippingAddress)), number of items: \(String(describing: cartController.itemNames.count))")
+        }
     }
     
 
