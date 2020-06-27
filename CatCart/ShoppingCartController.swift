@@ -21,10 +21,10 @@ class ShoppingCartController {
     var userController: UserController?
     var currentUser: User?
 
-    func addItem(itemName: String, itemPrice: Double, image: UIImage) {
+    func addItem(itemName: String, itemPrice: Double) {
         itemNames.append(itemName)
         itemPrices.append(itemPrice)
-        itemImages.append(image)
+//        itemImages.append(image)
     }
 
     func updateCart() { // POST
