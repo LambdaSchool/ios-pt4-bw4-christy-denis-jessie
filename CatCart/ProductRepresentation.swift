@@ -9,6 +9,8 @@
 import Foundation
 
 struct ProductRepresentation: Codable {
+    // swiftlint:disable identifier_name
+
     var id: UUID?
     var name: String?
     var price: Double?
@@ -18,7 +20,7 @@ struct ProductRepresentation: Codable {
     var imageURL: String?
 }
 
-func ==(lhs: ProductRepresentation, rhs: Product) -> Bool {
+func == (lhs: ProductRepresentation, rhs: Product) -> Bool {
     return rhs.id == lhs.id &&
         rhs.name == lhs.name &&
         rhs.price == lhs.price &&
@@ -28,14 +30,14 @@ func ==(lhs: ProductRepresentation, rhs: Product) -> Bool {
         rhs.imageURL == lhs.imageURL
 }
 
-func ==(lhs: Product, rhs: ProductRepresentation) -> Bool {
+func == (lhs: Product, rhs: ProductRepresentation) -> Bool {
     return rhs == lhs
 }
 
-func !=(lhs: ProductRepresentation, rhs: Product) -> Bool {
+func != (lhs: ProductRepresentation, rhs: Product) -> Bool {
     return !(lhs == rhs)
 }
 
-func !=(lhs: Product, rhs: ProductRepresentation) -> Bool {
+func != (lhs: Product, rhs: ProductRepresentation) -> Bool {
     return rhs != lhs
 }

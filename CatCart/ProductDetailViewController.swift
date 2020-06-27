@@ -9,6 +9,8 @@
 import UIKit
 
 class ProductDetailViewController: UIViewController {
+    // swiftlint:disable force_cast
+
     // MARK: - Outlets
     @IBOutlet var productImageView: UIImageView!
     @IBOutlet var nameLabel: UILabel!
@@ -16,7 +18,7 @@ class ProductDetailViewController: UIViewController {
     @IBOutlet var typeLabel: UILabel!
     @IBOutlet var colorLabel: UILabel!
     @IBOutlet var sizeLabel: UILabel!
-    
+
     // MARK: - Properties
     var product: Product?
     var cartController = ShoppingCartController.shared
@@ -24,10 +26,9 @@ class ProductDetailViewController: UIViewController {
     // MARK: - View
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         updateViews()
     }
-    
+
     func updateViews() {
         guard let product = product else { return }
         nameLabel.text = product.name
@@ -37,14 +38,13 @@ class ProductDetailViewController: UIViewController {
         sizeLabel.text = product.size
         getImage()
     }
-    
+
     func getImage() {
         guard let product = product else { return }
         if let productImageURLString = product.imageURL {
             guard let productImageURL = URL(string: productImageURLString) else { return }
             DispatchQueue.global().async {
                 guard let imageData = try? Data(contentsOf: productImageURL) else { return }
-                
                 let productImage = UIImage(data: imageData)
                 DispatchQueue.main.async {
                     self.productImageView.image = productImage
@@ -52,7 +52,7 @@ class ProductDetailViewController: UIViewController {
             }
         }
     }
-    
+
     // MARK: - Actions
     @IBAction func addToCart(_ sender: Any) {
         guard let product = product, let name = product.name else { return }
@@ -60,7 +60,6 @@ class ProductDetailViewController: UIViewController {
             guard let productImageURL = URL(string: productImageURLString) else { return }
             DispatchQueue.global().async {
                 guard let imageData = try? Data(contentsOf: productImageURL) else { return }
-                
                 guard let productImage = UIImage(data: imageData) else { return }
                 self.cartController.addItem(itemName: name, itemPrice: product.price)
             }
@@ -75,19 +74,20 @@ class ProductDetailViewController: UIViewController {
                 let alertAction = UIAlertAction(
                     title: "OK",
                     style: UIAlertAction.Style.default,
-                    handler: { action in
+                    handler: { _ in
                         self.navigationController?.popToRootViewController(animated: true)
-                } )
+                })
 
                 alertController.addAction(alertAction)
                 self.present(alertController, animated: true)
             }
         }
     }
-    
+
     @IBAction func cartButtonPressed(_ sender: UIBarButtonItem) {
         let storyBoard: UIStoryboard = UIStoryboard(name: "ShoppingCart", bundle: nil)
-        let shoppingCart = storyBoard.instantiateViewController(withIdentifier: "ShoppingCartViewController") as! ShoppingCartViewController
+        let shoppingCart = storyBoard.instantiateViewController(withIdentifier: "ShoppingCartViewController")
+            as! ShoppingCartViewController
         navigationController?.pushViewController(shoppingCart, animated: true)
     }
 }

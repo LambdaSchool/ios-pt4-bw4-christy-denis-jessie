@@ -9,14 +9,15 @@
 import UIKit
 
 class UserSignUpViewController: UIViewController {
-    
+    // swiftlint:disable force_cast
+
     @IBOutlet weak var userEmailTextField: UITextField!
     @IBOutlet weak var userPasswordTextField: UITextField!
     @IBOutlet weak var createAccountButton: UIButton!
-    
+
     var userController: UserController?
     var currentUser: User?
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -47,7 +48,7 @@ class UserSignUpViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
 //        present(loginVC, animated: true, completion: nil)
     }
-    
+
     @IBAction func createAccount(_ sender: UIButton) {
 
         guard let userController = userController else { return }
@@ -56,11 +57,10 @@ class UserSignUpViewController: UIViewController {
             !userEmail.isEmpty,
             let password = userPasswordTextField.text,
             !password.isEmpty {
-            
 
             let user = UserRepresentation(password: password,
                                           userName: userEmail)
-            
+
             currentUser = User(userName: user.userName,
                                password: user.password,
                                firstName: nil,
@@ -72,11 +72,11 @@ class UserSignUpViewController: UIViewController {
                                city: nil,
                                state: nil,
                                zipCode: nil)
-            
+
             userController.signUp(with: user) { error in
-                
+
                 if let error = error {
-                    
+
                     DispatchQueue.main.async {
                         let alertController = UIAlertController(
                             title: "Sign Up Successfull",
@@ -85,22 +85,22 @@ class UserSignUpViewController: UIViewController {
                         let alertAction = UIAlertAction(
                             title: "OK",
                             style: UIAlertAction.Style.default,
-                            handler: { action -> Void in
+                            handler: { _ -> Void in
                                 self.showLogin()
                         })
-                        
+
                         alertController.addAction(alertAction)
                         self.present(alertController, animated: true)
                         self.userEmailTextField.text = ""
                         self.userPasswordTextField.text = ""
                     }
                     print("Error did not occur during sign up: \(error)")
-                    
+
                 } else {
                     DispatchQueue.main.async {
                         self.userEmailTextField.text = ""
                         self.userPasswordTextField.text = ""
-                        
+
                         let alertController = UIAlertController(
                             title: "Sign Up not Successfull",
                             message: "Username already exists, please try again.",
@@ -111,15 +111,15 @@ class UserSignUpViewController: UIViewController {
                             handler: nil)
                         alertController.addAction(alertAction)
                         self.present(alertController, animated: true)
-                        
+
                     }
                 }
             }
-            
+
         }
     }
-    
-     //MARK: - Navigation
+
+     // MARK: - Navigation
          override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
              if segue.identifier == "ToLoginFromCreate" {
                  if let signInVC = segue.destination as? UserLoginViewController {
@@ -127,11 +127,10 @@ class UserSignUpViewController: UIViewController {
                  }
              }
          }
-    
-    
+
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)
         return false
     }
-    
+
 }
