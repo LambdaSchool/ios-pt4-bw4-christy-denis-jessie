@@ -10,7 +10,8 @@ import Foundation
 import CoreData
 
 extension Cat {
-    
+    // swiftlint:disable identifier_name
+
     convenience init(id: UUID = UUID(),
                      name: String,
                      price: Double,
@@ -20,9 +21,9 @@ extension Cat {
                      months: Int16?,
                      imageURL: String?,
                      context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
-        
+
         self.init(context: context)
-        
+
         self.id = id
         self.name = name
         self.price = price
@@ -32,9 +33,10 @@ extension Cat {
         self.months = months ?? 0
         self.imageURL = imageURL
     }
-    
-    convenience init?(catRepresentation: CatRepresentation, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
-        
+
+    convenience init?(catRepresentation: CatRepresentation,
+                      context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
+
         guard let id = catRepresentation.id,
             let name = catRepresentation.name,
             let price = catRepresentation.price,
@@ -43,8 +45,15 @@ extension Cat {
             let years = catRepresentation.years,
             let months = catRepresentation.months,
             let imageURL = catRepresentation.imageURL else { return nil }
-        
-        self.init(id: id, name: name, price: price, latitude: latitude, longitude: longitude, years: years, months: months, imageURL: imageURL, context: context)
+
+        self.init(id: id,
+                  name: name,
+                  price: price,
+                  latitude: latitude,
+                  longitude: longitude,
+                  years: years,
+                  months: months,
+                  imageURL: imageURL,
+                  context: context)
     }
 }
-

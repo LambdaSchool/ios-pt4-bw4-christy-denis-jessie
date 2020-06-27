@@ -9,16 +9,47 @@
 import UIKit
 
 class AllCatsTableViewController: UITableViewController {
+    // swiftlint:disable force_cast
 
     var cartController = ShoppingCartController.shared
 
     // MARK: - Mock Data
-    let cat1 = Cat(name: "Mysty", price: 14.99, latitude: 50, longitude: -100, years: 0, months: 2, imageURL: "https://imagizer.imageshack.com/img922/2816/kDUKLs.jpg")
-    let cat2 = Cat(name: "Arya", price: 2.49, latitude: 41, longitude: -100, years: 0, months: 6, imageURL: "https://imagizer.imageshack.com/img923/6269/C6kuyK.jpg")
-    let cat3 = Cat(name: "Eclipse", price: 74.99, latitude: 45, longitude: -99, years: 1, months: 3, imageURL: "https://imagizer.imageshack.com/img923/762/dhCFUn.jpg")
-    let cat4 = Cat(name: "Soledad", price: 0.99, latitude: 27, longitude: -81, years: 5, months: 3, imageURL: "https://imagizer.imageshack.com/img922/7587/3rbsUm.jpg")
-    let cat5 = Cat(name: "Thunder", price: 49.99, latitude: 40, longitude: -75, years: 0, months: 7, imageURL: "https://imagizer.imageshack.com/img923/1834/py9HKC.jpg")
-    
+    let cat1 = Cat(name: "Mysty",
+                   price: 14.99,
+                   latitude: 50,
+                   longitude: -100,
+                   years: 0,
+                   months: 2,
+                   imageURL: "https://imagizer.imageshack.com/img922/2816/kDUKLs.jpg")
+    let cat2 = Cat(name: "Arya",
+                   price: 2.49,
+                   latitude: 41,
+                   longitude: -100,
+                   years: 0,
+                   months: 6,
+                   imageURL: "https://imagizer.imageshack.com/img923/6269/C6kuyK.jpg")
+    let cat3 = Cat(name: "Eclipse",
+                   price: 74.99,
+                   latitude: 45,
+                   longitude: -99,
+                   years: 1,
+                   months: 3,
+                   imageURL: "https://imagizer.imageshack.com/img923/762/dhCFUn.jpg")
+    let cat4 = Cat(name: "Soledad",
+                   price: 0.99,
+                   latitude: 27,
+                   longitude: -81,
+                   years: 5,
+                   months: 3,
+                   imageURL: "https://imagizer.imageshack.com/img922/7587/3rbsUm.jpg")
+    let cat5 = Cat(name: "Thunder",
+                   price: 49.99,
+                   latitude: 40,
+                   longitude: -75,
+                   years: 0,
+                   months: 7,
+                   imageURL: "https://imagizer.imageshack.com/img923/1834/py9HKC.jpg")
+
     func addMockData() {
         cats.append(cat1)
         cats.append(cat2)
@@ -26,7 +57,7 @@ class AllCatsTableViewController: UITableViewController {
         cats.append(cat4)
         cats.append(cat5)
     }
-    
+
     // MARK: - Properties
     var cats: [Cat] = []
     var cat: Cat? {
@@ -34,7 +65,7 @@ class AllCatsTableViewController: UITableViewController {
         let cat = cats[indexPath.row]
         return cat
     }
-    
+
     // MARK: - View
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,7 +73,6 @@ class AllCatsTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -51,7 +81,6 @@ class AllCatsTableViewController: UITableViewController {
         return cats.count
     }
 
-  
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CatCell", for: indexPath) as! CatTableViewCell
 
@@ -60,18 +89,6 @@ class AllCatsTableViewController: UITableViewController {
         return cell
     }
 
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-    
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

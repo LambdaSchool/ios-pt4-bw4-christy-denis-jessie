@@ -9,14 +9,13 @@
 import UIKit
 
 class ShoppingCartViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    // swiftlint:disable force_cast
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var subtotalLabel: UILabel!
     @IBOutlet weak var numberOfItemsLabel: UILabel!
 
     var cartController = ShoppingCartController.shared
-//    var cat: Cat?
-
 
     override func viewDidLoad() {
         super.viewDidLoad()

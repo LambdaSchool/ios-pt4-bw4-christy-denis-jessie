@@ -11,7 +11,7 @@ import CoreData
 
 class CoreDataStack {
     static let shared = CoreDataStack()
-    
+
     lazy var container: NSPersistentContainer = {
        let newContainer = NSPersistentContainer(name: "CatCoreData")
         
@@ -23,7 +23,7 @@ class CoreDataStack {
         newContainer.viewContext.automaticallyMergesChangesFromParent = true
         return newContainer
     }()
-    
+
     var mainContext: NSManagedObjectContext {
         return container.viewContext
     }

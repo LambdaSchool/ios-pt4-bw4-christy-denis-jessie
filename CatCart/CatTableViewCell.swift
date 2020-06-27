@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 class CatTableViewCell: UITableViewCell {
     // MARK: - Outlets
     @IBOutlet var catImageView: UIImageView!
@@ -21,7 +20,7 @@ class CatTableViewCell: UITableViewCell {
             updateViews()
         }
     }
-    
+
     // MARK: - View
     func updateViews() {
         guard let cat = cat else { return }
@@ -29,14 +28,14 @@ class CatTableViewCell: UITableViewCell {
             catNameLabel.text = cat.name
             getImage()
     }
-    
+
     func getImage() {
         guard let cat = cat else { return }
         if let catImageURLString = cat.imageURL {
             guard let catImageURL = URL(string: catImageURLString) else { return }
             DispatchQueue.global().async {
                 guard let imageData = try? Data(contentsOf: catImageURL) else { return }
-                
+
                 let catImage = UIImage(data: imageData)
                 DispatchQueue.main.async {
                     self.catImageView.image = catImage

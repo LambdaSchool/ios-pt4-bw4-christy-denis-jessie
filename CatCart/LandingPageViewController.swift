@@ -16,12 +16,6 @@ class LandingPageViewController: UIViewController {
     var userController: UserController?
     var currentUser: User?
 
-    //    static func goToLandingPage() -> LandingPageViewController {
-    //        let storyboard = UIStoryboard(name: "LandingPage", bundle: nil)
-    //        let landingPageVC = storyboard.instantiateViewController(withIdentifier: "LandingPageViewController") as! LandingPageViewController
-    //        return landingPageVC
-    //    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
         if currentUser != nil {

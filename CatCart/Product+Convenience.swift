@@ -11,7 +11,8 @@ import CoreData
 
 @objc(CKProduct)
 extension Product {
-    
+    // swiftlint:disable identifier_name
+
     convenience init(id: UUID = UUID(),
                      name: String,
                      price: Double,
@@ -20,9 +21,9 @@ extension Product {
                      color: String?,
                      imageURL: String?,
                      context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
-        
+
         self.init(context: context)
-        
+
         self.id = id
         self.name = name
         self.price = price
@@ -31,9 +32,10 @@ extension Product {
         self.color = color
         self.imageURL = imageURL
     }
-    
-    @nonobjc convenience init?(productRepresentation: ProductRepresentation, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
-        
+
+    @nonobjc convenience init?(productRepresentation: ProductRepresentation,
+                               context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
+
         guard let id = productRepresentation.id,
             let name = productRepresentation.name,
             let price = productRepresentation.price,
@@ -41,7 +43,14 @@ extension Product {
             let size = productRepresentation.size,
             let color = productRepresentation.color,
             let imageURL = productRepresentation.imageURL else { return nil }
-        
-        self.init(id: id, name: name, price: price, type: type, size: size, color: color, imageURL: imageURL, context: context)
+
+        self.init(id: id,
+                  name: name,
+                  price: price,
+                  type: type,
+                  size: size,
+                  color: color,
+                  imageURL: imageURL,
+                  context: context)
     }
 }

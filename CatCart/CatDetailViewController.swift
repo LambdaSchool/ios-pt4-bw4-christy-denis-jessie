@@ -9,7 +9,8 @@
 import UIKit
 
 class CatDetailViewController: UIViewController {
-    
+    // swiftlint:disable force_cast
+
     // MARK: - Outlets
     @IBOutlet var catImageView: UIImageView!
     @IBOutlet var nameLabel: UILabel!
@@ -25,10 +26,9 @@ class CatDetailViewController: UIViewController {
     // MARK: - View
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         updateViews()
     }
-    
+
     func updateViews() {
         guard let cat = cat else { return }
         priceLabel.text = "$\(cat.price)"
@@ -37,14 +37,13 @@ class CatDetailViewController: UIViewController {
         monthsLabel.text = "\(cat.months)"
         getImage()
     }
-    
+
     func getImage() {
         guard let cat = cat else { return }
         if let catImageURLString = cat.imageURL {
             guard let catImageURL = URL(string: catImageURLString) else { return }
             DispatchQueue.global().async {
                 guard let imageData = try? Data(contentsOf: catImageURL) else { return }
-                
                 let catImage = UIImage(data: imageData)
                 DispatchQueue.main.async {
                     self.catImageView.image = catImage
@@ -53,6 +52,7 @@ class CatDetailViewController: UIViewController {
         }
     }
 
+    //TODO: Look at passing this image, or breakpoint why this works...
     @IBAction func addToCart(_ sender: Any) {
         guard let cat = cat, let name = cat.name else { return }
         if let image = self.catImageView.image {
@@ -68,10 +68,9 @@ class CatDetailViewController: UIViewController {
                 let alertAction = UIAlertAction(
                     title: "OK",
                     style: UIAlertAction.Style.default,
-                    handler: { action in
+                    handler: { _ in
                         self.navigationController?.popToRootViewController(animated: true)
-                } )
-
+                })
                 alertController.addAction(alertAction)
                 self.present(alertController, animated: true)
             }
@@ -80,7 +79,8 @@ class CatDetailViewController: UIViewController {
 
     @IBAction func cartButtonPressed(_ sender: UIBarButtonItem) {
         let storyBoard: UIStoryboard = UIStoryboard(name: "ShoppingCart", bundle: nil)
-        let shoppingCart = storyBoard.instantiateViewController(withIdentifier: "ShoppingCartViewController") as! ShoppingCartViewController
+        let shoppingCart = storyBoard.instantiateViewController(withIdentifier: "ShoppingCartViewController")
+            as! ShoppingCartViewController
         navigationController?.pushViewController(shoppingCart, animated: true)
     }
 }

@@ -10,29 +10,19 @@ import UIKit
 import CoreData
 
 class CategoryViewController: UIViewController {
+    // swiftlint:disable force_cast
 
     // MARK: - Properties
     var currentUser: User?
     var cartController = ShoppingCartController.shared
-    let userController = UserController()
-    
-    // MARK: - Setup
-    //    static func goToStore() -> CategoryViewController {
-    //        let storyboard = UIStoryboard(name: "CatsForSale", bundle: nil)
-    //        print(storyboard)
-    //        let categoryVC = storyboard.instantiateViewController(withIdentifier: "CategoryViewController") as! CategoryViewController
-    //
-    //        categoryVC.modalPresentationStyle = .fullScreen
-    //
-    //        return categoryVC
-    //    }
+
     // MARK: - View
     override func viewDidLoad() {
         super.viewDidLoad()
         // currentUser = fetchResultsController
         
     }
-    
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
@@ -69,7 +59,8 @@ class CategoryViewController: UIViewController {
 
     @IBAction func cartButtonPressed(_ sender: UIBarButtonItem) {
         let storyBoard: UIStoryboard = UIStoryboard(name: "ShoppingCart", bundle: nil)
-        let shoppingCart = storyBoard.instantiateViewController(withIdentifier: "ShoppingCartViewController") as! ShoppingCartViewController
+        let shoppingCart = storyBoard.instantiateViewController(withIdentifier: "ShoppingCartViewController")
+            as! ShoppingCartViewController
         navigationController?.pushViewController(shoppingCart, animated: true)
     }
 }

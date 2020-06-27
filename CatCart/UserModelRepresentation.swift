@@ -22,7 +22,7 @@ struct UserRepresentation: Codable {
     var zipCode: Int16?
 }
 
-func ==(lhs: UserRepresentation, rhs: User) -> Bool {
+func == (lhs: UserRepresentation, rhs: User) -> Bool {
     return rhs.password == lhs.password &&
         rhs.userName == lhs.userName &&
         rhs.firstName == lhs.firstName &&
@@ -37,14 +37,14 @@ func ==(lhs: UserRepresentation, rhs: User) -> Bool {
         rhs.zipCode == lhs.zipCode
 }
 
-func ==(lhs: User, rhs: UserRepresentation) -> Bool {
+func == (lhs: User, rhs: UserRepresentation) -> Bool {
     return rhs == lhs
 }
 
-func !=(lhs: UserRepresentation, rhs: User) -> Bool {
+func != (lhs: UserRepresentation, rhs: User) -> Bool {
     return !(lhs == rhs)
 }
 
-func !=(lhs: User, rhs: UserRepresentation) -> Bool {
+func != (lhs: User, rhs: UserRepresentation) -> Bool {
     return rhs != lhs
 }

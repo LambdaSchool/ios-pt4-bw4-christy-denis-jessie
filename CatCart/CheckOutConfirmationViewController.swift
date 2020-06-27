@@ -9,8 +9,7 @@
 import UIKit
 
 class CheckOutConfirmationViewController: UIViewController {
-    
-    
+
     var currentUser: User?
     var currentUserCreditCard: CreditCard?
     var currentUserShippingAddress: ShippingAdress?
@@ -68,8 +67,7 @@ class CheckOutConfirmationViewController: UIViewController {
         
         updateViews(formatter: currencyFormatter)
     }
-    
-    
+
     func updateViews(formatter: NumberFormatter) {
         
         
@@ -100,17 +98,6 @@ class CheckOutConfirmationViewController: UIViewController {
         let last4 = ccNumber.suffix(4)
         
         cardEndingInLabel.text = String(last4)
-        
+
     }
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
 }

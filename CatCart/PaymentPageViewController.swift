@@ -23,7 +23,7 @@ struct ShippingAdress {
 }
 
 class PaymentPageViewController: UIViewController {
-    
+
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
@@ -31,18 +31,18 @@ class PaymentPageViewController: UIViewController {
     @IBOutlet weak var billingCityTextField: UITextField!
     @IBOutlet weak var billingStateTextField: UITextField!
     @IBOutlet weak var billingZipCodeTextField: UITextField!
-    
+
     @IBOutlet weak var shippingAddressTextFeild: UITextField!
     @IBOutlet weak var shippingCityTextField: UITextField!
     @IBOutlet weak var shippingStateTextField: UITextField!
     @IBOutlet weak var shippingZipCodeTextField: UITextField!
-    
+
     @IBOutlet weak var creditCardNumberTextField: UITextField!
     @IBOutlet weak var expDateTextField: UITextField!
     @IBOutlet weak var cVVCodeTextField: UITextField!
-    
+
     @IBOutlet weak var checkOutButton: UIButton!
-    
+
     var currentUser: User?
     var currentUserCreditCard: CreditCard?
     var currentUserShippingAddress: ShippingAdress?
@@ -51,8 +51,8 @@ class PaymentPageViewController: UIViewController {
     
 
     @IBAction func isShippingTheSameAsBillingSwitch(_ sender: UISwitch) {
-        
-        if (sender.isOn == true) {
+
+        if sender.isOn == true {
             if billingAddressTextField.text == "" || billingCityTextField.text == "" ||
                 billingStateTextField.text == "" ||  billingZipCodeTextField.text == "" {
                 DispatchQueue.main.async {
@@ -67,31 +67,30 @@ class PaymentPageViewController: UIViewController {
                     alertController.addAction(alertAction)
                     self.present(alertController, animated: true)
                     sender.isOn = false
-                    
+
                     self.shippingAddressTextFeild.text = ""
                     self.shippingCityTextField.text = ""
                     self.shippingStateTextField.text = ""
                     self.shippingZipCodeTextField.text = ""
                 }
             }
-            
+
             shippingAddressTextFeild.text = billingAddressTextField.text
             shippingCityTextField.text = billingCityTextField.text
             shippingStateTextField.text = billingStateTextField.text
             shippingZipCodeTextField.text = billingZipCodeTextField.text
-            
-        } else if (sender.isOn == false) {
+
+        } else if sender.isOn == false {
             shippingAddressTextFeild.text = ""
             shippingCityTextField.text = ""
             shippingStateTextField.text = ""
             shippingZipCodeTextField.text = ""
         }
     }
-    
-    
+
     @IBAction func checkOutButtonTapped(_ sender: UIButton) {
-        
-        if  (firstNameTextField.text == "" ||
+
+        if  firstNameTextField.text == "" ||
             lastNameTextField.text == "" ||
             emailTextField.text == "" ||
             billingAddressTextField.text == "" ||
@@ -104,10 +103,8 @@ class PaymentPageViewController: UIViewController {
             shippingZipCodeTextField.text == "" ||
             creditCardNumberTextField.text == "" ||
             expDateTextField.text == "" ||
-            cVVCodeTextField.text == "" ) {
-            
-            
-            
+            cVVCodeTextField.text == "" {
+
             DispatchQueue.main.async {
                 let alertController = UIAlertController(
                     title: "Missing Information",
@@ -120,11 +117,9 @@ class PaymentPageViewController: UIViewController {
                 alertController.addAction(alertAction)
                 self.present(alertController, animated: true)
             }
-            
-            
-            
+
         } else {
-            
+
             let firstName = firstNameTextField.text
             let lastName = lastNameTextField.text
             let email = emailTextField.text
@@ -132,16 +127,16 @@ class PaymentPageViewController: UIViewController {
             let city = billingCityTextField.text
             let state = billingStateTextField.text
             let zipCode = Int16(billingZipCodeTextField.text ?? "0")
-            
+
             let shippingAddress = shippingAddressTextFeild.text
             let shippingCity = shippingCityTextField.text
             let shippingState = shippingStateTextField.text
             let shippingZip = Int(shippingZipCodeTextField.text ?? "0")
-            
+
             let creditCardNumber = Int(creditCardNumberTextField.text ?? "0")
             let creditCardEXP = Int(expDateTextField.text ?? "0") // convert to date formatt
             let creditCardCVV = Int(cVVCodeTextField.text ?? "0")
-            
+
             // MARK: - Added fetch from Core Data
             let moc = CoreDataStack.shared.mainContext
             let fetchRequest: NSFetchRequest<User> = User.fetchRequest()
@@ -168,27 +163,26 @@ class PaymentPageViewController: UIViewController {
             city: city,
             state: state,
             zipCode: zipCode)
-            
+
             currentUserShippingAddress = ShippingAdress(
                 shippingAddress: shippingAddress!,
                 shippingCity: shippingCity!,
                 shippingState: shippingState!,
                 shippingZip: shippingZip!)
-            
+
             currentUserCreditCard = CreditCard(
                 creditCardNumber: creditCardNumber!,
                 creditCardEXP: creditCardEXP!,
                 creditCardCVV: creditCardCVV!)
-            
-            
+
             performSegue(withIdentifier: "ShowCheckOutSegue", sender: AnyObject.self)
 
         }
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         // Do any additional setup after loading the view.
         // MARK: - Added fetch from Core Data
         let moc = CoreDataStack.shared.mainContext
@@ -208,10 +202,9 @@ class PaymentPageViewController: UIViewController {
         }
         
     }
-    
-    
+
     // MARK: - Navigation
-    
+
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowCheckOutSegue" {

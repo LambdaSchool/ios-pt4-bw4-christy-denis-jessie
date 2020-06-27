@@ -9,16 +9,18 @@
 import UIKit
 
 protocol UserLoginViewControllerDelegate: class {
+    // swiftlint:disable force_cast
+
     func userLoginViewController(_ viewController: UserLoginViewController, loggedInUser: User)
 }
 
 class UserLoginViewController: UIViewController {
-    
+
     // MARK: - Outlets
     @IBOutlet weak var userNameTextField: UITextField!
     @IBOutlet weak var userPasswordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
-    
+
     // MARK: - Properties
     var userController = UserController()
     var currentUser: User?
@@ -38,7 +40,7 @@ class UserLoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateViews()
-        
+
         let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
         view.addGestureRecognizer(tap)
     }
@@ -56,7 +58,7 @@ class UserLoginViewController: UIViewController {
         
         print("received loginVC user: \(String(describing: currentUser?.userName)) password: \(String(describing: currentUser?.password))")
     }
-    
+
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)
         return false
@@ -73,17 +75,17 @@ class UserLoginViewController: UIViewController {
         signupVC.userController = userController
         present(signupVC, animated: true, completion: nil)
     }
-    
+
     @IBAction func loginTapped(_ sender: UIButton) {
        
         if let userName = userNameTextField.text,
             !userName.isEmpty,
             let password = userPasswordTextField.text,
             !password.isEmpty {
-            
+
             let user = UserRepresentation(password: password,
                                           userName: userName)
-            
+
             currentUser = User(userName: user.userName,
                                password: user.password,
                                firstName: nil,
@@ -96,15 +98,14 @@ class UserLoginViewController: UIViewController {
                                state: nil,
                                zipCode: nil)
             
-            print("current user signed in with username: \(String(describing: currentUser?.userName)) and password: \(String(describing: currentUser?.password))")
             UserDefaults.standard.set(currentUser?.userName, forKey: "LoggedInUser")
-            
+
             userController.signIn(with: user) { error in
-                
+
                 if let error = error {
                     print("Error occurred during sign up: \(error)")
                 }
-                
+
                 if self.userController.passwordMatch == true {
                     print("password match: true")
                     DispatchQueue.main.async {
@@ -119,17 +120,17 @@ class UserLoginViewController: UIViewController {
                     DispatchQueue.main.async {
                         self.userNameTextField.text = ""
                         self.userPasswordTextField.text = ""
-                        
+
                         let alertController = UIAlertController(
                             title: "Sign In Un-Successfull",
                             message: "Incorrect Password or Username.",
                             preferredStyle: .alert)
-                        
+
                         let alertAction = UIAlertAction(
                             title: "OK",
                             style: UIAlertAction.Style.default,
                             handler: nil)
-                        
+
                         alertController.addAction(alertAction)
                         self.present(alertController, animated: true, completion: nil)
                     }
@@ -137,10 +138,8 @@ class UserLoginViewController: UIViewController {
             }
         }
     }
-    
-    
-    
-//     MARK: - Navigation
+
+// MARK: - Navigation
 //        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 //            if segue.identifier == "ShowStoreSegue" {
 //                if let catCartUserVC = segue.destination as? CategoryViewController {
@@ -148,7 +147,5 @@ class UserLoginViewController: UIViewController {
 //                }
 //            }
 //        }
-    
-    
 
 }
