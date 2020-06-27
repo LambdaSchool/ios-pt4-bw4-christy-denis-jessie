@@ -24,7 +24,6 @@ class ShoppingCartController {
     func addItem(itemName: String, itemPrice: Double) {
         itemNames.append(itemName)
         itemPrices.append(itemPrice)
-//        itemImages.append(image)
     }
 
     func updateCart() { // POST

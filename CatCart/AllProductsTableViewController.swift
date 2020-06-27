@@ -78,7 +78,7 @@ class AllProductsTableViewController: UITableViewController {
 
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showProductSegue" {
+        if segue.identifier == "ShowProductDetail" {
             let productDetailVC = segue.destination as! ProductDetailViewController
             productDetailVC.product = self.product
             productDetailVC.cartController = cartController
