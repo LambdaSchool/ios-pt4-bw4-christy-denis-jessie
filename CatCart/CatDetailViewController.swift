@@ -78,14 +78,16 @@ class CatDetailViewController: UIViewController {
     }
 
     @IBAction func cartButtonPressed(_ sender: UIBarButtonItem) {
-        performSegue(withIdentifier: "ShowShoppingCart", sender: self)
+        let storyBoard: UIStoryboard = UIStoryboard(name: "ShoppingCart", bundle: nil)
+        let shoppingCart = storyBoard.instantiateViewController(withIdentifier: "ShoppingCartViewController") as! ShoppingCartViewController
+        navigationController?.pushViewController(shoppingCart, animated: true)
     }
 
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "ShowShoppingCart" {
-            let shoppingCartVC = segue.destination as! ShoppingCartViewController
-            shoppingCartVC.cartController = cartController
-        }
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "ShowShoppingCart" {
+//            let shoppingCartVC = segue.destination as! ShoppingCartViewController
+//            shoppingCartVC.cartController = cartController
+//        }
+//    }
 
 }

@@ -15,7 +15,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HP7-Pm-YUN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2583" y="181"/>
+            <point key="canvasLocation" x="1958" y="653"/>
         </scene>
         <!--Category View Controller-->
         <scene sceneID="40h-YQ-e2g">
@@ -368,7 +368,6 @@
                         <barButtonItem key="rightBarButtonItem" image="cart.badge.plus" catalog="system" id="pPZ-te-4U2">
                             <connections>
                                 <action selector="cartButtonPressed:" destination="iGu-rw-Dz4" id="w7f-4D-jhg"/>
-                                <segue destination="kv9-q5-LfH" kind="show" identifier="ShowShoppingCart" id="IFH-Gz-TtD"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -393,7 +392,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vsd-k2-DFF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4446" y="-29"/>
+            <point key="canvasLocation" x="4600" y="165"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="2Kk-uQ-H6X">
@@ -468,7 +467,7 @@
                                     <outlet property="productImageView" destination="a5K-Ca-5Wq" id="4aA-Vz-KlR"/>
                                     <outlet property="productNameLabel" destination="gH3-sn-Ak5" id="uSj-tB-He2"/>
                                     <outlet property="productPriceLabel" destination="FEQ-Xb-yEU" id="6ff-AM-hUr"/>
-                                    <segue destination="iGu-rw-Dz4" kind="show" identifier="ShowProductDetail" id="wbn-tk-ryH"/>
+                                    <segue destination="3fQ-kw-qEI" kind="show" identifier="ShowProductDetail" id="Io6-zT-EEg"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -483,13 +482,120 @@
             </objects>
             <point key="canvasLocation" x="2894" y="672"/>
         </scene>
+        <!--Product Detail View Controller-->
+        <scene sceneID="SGi-C5-AaO">
+            <objects>
+                <viewController storyboardIdentifier="ProductDetailViewController" id="3fQ-kw-qEI" customClass="ProductDetailViewController" customModule="CatCart" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Dtf-8j-hWK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AeW-GV-5fj">
+                                <rect key="frame" x="24" y="112" width="366" height="366"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="AeW-GV-5fj" secondAttribute="height" multiplier="1:1" id="hqG-td-aLC"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="LOt-kL-1Yv">
+                                <rect key="frame" x="20" y="498" width="374" height="87.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ebw-Eu-Qmf">
+                                        <rect key="frame" x="0.0" y="0.0" width="87" height="41"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xC8-Gp-dDq">
+                                        <rect key="frame" x="0.0" y="61" width="48" height="26.5"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="yBZ-GD-0yF">
+                                <rect key="frame" x="20" y="605.5" width="374" height="20.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ryg-cY-uoo">
+                                        <rect key="frame" x="0.0" y="0.0" width="160.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Size" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sa6-R5-smF">
+                                        <rect key="frame" x="170.5" y="0.0" width="48" height="20.5"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Color" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qVb-Tf-J3M">
+                                        <rect key="frame" x="228.5" y="0.0" width="61" height="20.5"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U0d-OS-H5l">
+                                        <rect key="frame" x="299.5" y="0.0" width="74.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ilC-nD-MPa">
+                                <rect key="frame" x="32" y="646" width="350" height="42"/>
+                                <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="ADD TO CART"/>
+                                <connections>
+                                    <action selector="addToCart:" destination="3fQ-kw-qEI" eventType="touchUpInside" id="NWH-HN-6lb"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Gbe-6O-QHh" firstAttribute="trailing" secondItem="LOt-kL-1Yv" secondAttribute="trailing" constant="20" id="5Gb-ch-e10"/>
+                            <constraint firstItem="LOt-kL-1Yv" firstAttribute="top" secondItem="AeW-GV-5fj" secondAttribute="bottom" constant="20" id="CFT-93-i9j"/>
+                            <constraint firstItem="AeW-GV-5fj" firstAttribute="top" secondItem="Gbe-6O-QHh" secondAttribute="top" constant="24" id="ITe-Tb-pEu"/>
+                            <constraint firstItem="Gbe-6O-QHh" firstAttribute="trailing" secondItem="ilC-nD-MPa" secondAttribute="trailing" constant="32" id="IUK-4G-Zf0"/>
+                            <constraint firstItem="Gbe-6O-QHh" firstAttribute="trailing" secondItem="AeW-GV-5fj" secondAttribute="trailing" constant="24" id="Ii9-io-PvK"/>
+                            <constraint firstItem="LOt-kL-1Yv" firstAttribute="leading" secondItem="Gbe-6O-QHh" secondAttribute="leading" constant="20" id="KES-FI-PrU"/>
+                            <constraint firstItem="yBZ-GD-0yF" firstAttribute="leading" secondItem="Gbe-6O-QHh" secondAttribute="leading" constant="20" id="dta-EK-hDo"/>
+                            <constraint firstItem="ilC-nD-MPa" firstAttribute="centerX" secondItem="Dtf-8j-hWK" secondAttribute="centerX" id="i4m-Bk-XCM"/>
+                            <constraint firstItem="AeW-GV-5fj" firstAttribute="leading" secondItem="Gbe-6O-QHh" secondAttribute="leading" constant="24" id="oIW-Zd-Isi"/>
+                            <constraint firstItem="yBZ-GD-0yF" firstAttribute="top" secondItem="LOt-kL-1Yv" secondAttribute="bottom" constant="20" id="rF5-Yq-Tx9"/>
+                            <constraint firstItem="ilC-nD-MPa" firstAttribute="leading" secondItem="Gbe-6O-QHh" secondAttribute="leading" constant="32" id="rSF-ey-jJb"/>
+                            <constraint firstItem="Gbe-6O-QHh" firstAttribute="trailing" secondItem="yBZ-GD-0yF" secondAttribute="trailing" constant="20" id="y2T-nh-UBe"/>
+                            <constraint firstItem="ilC-nD-MPa" firstAttribute="top" secondItem="yBZ-GD-0yF" secondAttribute="bottom" constant="20" id="zu6-8k-UZG"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Gbe-6O-QHh"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="DC4-ON-whY">
+                        <barButtonItem key="rightBarButtonItem" image="cart" catalog="system" id="xPA-JV-hg4">
+                            <connections>
+                                <action selector="cartButtonPressed:" destination="3fQ-kw-qEI" id="D81-Sa-Yj6"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="colorLabel" destination="qVb-Tf-J3M" id="Soz-68-s6r"/>
+                        <outlet property="nameLabel" destination="ebw-Eu-Qmf" id="pRe-pt-2il"/>
+                        <outlet property="priceLabel" destination="xC8-Gp-dDq" id="a0e-zY-E0B"/>
+                        <outlet property="productImageView" destination="AeW-GV-5fj" id="nz8-6X-ydI"/>
+                        <outlet property="sizeLabel" destination="Sa6-R5-smF" id="mbA-qf-uS0"/>
+                        <outlet property="typeLabel" destination="U0d-OS-H5l" id="PCu-Ve-jnN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wVb-2s-9M1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3870" y="906"/>
+        </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="wbn-tk-ryH"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <image name="Cat10" width="250" height="200"/>
         <image name="Cat2" width="250" height="300"/>
+        <image name="cart" catalog="system" width="128" height="102"/>
         <image name="cart.badge.plus" catalog="system" width="128" height="98"/>
         <image name="mouse" width="253" height="199"/>
     </resources>
