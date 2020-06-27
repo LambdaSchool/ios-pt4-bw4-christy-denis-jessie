@@ -106,7 +106,6 @@ var user: User? {
             completion(nil)
         }.resume()
         
-        
     }
     
     // MARK: - Log In Existing User
@@ -177,6 +176,13 @@ func loadFromPersistentStore(username: String) -> User? {
         let moc = CoreDataStack.shared.mainContext
         do {
             let user = try moc.fetch(fetchRequest).first
+            if let currentUser = user,
+            let username = currentUser.userName,
+            let password = currentUser.password {
+                           
+                           print(username)
+                           print(password)
+            }
             return user
         } catch {
             print("Error fetching users: \(error)")

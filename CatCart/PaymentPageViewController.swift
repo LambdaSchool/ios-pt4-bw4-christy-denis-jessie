@@ -154,9 +154,20 @@ class PaymentPageViewController: UIViewController {
                 user.city = city
                 user.state = state
                 user.zipCode = zipCode!
-                
-                currentUser = user
             }
+            
+            currentUser = User(
+            userName: "testUserName",
+            password: "testPassword",
+            firstName: firstName,
+            lastName: lastName,
+            email: email,
+            longitude: nil,
+            latitude: nil,
+            streetAddress: address,
+            city: city,
+            state: state,
+            zipCode: zipCode)
             
             currentUserShippingAddress = ShippingAdress(
                 shippingAddress: shippingAddress!,
@@ -169,11 +180,6 @@ class PaymentPageViewController: UIViewController {
                 creditCardEXP: creditCardEXP!,
                 creditCardCVV: creditCardCVV!)
             
-            print("Name: \(String(describing: currentUser?.firstName))")
-            print("State: \(String(describing: currentUserShippingAddress?.shippingState))")
-            print("CVV: \(String(describing: currentUserCreditCard?.creditCardCVV))")
-            
-        
             
             performSegue(withIdentifier: "ShowCheckOutSegue", sender: AnyObject.self)
 
@@ -199,10 +205,7 @@ class PaymentPageViewController: UIViewController {
             billingStateTextField.text = "\(String(describing: user.state))"
             billingZipCodeTextField.text = "\(user.zipCode)"
             
-            currentUser = user
-            print("Name: \(String(describing: currentUser?.firstName))")
         }
-        print("Name: \(String(describing: currentUser?.firstName))")
         
     }
     
@@ -213,7 +216,7 @@ class PaymentPageViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowCheckOutSegue" {
             if let checkOutVC = segue.destination as? CheckOutConfirmationViewController {
-//                checkOutVC.currentUser = self.currentUser
+                checkOutVC.currentUser = self.currentUser
                 checkOutVC.cartController = self.cartController
                 checkOutVC.currentUserCreditCard = self.currentUserCreditCard
                 checkOutVC.currentUserShippingAddress = self.currentUserShippingAddress
