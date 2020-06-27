@@ -27,7 +27,7 @@ class CategoryViewController: UIViewController {
     // MARK: - View
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        // currentUser = fetchResultsController
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -42,22 +42,27 @@ class CategoryViewController: UIViewController {
             let destinationVC = segue.destination as! AllCatsTableViewController
             destinationVC.cartController = cartController
         } else if segue.identifier == "ToLandingPage" {
+            let destinationVC = segue.destination as! UserLoginViewController
             if let user = currentUser {
-                let destinationVC = segue.destination as! LandingPageViewController
                 destinationVC.currentUser = user
             }
+            destinationVC.delegate = self
         } else if segue.identifier == "ShowProductsPage" {
             let destinationVC = segue.destination as! AllProductsTableViewController
             destinationVC.cartController = cartController
         }
     }
 
-
     @IBAction func cartButtonPressed(_ sender: UIBarButtonItem) {
         let storyBoard: UIStoryboard = UIStoryboard(name: "ShoppingCart", bundle: nil)
         let shoppingCart = storyBoard.instantiateViewController(withIdentifier: "ShoppingCartViewController") as! ShoppingCartViewController
         navigationController?.pushViewController(shoppingCart, animated: true)
     }
-
 }
 
+extension CategoryViewController: UserLoginViewControllerDelegate {
+    func userLoginViewController(_ viewController: UserLoginViewController, loggedInUser: User) {
+        currentUser = loggedInUser
+        viewController.dismiss(animated: true, completion: nil)
+    }
+}

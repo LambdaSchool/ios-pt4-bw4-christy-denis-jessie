@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol UserLoginViewControllerDelegate: class {
+    func userLoginViewController(_ viewController: UserLoginViewController, loggedInUser: User)
+}
+
 class UserLoginViewController: UIViewController {
     
     // MARK: - Outlets
@@ -18,6 +22,7 @@ class UserLoginViewController: UIViewController {
     // MARK: - Properties
     var userController = UserController()
     var currentUser: User?
+    weak var delegate: UserLoginViewControllerDelegate?
 
     // MARK: - Setup
     static func newLogin() -> UserLoginViewController {
@@ -97,7 +102,7 @@ class UserLoginViewController: UIViewController {
                     DispatchQueue.main.async {
                         self.userNameTextField.text = ""
                         self.userPasswordTextField.text = ""
-                        self.dismiss(animated: true, completion: nil)
+                        self.delegate?.userLoginViewController(self, loggedInUser: self.currentUser!)
                     }
 
                 } else {
