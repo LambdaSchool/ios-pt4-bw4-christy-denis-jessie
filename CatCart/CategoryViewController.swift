@@ -51,6 +51,13 @@ class CategoryViewController: UIViewController {
             destinationVC.cartController = cartController
         }
     }
-    @IBAction func unwindToCategories(segue: UIStoryboard) {}
+
+
+    @IBAction func cartButtonPressed(_ sender: UIBarButtonItem) {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "ShoppingCart", bundle: nil)
+        let shoppingCart = storyBoard.instantiateViewController(withIdentifier: "ShoppingCartViewController") as! ShoppingCartViewController
+        navigationController?.pushViewController(shoppingCart, animated: true)
+    }
+
 }
 

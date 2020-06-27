@@ -106,7 +106,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="rsu-t0-MlG"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Fyi-1Z-ccb"/>
+                    <navigationItem key="navigationItem" id="Fyi-1Z-ccb">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="cart" catalog="system" id="e1k-nT-yXN">
+                            <connections>
+                                <action selector="cartButtonPressed:" destination="wQe-P6-dTr" id="xGy-wJ-i8O"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="IYf-Kg-ngQ" kind="presentation" identifier="ToLandingPage" id="M2U-Ya-RZO"/>
                     </connections>
