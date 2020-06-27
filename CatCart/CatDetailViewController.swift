@@ -56,7 +56,7 @@ class CatDetailViewController: UIViewController {
     @IBAction func addToCart(_ sender: Any) {
         guard let cartController = cartController, let cat = cat, let name = cat.name else { return }
         if let image = self.catImageView.image {
-            cartController.addItem(itemName: name, itemPrice: cat.price, image: image)
+            cartController.addItem(itemName: name, itemPrice: cat.price)
         }
 
         if let name = cat.name {
