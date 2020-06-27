@@ -11,6 +11,8 @@ import UIKit
 
 class ShoppingCartController {
 
+    static let shared = ShoppingCartController()
+
     var cat: Cat?
     var product: Product?
 
