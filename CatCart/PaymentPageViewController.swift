@@ -142,18 +142,21 @@ class PaymentPageViewController: UIViewController {
             let creditCardEXP = Int(expDateTextField.text ?? "0") // convert to date formatt
             let creditCardCVV = Int(cVVCodeTextField.text ?? "0")
             
-//            currentUser = User(
-//                userName: "user1",
-//                password: "password123",
-//                firstName: firstName,
-//                lastName: lastName,
-//                email: email,
-//                longitude: nil,
-//                latitude: nil,
-//                streetAddress: address,
-//                city: city,
-//                state: state,
-//                zipCode: zipCode)
+            // MARK: - Added fetch from Core Data
+            let moc = CoreDataStack.shared.mainContext
+            let fetchRequest: NSFetchRequest<User> = User.fetchRequest()
+            fetchRequest.predicate = NSPredicate(format: "userName == %@", UserDefaults.standard.value(forKey: "LoggedInUser") as! String)
+            if let user = try? moc.fetch(fetchRequest).first {
+                user.firstName = firstName
+                user.lastName = lastName
+                user.email = email
+                user.streetAddress = address
+                user.city = city
+                user.state = state
+                user.zipCode = zipCode!
+                
+                currentUser = user
+            }
             
             currentUserShippingAddress = ShippingAdress(
                 shippingAddress: shippingAddress!,
@@ -166,37 +169,10 @@ class PaymentPageViewController: UIViewController {
                 creditCardEXP: creditCardEXP!,
                 creditCardCVV: creditCardCVV!)
             
-//            userController.create(
-//                userName: "TestUser",
-//                password: "password123",
-//                firstName: firstName,
-//                lastName: lastName,
-//                email: email,
-//                longitude: nil,
-//                latitude: nil,
-//                streetAddress: address,
-//                city: city,
-//                state: state,
-//                zipCode: zipCode)
-//
-            userController.update(
-                user: userController.currentUser!,
-                firstName: firstName,
-                lastName: lastName,
-                email: email,
-                longitude: nil,
-                latitude: nil,
-                streetAddress: address,
-                city: city,
-                state: state,
-                zipCode: zipCode)
-            
             print("Name: \(String(describing: currentUser?.firstName))")
             print("State: \(String(describing: currentUserShippingAddress?.shippingState))")
             print("CVV: \(String(describing: currentUserCreditCard?.creditCardCVV))")
             
-            print("User Count: \(String(describing: userController.users.count))")
-            print("User Array: \(String(describing: userController.users))")
         
             
             performSegue(withIdentifier: "ShowCheckOutSegue", sender: AnyObject.self)
@@ -208,6 +184,26 @@ class PaymentPageViewController: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+        // MARK: - Added fetch from Core Data
+        let moc = CoreDataStack.shared.mainContext
+        let fetchRequest: NSFetchRequest<User> = User.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "userName == %@", UserDefaults.standard.value(forKey: "LoggedInUser") as! String)
+        
+        if let user = try? moc.fetch(fetchRequest).first {
+    
+            firstNameTextField.text = "\(String(describing: user.firstName))"
+            lastNameTextField.text = "\(String(describing: user.lastName))"
+            emailTextField.text = "\(String(describing: user.email))"
+            billingAddressTextField.text = "\(String(describing: user.streetAddress))"
+            billingCityTextField.text = "\(String(describing: user.city))"
+            billingStateTextField.text = "\(String(describing: user.state))"
+            billingZipCodeTextField.text = "\(user.zipCode)"
+            
+            currentUser = user
+            print("Name: \(String(describing: currentUser?.firstName))")
+        }
+        print("Name: \(String(describing: currentUser?.firstName))")
+        
     }
     
     
@@ -217,7 +213,7 @@ class PaymentPageViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowCheckOutSegue" {
             if let checkOutVC = segue.destination as? CheckOutConfirmationViewController {
-                checkOutVC.currentUser = self.currentUser
+//                checkOutVC.currentUser = self.currentUser
                 checkOutVC.cartController = self.cartController
                 checkOutVC.currentUserCreditCard = self.currentUserCreditCard
                 checkOutVC.currentUserShippingAddress = self.currentUserShippingAddress
