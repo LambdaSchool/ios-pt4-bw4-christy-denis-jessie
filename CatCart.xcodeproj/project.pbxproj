@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1250FFC924A6A0FE00C079EF /* CheckOutConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1250FFC824A6A0FE00C079EF /* CheckOutConfirmationViewController.swift */; };
 		12806BB924A1BCDB00778400 /* User+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12806BB824A1BCDB00778400 /* User+Convenience.swift */; };
 		12806BE824A511D900778400 /* Cat+Annotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12806BE724A511D900778400 /* Cat+Annotation.swift */; };
 		12806BEA24A5128200778400 /* CatAnnotationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12806BE924A5128200778400 /* CatAnnotationDetailView.swift */; };
@@ -49,6 +50,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1250FFC824A6A0FE00C079EF /* CheckOutConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckOutConfirmationViewController.swift; sourceTree = "<group>"; };
 		12806BB824A1BCDB00778400 /* User+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+Convenience.swift"; sourceTree = "<group>"; };
 		12806BE724A511D900778400 /* Cat+Annotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cat+Annotation.swift"; sourceTree = "<group>"; };
 		12806BE924A5128200778400 /* CatAnnotationDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatAnnotationDetailView.swift; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 			children = (
 				95D9571224A19B8100AAA206 /* ShoppingCartViewController.swift */,
 				95D9571424A19B9200AAA206 /* PaymentPageViewController.swift */,
+				1250FFC824A6A0FE00C079EF /* CheckOutConfirmationViewController.swift */,
 				9574A9CA24A4464F00CC1012 /* ItemTableViewCell.swift */,
 			);
 			name = "Shopping Cart and Payment VCs";
@@ -334,6 +337,7 @@
 				9590BA13249B130A008E7AD9 /* LandingPageViewController.swift in Sources */,
 				BA2F2239249C5339005944D8 /* CoreDataStack.swift in Sources */,
 				BA49E62F24A1ADBE009CEEF6 /* Product+Convenience.swift in Sources */,
+				1250FFC924A6A0FE00C079EF /* CheckOutConfirmationViewController.swift in Sources */,
 				BA2F2237249C52A0005944D8 /* CatCoreData.xcdatamodeld in Sources */,
 				95D9571524A19B9200AAA206 /* PaymentPageViewController.swift in Sources */,
 				12BE944A249B035D00AD1542 /* AppDelegate.swift in Sources */,

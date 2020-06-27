@@ -45,6 +45,7 @@ class PaymentPageViewController: UIViewController {
     var currentUser: User?
     var currentUserCreditCard: CreditCard?
     var currentUserShippingAddress: ShippingAdress?
+    var cartController: ShoppingCartController?
     
     @IBAction func isShippingTheSameAsBillingSwitch(_ sender: UISwitch) {
         
@@ -102,6 +103,8 @@ class PaymentPageViewController: UIViewController {
             expDateTextField.text == "" ||
             cVVCodeTextField.text == "" ) {
             
+            
+            
             DispatchQueue.main.async {
                 let alertController = UIAlertController(
                     title: "Missing Information",
@@ -114,6 +117,9 @@ class PaymentPageViewController: UIViewController {
                 alertController.addAction(alertAction)
                 self.present(alertController, animated: true)
             }
+            
+            
+            
         } else {
             
             let firstName = firstNameTextField.text
@@ -146,7 +152,7 @@ class PaymentPageViewController: UIViewController {
                 state: state,
                 zipCode: zipCode)
             
-
+            
             currentUserShippingAddress = ShippingAdress(
                 shippingAddress: shippingAddress!,
                 shippingCity: shippingCity!,
@@ -161,8 +167,11 @@ class PaymentPageViewController: UIViewController {
             print("Name: \(String(describing: currentUser?.firstName))")
             print("State: \(String(describing: currentUserShippingAddress?.shippingState))")
             print("CVV: \(String(describing: currentUserCreditCard?.creditCardCVV))")
+            
+            performSegue(withIdentifier: "ShowCheckOutSegue", sender: AnyObject.self)
+
         }
-   
+        
     }
     
     
@@ -176,13 +185,19 @@ class PaymentPageViewController: UIViewController {
     
     
     
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     
+    // MARK: - Navigation
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowCheckOutSegue" {
+            if let checkOutVC = segue.destination as? CheckOutConfirmationViewController {
+                checkOutVC.currentUser = self.currentUser
+                checkOutVC.cartController = self.cartController
+                checkOutVC.currentUserCreditCard = self.currentUserCreditCard
+                checkOutVC.currentUserShippingAddress = self.currentUserShippingAddress
+            }
+        }
+    }
+    
     
 }
