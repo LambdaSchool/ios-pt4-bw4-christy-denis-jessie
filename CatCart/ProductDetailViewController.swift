@@ -65,7 +65,24 @@ class ProductDetailViewController: UIViewController {
                 self.cartController.addItem(itemName: name, itemPrice: product.price)
             }
         }
-        //        cartButton.badge = cartController.itemNames.count
+
+        if let name = product.name {
+            DispatchQueue.main.async {
+                let alertController = UIAlertController(
+                    title: "Meow!",
+                    message: "\(String(describing: name)) was added to your cart!",
+                    preferredStyle: .alert)
+                let alertAction = UIAlertAction(
+                    title: "OK",
+                    style: UIAlertAction.Style.default,
+                    handler: { action in
+                        self.navigationController?.popToRootViewController(animated: true)
+                } )
+
+                alertController.addAction(alertAction)
+                self.present(alertController, animated: true)
+            }
+        }
     }
     
     @IBAction func cartButtonPressed(_ sender: UIBarButtonItem) {
@@ -73,12 +90,4 @@ class ProductDetailViewController: UIViewController {
         let shoppingCart = storyBoard.instantiateViewController(withIdentifier: "ShoppingCartViewController") as! ShoppingCartViewController
         navigationController?.pushViewController(shoppingCart, animated: true)
     }
-    
-    // MARK: - Navigation
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "ShowShoppingCart" {
-//            let shoppingCartVC = segue.destination as! ShoppingCartViewController
-//            shoppingCartVC.cartController = cartController
-//        }
-//    }
 }
