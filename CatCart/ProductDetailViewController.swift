@@ -56,14 +56,24 @@ class ProductDetailViewController: UIViewController {
     // MARK: - Actions
     @IBAction func addToCart(_ sender: Any) {
         guard let cartController = cartController, let product = product, let name = product.name else { return }
-        cartController.addItem(itemName: name, itemPrice: product.price)
+        if let productImageURLString = product.imageURL {
+            guard let productImageURL = URL(string: productImageURLString) else { return }
+            DispatchQueue.global().async {
+                guard let imageData = try? Data(contentsOf: productImageURL) else { return }
+                
+                guard let productImage = UIImage(data: imageData) else { return }
+                
+                
+                
+                cartController.addItem(itemName: name, itemPrice: product.price, image: productImage)
+            }
+        }
         //        cartButton.badge = cartController.itemNames.count
     }
     
     @IBAction func cartButtonPressed(_ sender: UIBarButtonItem) {
         performSegue(withIdentifier: "ShowShoppingCart", sender: self)
     }
-    
     
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
