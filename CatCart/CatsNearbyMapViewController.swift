@@ -97,6 +97,6 @@ extension CatsNearbyMapViewController: MapDetailViewDelegate {
         let storyBoard: UIStoryboard = UIStoryboard(name: "CatsForSale", bundle: nil)
         let detailView = storyBoard.instantiateViewController(withIdentifier: "CatDetailViewController") as! CatDetailViewController
         detailView.cat = cat
-        present(detailView, animated: true)
+        navigationController?.pushViewController(detailView, animated: true)
     }
 }
