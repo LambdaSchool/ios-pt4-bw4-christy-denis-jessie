@@ -41,9 +41,9 @@ class UserSignUpViewController: UIViewController {
     func showLogin() {
 //    func showLogin(completion: @escaping () -> Void) {
         let loginVC = UserLoginViewController.newLogin()
-        
+
         print("sending user to loginVC: \(String(describing: currentUser?.userName)) password: \(String(describing: currentUser?.password))")
-        
+
         loginVC.currentUser = currentUser
         self.dismiss(animated: true, completion: nil)
 //        present(loginVC, animated: true, completion: nil)
