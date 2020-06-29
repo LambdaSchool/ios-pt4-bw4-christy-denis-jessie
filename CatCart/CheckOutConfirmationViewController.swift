@@ -9,7 +9,7 @@
 import UIKit
 
 class CheckOutConfirmationViewController: UIViewController {
-
+    // swiftlint:disable line_length
     var currentUser: User?
     var currentUserCreditCard: CreditCard?
     var currentUserShippingAddress: ShippingAdress?
@@ -58,7 +58,6 @@ class CheckOutConfirmationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         let currencyFormatter = NumberFormatter()
         currencyFormatter.usesGroupingSeparator = true
         currencyFormatter.numberStyle = .currency

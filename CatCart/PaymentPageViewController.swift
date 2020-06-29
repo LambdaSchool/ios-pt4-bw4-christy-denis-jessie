@@ -23,6 +23,8 @@ struct ShippingAdress {
 }
 
 class PaymentPageViewController: UIViewController {
+    // swiftlint:disable line_length
+    // swiftlint:disable force_cast
 
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
