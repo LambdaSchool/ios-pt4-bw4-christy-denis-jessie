@@ -11,6 +11,7 @@ import UIKit
 class UserSignUpViewController: UIViewController {
     // swiftlint:disable force_cast
     // swiftlint:disable line_length
+    // swiftlint:disable function_body_length
 
     @IBOutlet weak var userEmailTextField: UITextField!
     @IBOutlet weak var userPasswordTextField: UITextField!

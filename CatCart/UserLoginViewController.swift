@@ -11,7 +11,7 @@ import UIKit
 protocol UserLoginViewControllerDelegate: class {
     // swiftlint:disable force_cast
     // swiftlint:disable line_length
-
+    // swiftlint:disable function_body_length
     func userLoginViewController(_ viewController: UserLoginViewController, loggedInUser: User)
 }
 
