@@ -10,6 +10,7 @@ import UIKit
 
 class UserSignUpViewController: UIViewController {
     // swiftlint:disable force_cast
+    // swiftlint:disable line_length
 
     @IBOutlet weak var userEmailTextField: UITextField!
     @IBOutlet weak var userPasswordTextField: UITextField!
@@ -34,7 +35,8 @@ class UserSignUpViewController: UIViewController {
 
     static func newSignUp() -> UserSignUpViewController {
         let storyboard = UIStoryboard(name: "UserSignup", bundle: nil)
-        let signupVC = storyboard.instantiateViewController(withIdentifier: "UserSignUpViewController") as! UserSignUpViewController
+        let signupVC = storyboard.instantiateViewController(withIdentifier: "UserSignUpViewController")
+            as! UserSignUpViewController
         return signupVC
     }
 

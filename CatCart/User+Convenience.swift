@@ -39,7 +39,8 @@ extension User {
         self.zipCode = zipCode ?? 0
     }
 
-   @discardableResult convenience init?(userRepresentation: UserRepresentation, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
+   @discardableResult convenience init?(userRepresentation: UserRepresentation,
+                                        context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
 
         let userName = userRepresentation.userName
         let password = userRepresentation.password
