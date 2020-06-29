@@ -18,7 +18,7 @@ enum HTTPMethod: String {
 }
 
 class UserController {
-    
+
     private let baseURL = URL(string: "https://catcart-65be0.firebaseio.com/user")!
 
     var passwordMatch: Bool = false
@@ -28,12 +28,12 @@ class UserController {
         guard let username = UserDefaults.standard.value(forKey: "LoggedInUser") as? String else { return nil }
         return loadFromPersistentStore(username: username)
     }
-    
+
     var currentUser: User?
-    
+
     // MARK: - Register New User
     func signUp(with user: UserRepresentation, completion: @escaping (Error?) -> Void) {
-        
+
         createUserWithUserNameAndPassword(userName: user.userName, password: user.password)
 
         let getUserURL = baseURL
@@ -142,7 +142,7 @@ class UserController {
                 if user.password == password {
                     print("We HAVE a match!!!!!!!!!!!!")
                     self.passwordMatch = true
-                    
+
                 } else {
                     print("We DON'T have a match!!!!!!!!!!!!")
                     self.passwordMatch = false
@@ -155,8 +155,7 @@ class UserController {
             completion(nil)
         } .resume()
     }
-    
-    
+
     private func saveToPersistentStore() {
         let moc = CoreDataStack.shared
         do {
@@ -165,7 +164,7 @@ class UserController {
             print("Error saving managed object context: \(error)")
         }
     }
-    
+
     func loadFromPersistentStore(username: String) -> User? {
         let fetchRequest: NSFetchRequest<User> = User.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "userName == %@", username)
@@ -175,7 +174,6 @@ class UserController {
             if let currentUser = user,
                 let username = currentUser.userName,
                 let password = currentUser.password {
-
                 print(username)
                 print(password)
             }
@@ -185,21 +183,20 @@ class UserController {
             return nil
         }
     }
-    
+
     func create(userName: String, password: String, firstName: String?, lastName: String?, email: String?, longitude: Double?, latitude: Double?, streetAddress: String?, city: String?, state: String?, zipCode: Int16?) {
-        let _ = User(userName: userName, password: password, firstName: firstName, lastName: lastName, email: email, longitude: longitude, latitude: latitude, streetAddress: streetAddress, city: city, state: state, zipCode: zipCode)
+        _ = User(userName: userName, password: password, firstName: firstName, lastName: lastName, email: email, longitude: longitude, latitude: latitude, streetAddress: streetAddress, city: city, state: state, zipCode: zipCode)
         saveToPersistentStore()
     }
-    
+
     func createUserWithUserNameAndPassword(userName: String, password: String) {
-        
+
         currentUser = User(userName: userName, password: password, firstName: nil, lastName: nil, email: nil, longitude: nil, latitude: nil, streetAddress: nil, city: nil, state: nil, zipCode: nil)
-        
+
         print("User created with UserName: \(String(describing: currentUser?.userName)) and password: \(String(describing: currentUser?.password))")
-        
+
         saveToPersistentStore()
     }
-    
 
     //    func update(user: User, firstName: String?, lastName: String?, email: String?, longitude: Double?, latitude: Double?, streetAddress: String?, city: String?, state: String?, zipCode: Int16?) {
     //

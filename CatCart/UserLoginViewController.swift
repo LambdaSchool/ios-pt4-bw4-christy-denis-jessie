@@ -30,9 +30,9 @@ class UserLoginViewController: UIViewController {
     static func newLogin() -> UserLoginViewController {
         let storyboard = UIStoryboard(name: "UserLogin", bundle: nil)
         let loginVC = storyboard.instantiateViewController(withIdentifier: "UserLoginViewController") as! UserLoginViewController
-        
+
         print("received loginVC user: \(String(describing: loginVC.currentUser?.userName)) password: \(String(describing: loginVC.currentUser?.password))")
-        
+
         return loginVC
     }
 
@@ -55,7 +55,7 @@ class UserLoginViewController: UIViewController {
         guard let user = currentUser else { return }
         userNameTextField.text = user.userName
         userPasswordTextField.text = user.password
-        
+
         print("received loginVC user: \(String(describing: currentUser?.userName)) password: \(String(describing: currentUser?.password))")
     }
 
@@ -77,7 +77,7 @@ class UserLoginViewController: UIViewController {
     }
 
     @IBAction func loginTapped(_ sender: UIButton) {
-       
+
         if let userName = userNameTextField.text,
             !userName.isEmpty,
             let password = userPasswordTextField.text,
@@ -97,7 +97,7 @@ class UserLoginViewController: UIViewController {
                                city: nil,
                                state: nil,
                                zipCode: nil)
-            
+
             UserDefaults.standard.set(currentUser?.userName, forKey: "LoggedInUser")
 
             userController.signIn(with: user) { error in
@@ -111,7 +111,7 @@ class UserLoginViewController: UIViewController {
                     DispatchQueue.main.async {
                         self.userNameTextField.text = ""
                         self.userPasswordTextField.text = ""
-                        
+
                         self.delegate?.userLoginViewController(self, loggedInUser: self.currentUser!)
                     }
 

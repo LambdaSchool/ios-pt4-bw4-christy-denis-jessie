@@ -48,7 +48,6 @@ class PaymentPageViewController: UIViewController {
     var currentUserShippingAddress: ShippingAdress?
     var cartController = ShoppingCartController.shared
     var userController = UserController()
-    
 
     @IBAction func isShippingTheSameAsBillingSwitch(_ sender: UISwitch) {
 
@@ -150,7 +149,7 @@ class PaymentPageViewController: UIViewController {
                 user.state = state
                 user.zipCode = zipCode!
             }
-            
+
             currentUser = User(
             userName: "testUserName",
             password: "testPassword",
@@ -188,9 +187,9 @@ class PaymentPageViewController: UIViewController {
         let moc = CoreDataStack.shared.mainContext
         let fetchRequest: NSFetchRequest<User> = User.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "userName == %@", UserDefaults.standard.value(forKey: "LoggedInUser") as! String)
-        
+
         if let user = try? moc.fetch(fetchRequest).first {
-    
+
             firstNameTextField.text = "\(String(describing: user.firstName))"
             lastNameTextField.text = "\(String(describing: user.lastName))"
             emailTextField.text = "\(String(describing: user.email))"
@@ -198,9 +197,9 @@ class PaymentPageViewController: UIViewController {
             billingCityTextField.text = "\(String(describing: user.city))"
             billingStateTextField.text = "\(String(describing: user.state))"
             billingZipCodeTextField.text = "\(user.zipCode)"
-            
+
         }
-        
+
     }
 
     // MARK: - Navigation
