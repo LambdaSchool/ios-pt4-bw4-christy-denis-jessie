@@ -19,6 +19,8 @@ enum HTTPMethod: String {
 
 class UserController {
     // swiftlint:disable line_length
+    // swiftlint:disable function_parameter_count
+    // swiftlint:disable function_body_length
 
     private let baseURL = URL(string: "https://catcart-65be0.firebaseio.com/user")!
 
