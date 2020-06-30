@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1250FFC924A6A0FE00C079EF /* CheckOutConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1250FFC824A6A0FE00C079EF /* CheckOutConfirmationViewController.swift */; };
+		126B223924ABBE1500790DE7 /* CHMeow10.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 126B223824ABBE1500790DE7 /* CHMeow10.m4a */; };
 		12806BB924A1BCDB00778400 /* User+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12806BB824A1BCDB00778400 /* User+Convenience.swift */; };
 		12806BE824A511D900778400 /* Cat+Annotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12806BE724A511D900778400 /* Cat+Annotation.swift */; };
 		12806BEA24A5128200778400 /* CatAnnotationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12806BE924A5128200778400 /* CatAnnotationDetailView.swift */; };
@@ -51,6 +52,7 @@
 
 /* Begin PBXFileReference section */
 		1250FFC824A6A0FE00C079EF /* CheckOutConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckOutConfirmationViewController.swift; sourceTree = "<group>"; };
+		126B223824ABBE1500790DE7 /* CHMeow10.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = CHMeow10.m4a; path = Assets.xcassets/CHMeow10.dataset/CHMeow10.m4a; sourceTree = "<group>"; };
 		12806BB824A1BCDB00778400 /* User+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+Convenience.swift"; sourceTree = "<group>"; };
 		12806BE724A511D900778400 /* Cat+Annotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cat+Annotation.swift"; sourceTree = "<group>"; };
 		12806BE924A5128200778400 /* CatAnnotationDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatAnnotationDetailView.swift; sourceTree = "<group>"; };
@@ -219,6 +221,7 @@
 				95D9571424A19B9200AAA206 /* PaymentPageViewController.swift */,
 				1250FFC824A6A0FE00C079EF /* CheckOutConfirmationViewController.swift */,
 				9574A9CA24A4464F00CC1012 /* ItemTableViewCell.swift */,
+				126B223824ABBE1500790DE7 /* CHMeow10.m4a */,
 			);
 			name = "Shopping Cart and Payment VCs";
 			sourceTree = "<group>";
@@ -312,6 +315,7 @@
 				9590BA08249B0A06008E7AD9 /* ShoppingCart.storyboard in Resources */,
 				12BE9456249B036700AD1542 /* LaunchScreen.storyboard in Resources */,
 				12BE9453249B036700AD1542 /* Assets.xcassets in Resources */,
+				126B223924ABBE1500790DE7 /* CHMeow10.m4a in Resources */,
 				95D956FF24A1925F00AAA206 /* LandingPage.storyboard in Resources */,
 				9590BA0A249B0A63008E7AD9 /* CatsForSale.storyboard in Resources */,
 				9590BA06249B09CC008E7AD9 /* UserLogin.storyboard in Resources */,

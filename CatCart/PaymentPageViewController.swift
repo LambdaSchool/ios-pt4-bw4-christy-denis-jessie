@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import AVFoundation
 
 struct CreditCard {
     let creditCardNumber: Int
@@ -34,16 +35,13 @@ class PaymentPageViewController: UIViewController {
     @IBOutlet weak var billingCityTextField: UITextField!
     @IBOutlet weak var billingStateTextField: UITextField!
     @IBOutlet weak var billingZipCodeTextField: UITextField!
-
     @IBOutlet weak var shippingAddressTextFeild: UITextField!
     @IBOutlet weak var shippingCityTextField: UITextField!
     @IBOutlet weak var shippingStateTextField: UITextField!
     @IBOutlet weak var shippingZipCodeTextField: UITextField!
-
     @IBOutlet weak var creditCardNumberTextField: UITextField!
     @IBOutlet weak var expDateTextField: UITextField!
     @IBOutlet weak var cVVCodeTextField: UITextField!
-
     @IBOutlet weak var checkOutButton: UIButton!
 
     var currentUser: User?
@@ -51,7 +49,47 @@ class PaymentPageViewController: UIViewController {
     var currentUserShippingAddress: ShippingAdress?
     var cartController = ShoppingCartController.shared
     var userController = UserController()
-
+    
+    var audioPlayer: AVAudioPlayer? {
+           didSet {
+               guard let audioPlayer = audioPlayer else { return }
+               audioPlayer.delegate = self
+               audioPlayer.isMeteringEnabled = true
+           }
+       }
+    
+    func updateViews() {
+           checkOutButton.isSelected = isPlaying
+       }
+    
+    var isPlaying: Bool {
+        audioPlayer?.isPlaying ?? false
+    }
+    func loadAudio() {
+        let songURL = Bundle.main.url(forResource: "CHMeow10", withExtension: "m4a")!
+        do {
+            audioPlayer = try AVAudioPlayer(contentsOf: songURL)
+        } catch {
+            preconditionFailure("Failure to load audio file: \(error)")
+        }
+    }
+     // remember this code if mute is turned on
+     func prepareAudioSession() throws {
+         let session = AVAudioSession.sharedInstance()
+         try session.setCategory(.playAndRecord, options: [.defaultToSpeaker])
+         try session.setActive(true, options: []) // can fail if on a phone call, for instance
+     }
+    
+     func play() {
+         do {
+             try prepareAudioSession()
+             audioPlayer?.play()
+             updateViews()
+         } catch {
+             print("cannot play audio: \(error)")
+         }
+     }
+    
     @IBAction func isShippingTheSameAsBillingSwitch(_ sender: UISwitch) {
 
         if sender.isOn == true {
@@ -92,6 +130,8 @@ class PaymentPageViewController: UIViewController {
 
     @IBAction func checkOutButtonTapped(_ sender: UIButton) {
 
+        play()
+        
         if  firstNameTextField.text == "" ||
             lastNameTextField.text == "" ||
             emailTextField.text == "" ||
@@ -184,6 +224,8 @@ class PaymentPageViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadAudio()
+        updateViews()
         // MARK: - Added fetch from Core Data
         let moc = CoreDataStack.shared.mainContext
         let fetchRequest: NSFetchRequest<User> = User.fetchRequest()
@@ -212,6 +254,19 @@ class PaymentPageViewController: UIViewController {
                 checkOutVC.currentUserCreditCard = self.currentUserCreditCard
                 checkOutVC.currentUserShippingAddress = self.currentUserShippingAddress
             }
+        }
+    }
+}
+
+
+
+extension PaymentPageViewController: AVAudioPlayerDelegate {
+    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+        updateViews()
+    }
+    func audioPlayerDecodeErrorDidOccur(_ player: AVAudioPlayer, error: Error?) {
+        if let error = error {
+            print("Audio Player error: \(error)")
         }
     }
 }
