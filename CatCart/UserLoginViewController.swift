@@ -65,12 +65,6 @@ class UserLoginViewController: UIViewController {
         return false
     }
 
-    // MARK: - Actions
-//    @IBAction func showStore() {
-//        let storeVC = CategoryViewController.goToStore()
-//        storeVC.currentUser = currentUser
-//        show(storeVC, sender: self)
-//    }
     @IBAction func showSignUp() {
         let signupVC = UserSignUpViewController.newSignUp()
         signupVC.userController = userController
@@ -87,17 +81,7 @@ class UserLoginViewController: UIViewController {
             let user = UserRepresentation(password: password,
                                           userName: userName)
 
-            currentUser = User(userName: user.userName,
-                               password: user.password,
-                               firstName: nil,
-                               lastName: nil,
-                               email: nil,
-                               longitude: nil,
-                               latitude: nil,
-                               streetAddress: nil,
-                               city: nil,
-                               state: nil,
-                               zipCode: nil)
+            currentUser = User(userName: user.userName, password: user.password, firstName: nil, lastName: nil, email: nil, longitude: nil, latitude: nil, streetAddress: nil, city: nil, state: nil, zipCode: nil)
 
             UserDefaults.standard.set(currentUser?.userName, forKey: "LoggedInUser")
 
@@ -139,14 +123,4 @@ class UserLoginViewController: UIViewController {
             }
         }
     }
-
-// MARK: - Navigation
-//        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//            if segue.identifier == "ShowStoreSegue" {
-//                if let catCartUserVC = segue.destination as? CategoryViewController {
-//                    catCartUserVC.user = user
-//                }
-//            }
-//        }
-
 }

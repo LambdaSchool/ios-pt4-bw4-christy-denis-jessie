@@ -20,8 +20,6 @@ class CategoryViewController: UIViewController {
     // MARK: - View
     override func viewDidLoad() {
         super.viewDidLoad()
-        // currentUser = fetchResultsController
-
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -39,7 +37,6 @@ class CategoryViewController: UIViewController {
                 print(password)
             }
         }
-
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

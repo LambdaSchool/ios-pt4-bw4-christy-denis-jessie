@@ -16,23 +16,14 @@ class CheckOutConfirmationViewController: UIViewController {
     var cartController = ShoppingCartController.shared
 
     @IBOutlet weak var itemCountLabel: UILabel!
-
     @IBOutlet weak var totalLabel: UILabel!
-
     @IBOutlet weak var firstNameLabel: UILabel!
-
     @IBOutlet weak var lastNameLabel: UILabel!
-
     @IBOutlet weak var streetAddress: UILabel!
-
     @IBOutlet weak var cityLabel: UILabel!
-
     @IBOutlet weak var stateLabel: UILabel!
-
     @IBOutlet weak var zipCodeLabel: UILabel!
-
     @IBOutlet weak var cardEndingInLabel: UILabel!
-
     @IBAction func placeOrderButton(_ sender: Any) {
 
         DispatchQueue.main.async {
