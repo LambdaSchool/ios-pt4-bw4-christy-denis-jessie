@@ -184,8 +184,6 @@ class PaymentPageViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
         // MARK: - Added fetch from Core Data
         let moc = CoreDataStack.shared.mainContext
         let fetchRequest: NSFetchRequest<User> = User.fetchRequest()
@@ -206,8 +204,6 @@ class PaymentPageViewController: UIViewController {
     }
 
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowCheckOutSegue" {
             if let checkOutVC = segue.destination as? CheckOutConfirmationViewController {

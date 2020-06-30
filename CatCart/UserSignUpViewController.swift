@@ -29,9 +29,6 @@ class UserSignUpViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-//        if currentUser != nil {
-//            self.dismiss(animated: true, completion: nil)
-//        }
     }
 
     static func newSignUp() -> UserSignUpViewController {
@@ -42,14 +39,12 @@ class UserSignUpViewController: UIViewController {
     }
 
     func showLogin() {
-//    func showLogin(completion: @escaping () -> Void) {
         let loginVC = UserLoginViewController.newLogin()
 
         print("sending user to loginVC: \(String(describing: currentUser?.userName)) password: \(String(describing: currentUser?.password))")
 
         loginVC.currentUser = currentUser
         self.dismiss(animated: true, completion: nil)
-//        present(loginVC, animated: true, completion: nil)
     }
 
     @IBAction func createAccount(_ sender: UIButton) {
