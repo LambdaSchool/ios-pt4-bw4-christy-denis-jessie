@@ -49,7 +49,6 @@ class PaymentPageViewController: UIViewController {
     var currentUserShippingAddress: ShippingAdress?
     var cartController = ShoppingCartController.shared
     var userController = UserController()
-    
     var audioPlayer: AVAudioPlayer? {
            didSet {
                guard let audioPlayer = audioPlayer else { return }
@@ -57,14 +56,15 @@ class PaymentPageViewController: UIViewController {
                audioPlayer.isMeteringEnabled = true
            }
        }
-    
+
     func updateViews() {
            checkOutButton.isSelected = isPlaying
        }
-    
+
     var isPlaying: Bool {
         audioPlayer?.isPlaying ?? false
     }
+
     func loadAudio() {
         let songURL = Bundle.main.url(forResource: "CHMeow10", withExtension: "m4a")!
         do {
@@ -73,13 +73,13 @@ class PaymentPageViewController: UIViewController {
             preconditionFailure("Failure to load audio file: \(error)")
         }
     }
-     // remember this code if mute is turned on
+
      func prepareAudioSession() throws {
          let session = AVAudioSession.sharedInstance()
          try session.setCategory(.playAndRecord, options: [.defaultToSpeaker])
-         try session.setActive(true, options: []) // can fail if on a phone call, for instance
+         try session.setActive(true, options: [])
      }
-    
+
      func play() {
          do {
              try prepareAudioSession()
@@ -89,7 +89,7 @@ class PaymentPageViewController: UIViewController {
              print("cannot play audio: \(error)")
          }
      }
-    
+
     @IBAction func isShippingTheSameAsBillingSwitch(_ sender: UISwitch) {
 
         if sender.isOn == true {
@@ -131,7 +131,7 @@ class PaymentPageViewController: UIViewController {
     @IBAction func checkOutButtonTapped(_ sender: UIButton) {
 
         play()
-        
+
         if  firstNameTextField.text == "" ||
             lastNameTextField.text == "" ||
             emailTextField.text == "" ||
@@ -257,8 +257,6 @@ class PaymentPageViewController: UIViewController {
         }
     }
 }
-
-
 
 extension PaymentPageViewController: AVAudioPlayerDelegate {
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {

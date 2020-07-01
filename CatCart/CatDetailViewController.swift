@@ -52,12 +52,10 @@ class CatDetailViewController: UIViewController {
         }
     }
 
-    //TODO: Look at passing this image, or breakpoint why this works...
     @IBAction func addToCart(_ sender: Any) {
         guard let cat = cat, let name = cat.name else { return }
-        if let image = self.catImageView.image {
-            cartController.addItem(itemName: name, itemPrice: cat.price)
-        }
+
+        cartController.addItem(itemName: name, itemPrice: cat.price)
 
         if let name = cat.name {
             DispatchQueue.main.async {
