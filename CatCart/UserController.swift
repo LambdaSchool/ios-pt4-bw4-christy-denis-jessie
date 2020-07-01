@@ -45,7 +45,6 @@ class UserController {
             .appendingPathExtension("json")
         var getUserRequest = URLRequest(url: getUserURL)
         getUserRequest.httpMethod = HTTPMethod.get.rawValue
-        print("\(getUserURL)")
 
         URLSession.shared.dataTask(with: getUserRequest) { data, response, error in
 
@@ -70,10 +69,8 @@ class UserController {
                 let userName = try decoder.decode(String.self, from: data)
                 print("\(userName)")
                 if user.userName == userName {
-                    print("\(userName) already exists")
                     self.usernameMatch = true
                 } else {
-                    print("\(user.userName) does not exist")
                     self.usernameMatch = false
                 }
             } catch {
@@ -143,11 +140,9 @@ class UserController {
                 print("text field password: \(user.password)")
 
                 if user.password == password {
-                    print("We HAVE a match!!!!!!!!!!!!")
                     self.passwordMatch = true
 
                 } else {
-                    print("We DON'T have a match!!!!!!!!!!!!")
                     self.passwordMatch = false
                 }
             } catch {
@@ -201,24 +196,4 @@ class UserController {
         saveToPersistentStore()
     }
 
-    //    func update(user: User, firstName: String?, lastName: String?, email: String?, longitude: Double?, latitude: Double?, streetAddress: String?, city: String?, state: String?, zipCode: Int16?) {
-    //
-    //        guard let userIndex = users.firstIndex(of: user) else { return }
-    //
-    //
-    //        users[userIndex].firstName = firstName
-    //        users[userIndex].lastName = lastName
-    //        users[userIndex].email = email
-    //        users[userIndex].longitude = longitude ?? 0.0
-    //        users[userIndex].latitude = latitude ?? 0.0
-    //        users[userIndex].streetAddress = streetAddress
-    //        users[userIndex].city = city
-    //        users[userIndex].state = state
-    //        users[userIndex].zipCode = zipCode ?? 0
-    //
-    //        print("User: \(users[userIndex])")
-    //
-    //        saveToPersistentStore()
-    //    }
-    //
 }
